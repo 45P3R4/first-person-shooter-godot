@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd5v6py7keiiq"]
+
+[ext_resource type="Script" path="res://scripts/Camera.cs" id="1_02tyf"]
+[ext_resource type="Script" path="res://scripts/Movement.cs" id="2_fmwto"]
+
+[sub_resource type="Environment" id="Environment_6c8ja"]
+background_mode = 1
+background_color = Color(0, 0.580407, 0.950545, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j8ojb"]
+
+[node name="Player" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+floor_constant_speed = true
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506911, 0)
+environment = SubResource("Environment_6c8ja")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_j8ojb")
+
+[node name="Scripts" type="Node3D" parent="CharacterBody3D"]
+
+[node name="Camera" type="Node3D" parent="CharacterBody3D/Scripts" node_paths=PackedStringArray("cam", "body")]
+script = ExtResource("1_02tyf")
+cam = NodePath("../../Camera3D")
+body = NodePath("../..")
+sensetive_x = 0.005
+sensetive_y = 0.005
+
+[node name="Movement" type="Node3D" parent="CharacterBody3D/Scripts" node_paths=PackedStringArray("body")]
+script = ExtResource("2_fmwto")
+body = NodePath("../..")
+speed = 3.0
+gravity = -9.0
