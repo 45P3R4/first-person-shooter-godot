@@ -2,10 +2,14 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class StateMachine : Node3D
+public partial class PlayerStateMachine : Node3D
 {
 	[Export]
 	public NodePath initialState;
+	[Export]
+	public CharacterBody3D body;
+
+	public Vector3 velocity = Vector3.Zero;
 
 	private Dictionary<string, State> _states;
 	private State _currentState;
@@ -28,7 +32,6 @@ public partial class StateMachine : Node3D
 
     public override void _Process(double delta) {
         _currentState.Process((float) delta);
-   
     }
 
     public override void _PhysicsProcess(double delta) {
