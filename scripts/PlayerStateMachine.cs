@@ -47,8 +47,11 @@ public partial class PlayerStateMachine : Node3D
 			return;
 
 		_currentState.Exit();
-		GD.Print(key);
 		_currentState = _states[key];
 		_currentState.Enter();
+	}
+
+	public State GetCurrentState() {
+		return _currentState;
 	}
 }

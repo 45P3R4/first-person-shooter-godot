@@ -11,6 +11,6 @@ public partial class Sun : DirectionalLight3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
-		RotateX((float)delta/10);
+		RotateX((float)delta/1000);
 	}
 }

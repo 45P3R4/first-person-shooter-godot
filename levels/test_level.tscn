@@ -1,26 +1,38 @@
-[gd_scene load_steps=7 format=3 uid="uid://syuje46aluto"]
+[gd_scene load_steps=10 format=3 uid="uid://syuje46aluto"]
 
 [ext_resource type="Texture2D" uid="uid://b52xak6jsus2s" path="res://textures/concrete.jpg" id="1_fmmlo"]
 [ext_resource type="PackedScene" uid="uid://bd5v6py7keiiq" path="res://scenes/player.tscn" id="1_p6p1l"]
 [ext_resource type="Texture2D" uid="uid://bucsr31dbs8jn" path="res://textures/tiles.jpg" id="2_bdqtn"]
+[ext_resource type="Script" path="res://levels/Sun.cs" id="2_tkr8m"]
+[ext_resource type="VoxelGIData" uid="uid://w4mcmkdk8qhq" path="res://levels/test_level.VoxelGI_data.res" id="5_0dde5"]
+[ext_resource type="PackedScene" uid="uid://dq7kwckjmo2ly" path="res://scenes/enemy.tscn" id="6_62c5i"]
 
 [sub_resource type="Environment" id="Environment_dhoh4"]
 background_mode = 1
 background_color = Color(0, 0.542056, 0.918194, 1)
-ambient_light_color = Color(0.385253, 0.531358, 0.686121, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.238749, 0.354497, 0.476218, 1)
 tonemap_mode = 2
 ssao_enabled = true
 sdfgi_use_occlusion = true
+sdfgi_cascades = 8
+sdfgi_min_cell_size = 0.350879
+sdfgi_cascade0_distance = 22.4562
+sdfgi_max_distance = 5748.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11nm6"]
 albedo_texture = ExtResource("2_bdqtn")
 uv1_triplanar = true
 uv1_world_triplanar = true
+uv2_triplanar = true
+uv2_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rc8m0"]
 albedo_texture = ExtResource("1_fmmlo")
 uv1_triplanar = true
 uv1_world_triplanar = true
+uv2_triplanar = true
+uv2_world_triplanar = true
 
 [node name="Node3D" type="Node3D"]
 
@@ -29,8 +41,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.759883, 2.55784, 10.359)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.8841, 0.398921, -0.243369, 0, 0.520801, 0.853678, 0.467297, -0.754737, 0.46044, 0, 3.19008, 0)
+light_energy = 0.6
 light_bake_mode = 1
 shadow_enabled = true
+script = ExtResource("2_tkr8m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dhoh4")
@@ -48,24 +62,24 @@ material_override = SubResource("StandardMaterial3D_rc8m0")
 use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.75, 3.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.116, 3.5, 0)
 use_collision = true
-size = Vector3(0.5, 7, 32)
+size = Vector3(7.23193, 7, 32)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.75, 3.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9399, 3.5, 0)
 use_collision = true
-size = Vector3(0.5, 7, 32)
+size = Vector3(10.8799, 7, 32)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 15.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71307, 3.5, 20.6418)
 use_collision = true
-size = Vector3(31, 7, 0.5)
+size = Vector3(60.8334, 7, 10.2837)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -15.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22687, 3.5, -18.9951)
 use_collision = true
-size = Vector3(31, 7, 0.5)
+size = Vector3(49.6627, 7, 6.99023)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 2, -2.75)
@@ -311,3 +325,11 @@ size = Vector3(1.5, 0.5, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, 0)
 use_collision = true
 size = Vector3(7, 0.5, 7)
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9476, 0, 0.664978)
+size = Vector3(36.6371, 20, 34.7352)
+data = ExtResource("5_0dde5")
+
+[node name="Player2" parent="." instance=ExtResource("6_62c5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00448, 0.999265, -5.96985)

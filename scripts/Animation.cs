@@ -1,50 +1,25 @@
-// using Godot;
-// using System;
+using Godot;
+using System;
 
-// public partial class Animation : Node3D
-// {
-// 	[Export]
-// 	AnimationTree anim;
+public partial class Animation : State
+{
+		[Export]
+        AnimationTree anim;
 
-// 	[Export]
-// 	Movement movement;
+        [Export]
+        PlayerStateMachine sm;
 
-// 	float weight = 0;
-// 	float elapsed = 0;
+        string prev_state = "Idle";
 
-// 	// Called when the node enters the scene tree for the first time.
-// 	public override void _Ready()
-// 	{
-// 		anim.Set("parameters/idle_walk_run/blend_amount", 0);
-// 	}
+    public override void _PhysicsProcess(double delta)
+    {
+        if (prev_state != sm.GetCurrentState().Name){
+            GD.Print("current " + sm.GetCurrentState().Name + " prev " + prev_state);
+            anim.Set("parameters/StateMachine/conditions/" + prev_state, 0);
+        }
+            
+        anim.Set("parameters/StateMachine/conditions/" + sm.GetCurrentState().Name, 1);
+        prev_state = sm.GetCurrentState().Name;
+    }
 
-// 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-// 	public override void _Process(double delta)
-// 	{
-// 		elapsed += 0.1f;
-// 		// GD.Print(elapsed);
-		
-// 		switch (movement.Get_state())
-// 		{
-// 			case(Movement.State.Idle):
-// 				anim.Set("parameters/idle_walk_run/blend_amount", Mathf.Lerp(0, -1, elapsed));
-// 				break;
-// 			case(Movement.State.Walk):
-// 				anim.Set("parameters/idle_walk_run/blend_amount", Mathf.Lerp(-1, 0, elapsed));
-// 				break;
-// 			case(Movement.State.Run):
-// 				anim.Set("parameters/idle_walk_run/blend_amount", Mathf.Lerp(-1, 1, elapsed));
-// 				break;
-// 			case(Movement.State.Jump):
-// 				anim.Set("parameters/idle_walk_run/blend_amount", Mathf.Lerp(1, 0, elapsed));
-// 				break;
-// 			default:
-// 				anim.Set("parameters/idle_walk_run/blend_amount", 0);
-// 				break;
-// 		}
-// 	}
-
-// 	public void StateChanged() {
-// 		elapsed = 0;
-// 	}
-// }
+}
