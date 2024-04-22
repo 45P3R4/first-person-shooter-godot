@@ -9,7 +9,7 @@ public partial class Run : State
 		Vector2 input_dir;
         Vector3 dir;
 
-	public override void PhysicsProcess(float delta) {
+	public override void Process(float delta) {
 		input_dir = Input.GetVector("left", "right", "up", "down");
 		dir = (GlobalTransform.Basis * new Vector3(input_dir.X, 0, input_dir.Y)).Normalized();
 		fsm.body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed;
