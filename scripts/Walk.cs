@@ -3,20 +3,21 @@ using System;
 
 public partial class Walk : State
 {
-	    [Export]
-        float speed;
+	PlayerSingleton s;
 
-		Vector2 input_dir;
-        Vector3 dir;
+	[Export]
+    float speed;
+	Vector2 input_dir;
+    Vector3 dir;
 
 	public override void Process(float delta) {
 		input_dir = Input.GetVector("left", "right", "up", "down");
 		dir = (GlobalTransform.Basis * new Vector3(input_dir.X, 0, input_dir.Y)).Normalized();
-        fsm.body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed;
+        PlayerSingleton.body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed;
 		
-		fsm.body.MoveAndSlide();
+		PlayerSingleton.body.MoveAndSlide();
 
-		if (!fsm.body.IsOnFloor()) {
+		if (!PlayerSingleton.body.IsOnFloor()) {
 			fsm.TransitionTo("InAir");
 		}
 

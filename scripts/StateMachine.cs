@@ -2,12 +2,10 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class PlayerStateMachine : Node3D
+public partial class StateMachine : Node3D
 {
 	[Export]
 	public NodePath initialState;
-	[Export]
-	public CharacterBody3D body;
 
 	public Vector3 velocity = Vector3.Zero;
 

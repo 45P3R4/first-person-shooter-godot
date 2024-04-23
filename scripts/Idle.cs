@@ -3,6 +3,8 @@ using System;
 
 public partial class Idle : State
 {
+	PlayerSingleton s;
+
 	public override void PhysicsProcess(float delta) {
 
 		if (Input.IsActionJustPressed("jump"))
@@ -11,7 +13,7 @@ public partial class Idle : State
 		if (Input.GetVector("left", "right", "up", "down") != Vector2.Zero)
 			fsm.TransitionTo("Walk");
 
-		if (!fsm.body.IsOnFloor()) {
+		if (!PlayerSingleton.body.IsOnFloor()) {
 			fsm.TransitionTo("InAir");
 		}
 	}

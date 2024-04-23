@@ -7,7 +7,7 @@ public partial class Animation : State
         AnimationTree anim;
 
         [Export]
-        PlayerStateMachine sm;
+        StateMachine sm;
 
         string prev_state = "Idle";
 

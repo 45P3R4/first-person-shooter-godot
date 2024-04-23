@@ -3,9 +3,13 @@ using System;
 
 public partial class State : Node3D
 {
-	public PlayerStateMachine fsm;
+	PlayerSingleton s;
 
-	public virtual void Enter() {}
+	public StateMachine fsm;
+
+	public virtual void Enter() {
+		GD.Print(fsm.GetCurrentState().Name);
+	}
 
 	public virtual void Exit() {
 	}
@@ -15,10 +19,6 @@ public partial class State : Node3D
 	public virtual void Process(float delta) {}
 
 	public virtual void PhysicsProcess(float delta) {
-
-		if (!fsm.body.IsOnFloor()) {
-			fsm.TransitionTo("InAir");
-		}
 	}
 
 	public virtual void HandleInput(InputEvent @event) {}

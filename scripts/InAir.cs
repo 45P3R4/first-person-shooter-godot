@@ -3,14 +3,16 @@ using System;
 
 public partial class InAir : State
 {
+	PlayerSingleton s;
+
 	[Export]
 	float gravity = -1;
 	public override void PhysicsProcess(float delta)
 	{
-		fsm.body.Velocity += Vector3.Up * gravity;
-		fsm.body.MoveAndSlide();
+		PlayerSingleton.body.Velocity += Vector3.Up * PlayerSingleton.gravity;
+		PlayerSingleton.body.MoveAndSlide();
 
-		if (fsm.body.IsOnFloor()) {
+		if (PlayerSingleton.body.IsOnFloor()) {
 			fsm.TransitionTo("Idle");
 		}
 	}
