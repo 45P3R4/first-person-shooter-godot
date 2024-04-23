@@ -4,7 +4,7 @@ using System;
 public partial class PlayerWeaponCooldown : State
 {
 
-    public override void Start()
+    public override void Enter()
     {
         timer();
     }
