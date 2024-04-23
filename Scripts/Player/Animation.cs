@@ -1,24 +1,17 @@
 using Godot;
 using System;
 
-public partial class Animation : State
+public partial class Animation : Node3D
 {
+
 		[Export]
         AnimationTree anim;
 
-        [Export]
-        StateMachine sm;
-
-        string prev_state = "PlayerMovementIdle";
-
-    public override void _PhysicsProcess(double delta)
-    {
-        if (prev_state != sm.GetCurrentState().Name){
-            anim.Set("parameters/StateMachine/conditions/" + prev_state, 0);
-        }
-        
-        anim.Set("parameters/StateMachine/conditions/" + sm.GetCurrentState().Name, 1);
-        prev_state = sm.GetCurrentState().Name;
+    //signal from PlayerMovementStateMachine
+    public void StateChanged(State new_state, State prev_state, string machine_name) {
+        GD.Print(new_state.Name);
+        anim.Set("parameters/" + machine_name + "/conditions/" + prev_state.Name, 0);
+        anim.Set("parameters/" + machine_name + "/conditions/" + new_state.Name, 1);
     }
 
 }

@@ -4,13 +4,15 @@ using System.Collections.Generic;
 
 public partial class StateMachine : Node3D
 {
-	[Export]
-	public NodePath initialState;
+	[Signal]
+	public delegate void StateChangedEventHandler(State new_state, State prev_state, string machine_name);
 
-	public Vector3 velocity = Vector3.Zero;
+	[Export]
+	public State initialState;
 
 	private Dictionary<string, State> _states;
-	private State _currentState;
+	public State currentState;
+	public State prevState;
 
     public override void _Ready()
     {
@@ -24,32 +26,37 @@ public partial class StateMachine : Node3D
 			}
 		}
 
-		_currentState = GetNode<State>(initialState);
-		_currentState.Enter();
+		currentState = initialState;
+		currentState.Enter();
     }
 
     public override void _Process(double delta) {
-        _currentState.Process((float) delta);
+        currentState.Process((float) delta);
     }
 
     public override void _PhysicsProcess(double delta) {
-        _currentState.PhysicsProcess((float) delta);
+        currentState.PhysicsProcess((float) delta);
     }
 
     public override void _UnhandledInput(InputEvent @event) {
-        _currentState.HandleInput(@event);
+        currentState.HandleInput(@event);
     }
 
 	public void TransitionTo (string key) {
-		if (!_states.ContainsKey(key) || _currentState == _states[key])
+		if (!_states.ContainsKey(key) || currentState == _states[key])
 			return;
 
-		_currentState.Exit();
-		_currentState = _states[key];
-		_currentState.Enter();
+		prevState = currentState;
+
+		currentState.Exit();
+		currentState = _states[key];
+		currentState.Enter();
+
+
+		EmitSignal(SignalName.StateChanged, currentState, prevState, Name);
 	}
 
 	public State GetCurrentState() {
-		return _currentState;
+		return currentState;
 	}
 }

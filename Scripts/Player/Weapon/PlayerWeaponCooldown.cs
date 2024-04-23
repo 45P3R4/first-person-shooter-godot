@@ -6,17 +6,13 @@ public partial class PlayerWeaponCooldown : State
 
     public override void Enter()
     {
-        timer();
+        timer(1f);
     }
 
-	private async void timer() 
+	private async void timer(float time) 
 	{
-		await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
-		if (Input.IsActionPressed("fire")) {
-			fsm.TransitionTo("PlayerWeaponFire");
-		}
-		else {
-			fsm.TransitionTo("PlayerWeaponIdle");
-		}
+		await ToSignal(GetTree().CreateTimer(time), SceneTreeTimer.SignalName.Timeout);
+
+		fsm.TransitionTo("PlayerWeaponIdle");
 	}
 }
