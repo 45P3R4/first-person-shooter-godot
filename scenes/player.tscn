@@ -1,19 +1,22 @@
-[gd_scene load_steps=41 format=3 uid="uid://bd5v6py7keiiq"]
+[gd_scene load_steps=44 format=3 uid="uid://bd5v6py7keiiq"]
 
-[ext_resource type="Script" path="res://scripts/Camera.cs" id="1_02tyf"]
+[ext_resource type="Script" path="res://Scripts/Player/Camera.cs" id="1_02tyf"]
 [ext_resource type="Script" path="res://test.cs" id="1_3j5vo"]
-[ext_resource type="PackedScene" uid="uid://cv6qwvtibrtvg" path="res://models/blender/LowPoly_FPS_MP5.blend" id="1_4naph"]
-[ext_resource type="Script" path="res://scripts/Animation.cs" id="3_7ob0h"]
+[ext_resource type="PackedScene" uid="uid://cv6qwvtibrtvg" path="res://Models/blender/LowPoly_FPS_MP5.blend" id="1_4naph"]
+[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_26yc0"]
+[ext_resource type="Script" path="res://Scripts/Player/Animation.cs" id="3_7ob0h"]
 [ext_resource type="Script" path="res://LowPoly_FPS_MP5.cs" id="3_igrad"]
-[ext_resource type="Script" path="res://scripts/Idle.cs" id="4_15lhl"]
-[ext_resource type="Script" path="res://scripts/Fire.cs" id="4_hdfd1"]
-[ext_resource type="Script" path="res://scripts/Walk.cs" id="5_j3ct8"]
-[ext_resource type="Script" path="res://scripts/Run.cs" id="6_jp3up"]
-[ext_resource type="Script" path="res://scripts/Jump.cs" id="7_cm1d8"]
-[ext_resource type="Script" path="res://scripts/StateMachine.cs" id="7_ju0y3"]
-[ext_resource type="Script" path="res://scripts/InAir.cs" id="8_itdee"]
-[ext_resource type="Texture2D" uid="uid://cf70qvs6t8obi" path="res://textures/cross.png" id="12_euvy4"]
-[ext_resource type="Script" path="res://scripts/PlayerSingleton.cs" id="13_3833v"]
+[ext_resource type="Script" path="res://Scripts/StateMachine.cs" id="7_ju0y3"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementIdle.cs" id="9_hgku5"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementWalk.cs" id="10_ro4mx"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementRun.cs" id="11_33753"]
+[ext_resource type="Texture2D" uid="uid://cf70qvs6t8obi" path="res://Textures/cross.png" id="12_euvy4"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementJump.cs" id="12_pe6a0"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementInAir.cs" id="13_1twm2"]
+[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponIdle.cs" id="14_8c7hj"]
+[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponFire.cs" id="15_gbna7"]
+[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponCooldown.cs" id="16_6dg28"]
+[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponReload.cs" id="16_j46n1"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c1vso"]
 animation = &"Arms_Fire"
@@ -40,85 +43,85 @@ advance_mode = 2
 xfade_time = 0.2
 switch_mode = 1
 advance_mode = 2
-advance_condition = &"Walk"
+advance_condition = &"PlayerMovementWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0dhd7"]
 xfade_time = 0.2
 switch_mode = 1
 advance_mode = 2
-advance_condition = &"Run"
+advance_condition = &"PlayerMovementRun"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gvmhq"]
 xfade_time = 0.2
 advance_mode = 2
-advance_condition = &"Idle"
+advance_condition = &"PlayerMovementIdle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n6346"]
 xfade_time = 0.2
 switch_mode = 1
 advance_mode = 2
-advance_condition = &"Walk"
+advance_condition = &"PlayerMovementWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p2ie7"]
 xfade_time = 0.2
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"Idle"
+advance_condition = &"PlayerMovementIdle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7fgwv"]
 xfade_time = 0.1
 advance_mode = 2
-advance_condition = &"Fire"
+advance_condition = &"PlayerWeaponFire"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s03oi"]
 xfade_time = 0.2
 reset = false
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"Idle"
+advance_condition = &"PlayerMovementIdle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4024k"]
 xfade_time = 0.1
 reset = false
 switch_mode = 1
 advance_mode = 2
-advance_condition = &"Fire"
+advance_condition = &"PlayerWeaponFire"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eho0r"]
 xfade_time = 0.1
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"Walk"
+advance_condition = &"PlayerMovementWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sw1as"]
 switch_mode = 1
 advance_mode = 2
-advance_condition = &"Reload"
+advance_condition = &"PlayerWeaponReload"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s0arw"]
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"Idle"
+advance_condition = &"PlayerMovementIdle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8ab3a"]
 xfade_time = 0.1
 advance_mode = 2
-advance_condition = &"Fire"
+advance_condition = &"PlayerWeaponFire"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7rhhl"]
 xfade_time = 0.1
 advance_mode = 2
-advance_condition = &"Walk"
+advance_condition = &"PlayerMovementWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p8fa1"]
 xfade_time = 0.1
 advance_mode = 2
-advance_condition = &"Fire"
+advance_condition = &"PlayerWeaponFire"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5hq20"]
 xfade_time = 0.1
 advance_mode = 2
-advance_condition = &"Idle"
+advance_condition = &"PlayerMovementIdle"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sxdd7"]
 states/Arms_Fire/node = SubResource("AnimationNodeAnimation_1817p")
@@ -135,10 +138,10 @@ states/Arms_fullreload/node = SubResource("AnimationNodeAnimation_yj7sg")
 states/Arms_fullreload/position = Vector2(380, -114)
 states/Start/position = Vector2(230, 55)
 transitions = ["Start", "Arms_Idle", SubResource("AnimationNodeStateMachineTransition_os0i3"), "Arms_Idle", "Arms_Walk", SubResource("AnimationNodeStateMachineTransition_l68um"), "Arms_Walk", "Arms_Sprint", SubResource("AnimationNodeStateMachineTransition_0dhd7"), "Arms_Walk", "Arms_Idle", SubResource("AnimationNodeStateMachineTransition_gvmhq"), "Arms_Sprint", "Arms_Walk", SubResource("AnimationNodeStateMachineTransition_n6346"), "Arms_Sprint", "Arms_Idle", SubResource("AnimationNodeStateMachineTransition_p2ie7"), "Arms_Idle", "Arms_Fire", SubResource("AnimationNodeStateMachineTransition_7fgwv"), "Arms_Fire", "Arms_Idle", SubResource("AnimationNodeStateMachineTransition_s03oi"), "Arms_Walk", "Arms_Fire", SubResource("AnimationNodeStateMachineTransition_4024k"), "Arms_Fire", "Arms_Walk", SubResource("AnimationNodeStateMachineTransition_eho0r"), "Arms_Idle", "Arms_fullreload", SubResource("AnimationNodeStateMachineTransition_sw1as"), "Arms_fullreload", "Arms_Idle", SubResource("AnimationNodeStateMachineTransition_s0arw"), "Arms_Fire", "Arms_Fire 2", SubResource("AnimationNodeStateMachineTransition_8ab3a"), "Arms_Fire 2", "Arms_Walk", SubResource("AnimationNodeStateMachineTransition_7rhhl"), "Arms_Fire 2", "Arms_Fire", SubResource("AnimationNodeStateMachineTransition_p8fa1"), "Arms_Fire 2", "Arms_Idle", SubResource("AnimationNodeStateMachineTransition_5hq20")]
-graph_offset = Vector2(-167, -215)
+graph_offset = Vector2(-145, -112)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1d8wg"]
-graph_offset = Vector2(-172.185, 66.6604)
+graph_offset = Vector2(-115.364, 87.8182)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_sxdd7")
 nodes/StateMachine/position = Vector2(400, 40)
 nodes/output/position = Vector2(1020, 40)
@@ -155,7 +158,7 @@ subsurf_scatter_skin_mode = true
 [node name="Player" type="Node3D"]
 
 [node name="PlayerSingleton" type="Node3D" parent="."]
-script = ExtResource("13_3833v")
+script = ExtResource("1_26yc0")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("raycast")]
 floor_constant_speed = true
@@ -166,11 +169,11 @@ raycast = NodePath("Cam/RayCast3D")
 root_node = NodePath("../Cam/Camera3D/LowPoly_FPS_MP5")
 tree_root = SubResource("AnimationNodeBlendTree_1d8wg")
 anim_player = NodePath("../Cam/Camera3D/LowPoly_FPS_MP5/AnimationPlayer")
-parameters/StateMachine/conditions/Fire = false
-parameters/StateMachine/conditions/Idle = false
-parameters/StateMachine/conditions/Reload = false
-parameters/StateMachine/conditions/Run = false
-parameters/StateMachine/conditions/Walk = false
+parameters/StateMachine/conditions/PlayerMovementIdle = false
+parameters/StateMachine/conditions/PlayerMovementRun = false
+parameters/StateMachine/conditions/PlayerMovementWalk = false
+parameters/StateMachine/conditions/PlayerWeaponFire = false
+parameters/StateMachine/conditions/PlayerWeaponReload = false
 
 [node name="Cam" type="Node3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.577075, 0)
@@ -184,7 +187,7 @@ script = ExtResource("3_igrad")
 
 [node name="Skeleton3D" parent="CharacterBody3D/Cam/Camera3D/LowPoly_FPS_MP5/Arms" index="0"]
 bones/1/position = Vector3(-0.00654852, 0.424412, 0.26196)
-bones/1/rotation = Quaternion(-0.929842, -0.316102, -0.12568, 0.140278)
+bones/1/rotation = Quaternion(-0.929899, -0.316159, -0.125566, 0.139874)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(0.015265, -0.109479, -0.0891798)
 bones/2/rotation = Quaternion(-0.651459, 0.034364, 0.0106243, 0.757831)
@@ -215,8 +218,8 @@ bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(0.252867, 0.0952959, -0.367268)
 bones/12/rotation = Quaternion(-0.646953, 0.285398, -0.285398, 0.646953)
 bones/13/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/14/position = Vector3(-0.0984564, 0.350062, 0.00106921)
-bones/14/rotation = Quaternion(-0.702562, 0.693123, -0.00336394, 0.16117)
+bones/14/position = Vector3(-0.0984385, 0.349642, 0.00111636)
+bones/14/rotation = Quaternion(-0.702631, 0.693118, -0.00367605, 0.160885)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-0.0441879, -0.0894969, -0.113706)
 bones/15/rotation = Quaternion(-0.38348, -0.0231289, 0.000207206, 0.92326)
@@ -243,9 +246,9 @@ bones/24/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(-0.646953, -0.285398, 0.285398, 0.646953)
 bones/26/position = Vector3(-0.0981148, 0.449481, -0.264995)
 bones/27/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/27/rotation = Quaternion(0.56882, 0.172803, 0.768339, 0.237146)
+bones/27/rotation = Quaternion(0.568879, 0.172676, 0.768436, 0.236782)
 bones/28/rotation = Quaternion(-0.105366, 4.12855e-05, -0.723097, 0.682664)
-bones/29/rotation = Quaternion(0.272359, -0.366847, 0.31266, 0.832759)
+bones/29/rotation = Quaternion(0.27199, -0.366875, 0.312086, 0.833083)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/rotation = Quaternion(0.367876, 0.510019, -0.461173, 0.625994)
 bones/30/scale = Vector3(1, 1, 1)
@@ -275,9 +278,9 @@ bones/49/scale = Vector3(1, 1, 1)
 bones/50/rotation = Quaternion(7.08564e-09, -0.19207, -1.24889e-08, 0.981381)
 bones/51/rotation = Quaternion(-7.02881e-08, -0.118053, -1.54008e-08, 0.993007)
 bones/52/position = Vector3(-0.0981148, 0.449481, -0.264995)
-bones/52/rotation = Quaternion(0.590054, -0.294179, -0.696326, -0.283594)
-bones/53/rotation = Quaternion(-0.11793, -3.48035e-05, 0.809318, 0.57541)
-bones/54/rotation = Quaternion(0.189544, 0.328836, -0.224565, 0.897503)
+bones/52/rotation = Quaternion(0.589811, -0.293825, -0.696744, -0.283439)
+bones/53/rotation = Quaternion(-0.117871, -3.48259e-05, 0.808918, 0.575984)
+bones/54/rotation = Quaternion(0.189816, 0.328492, -0.223442, 0.897851)
 bones/54/scale = Vector3(1, 1, 1)
 bones/55/rotation = Quaternion(0.315419, -0.334144, 0.720446, 0.519439)
 bones/55/scale = Vector3(1, 1, 1)
@@ -307,7 +310,7 @@ bones/74/scale = Vector3(1, 1, 1)
 bones/75/rotation = Quaternion(4.28802e-08, 0.140685, -1.54934e-09, 0.990054)
 bones/76/rotation = Quaternion(-1.19694e-07, 0.0863127, 3.09437e-08, 0.996268)
 bones/77/position = Vector3(-0.0488726, 0.447867, 0.330354)
-bones/77/rotation = Quaternion(0.471861, -0.521357, -0.519478, 0.485465)
+bones/77/rotation = Quaternion(0.471665, -0.52159, -0.519244, 0.485655)
 bones/82/rotation = Quaternion(0.408674, 0.491589, 0.491589, 0.591326)
 bones/83/rotation = Quaternion(0.5, 0.5, 0.5, -0.499999)
 bones/84/rotation = Quaternion(-0.629095, 0.322861, 0.629095, 0.322862)
@@ -334,43 +337,54 @@ shape = SubResource("CapsuleShape3D_j8ojb")
 
 [node name="Scripts" type="Node3D" parent="CharacterBody3D"]
 
-[node name="Camera" type="Node3D" parent="CharacterBody3D/Scripts" node_paths=PackedStringArray("cam", "body")]
+[node name="Camera" type="Node3D" parent="CharacterBody3D/Scripts" node_paths=PackedStringArray("cam")]
 script = ExtResource("1_02tyf")
 cam = NodePath("../../Cam/Camera3D")
-body = NodePath("../..")
 sensetive_x = 0.005
 sensetive_y = 0.005
 
 [node name="Animation" type="Node3D" parent="CharacterBody3D/Scripts" node_paths=PackedStringArray("anim", "sm")]
 script = ExtResource("3_7ob0h")
 anim = NodePath("../../AnimationTree")
-sm = NodePath("../../StateMachine")
+sm = NodePath("../../MovementStateMachine")
 
-[node name="Fire" type="Node3D" parent="CharacterBody3D/Scripts" node_paths=PackedStringArray("raycast")]
-script = ExtResource("4_hdfd1")
-raycast = NodePath("../../Cam/RayCast3D")
-
-[node name="StateMachine" type="Node3D" parent="CharacterBody3D"]
+[node name="MovementStateMachine" type="Node3D" parent="CharacterBody3D"]
 script = ExtResource("7_ju0y3")
-initialState = NodePath("Idle")
+initialState = NodePath("PlayerMovementIdle")
 
-[node name="Idle" type="Node3D" parent="CharacterBody3D/StateMachine"]
-script = ExtResource("4_15lhl")
+[node name="PlayerMovementIdle" type="Node3D" parent="CharacterBody3D/MovementStateMachine"]
+script = ExtResource("9_hgku5")
 
-[node name="Walk" type="Node3D" parent="CharacterBody3D/StateMachine"]
-script = ExtResource("5_j3ct8")
+[node name="PlayerMovementWalk" type="Node3D" parent="CharacterBody3D/MovementStateMachine"]
+script = ExtResource("10_ro4mx")
 speed = 3.0
 
-[node name="Run" type="Node3D" parent="CharacterBody3D/StateMachine"]
-script = ExtResource("6_jp3up")
+[node name="PlayerMovementRun" type="Node3D" parent="CharacterBody3D/MovementStateMachine"]
+script = ExtResource("11_33753")
 speed = 5.0
 
-[node name="Jump" type="Node3D" parent="CharacterBody3D/StateMachine"]
-script = ExtResource("7_cm1d8")
+[node name="PlayerMovementJump" type="Node3D" parent="CharacterBody3D/MovementStateMachine"]
+script = ExtResource("12_pe6a0")
 
-[node name="InAir" type="Node3D" parent="CharacterBody3D/StateMachine"]
-script = ExtResource("8_itdee")
-gravity = -0.5
+[node name="PlayerMovementInAir" type="Node3D" parent="CharacterBody3D/MovementStateMachine"]
+script = ExtResource("13_1twm2")
+
+[node name="WeaponStateMachine" type="Node3D" parent="CharacterBody3D"]
+script = ExtResource("7_ju0y3")
+initialState = NodePath("PlayerWeaponIdle")
+
+[node name="PlayerWeaponIdle" type="Node3D" parent="CharacterBody3D/WeaponStateMachine"]
+script = ExtResource("14_8c7hj")
+
+[node name="PlayerWeaponFire" type="Node3D" parent="CharacterBody3D/WeaponStateMachine" node_paths=PackedStringArray("raycast")]
+script = ExtResource("15_gbna7")
+raycast = NodePath("../../Cam/RayCast3D")
+
+[node name="PlayerWeaponCooldown" type="Node3D" parent="CharacterBody3D/WeaponStateMachine"]
+script = ExtResource("16_6dg28")
+
+[node name="PlayerWeaponReload" type="Node3D" parent="CharacterBody3D/WeaponStateMachine"]
+script = ExtResource("16_j46n1")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

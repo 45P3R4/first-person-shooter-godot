@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5axdlo1xv37w"
-path="res://.godot/imported/Soldier_head_specular.png-159523255f062717a6fcb086122070cd.ctex"
+path="res://.godot/imported/Soldier_head_specular.png-02c36e9b6cf3fc73675506d2f0a0d6d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/blender/textures/Soldier_head_specular.png"
-dest_files=["res://.godot/imported/Soldier_head_specular.png-159523255f062717a6fcb086122070cd.ctex"]
+source_file="res://Models/blender/textures/Soldier_head_specular.png"
+dest_files=["res://.godot/imported/Soldier_head_specular.png-02c36e9b6cf3fc73675506d2f0a0d6d1.ctex"]
 
 [params]
 

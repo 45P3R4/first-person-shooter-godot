@@ -19,7 +19,7 @@ public partial class StateMachine : Node3D
 			if(node is State s) {
 				_states[node.Name] = s;
 				s.fsm = this;
-				s.Ready();
+				s.Start();
 				s.Exit();
 			}
 		}

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0cm42q6j66f4"
-path.s3tc="res://.godot/imported/Soldier_Body_diffuse.png-cd3a87ffb1f5ea783a5fe9329f73a1fa.s3tc.ctex"
+path.s3tc="res://.godot/imported/Soldier_Body_diffuse.png-bfcceb18e9e744d3aea45c6b7e0f4e5b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/blender/textures/Soldier_Body_diffuse.png"
-dest_files=["res://.godot/imported/Soldier_Body_diffuse.png-cd3a87ffb1f5ea783a5fe9329f73a1fa.s3tc.ctex"]
+source_file="res://Models/blender/textures/Soldier_Body_diffuse.png"
+dest_files=["res://.godot/imported/Soldier_Body_diffuse.png-bfcceb18e9e744d3aea45c6b7e0f4e5b.s3tc.ctex"]
 
 [params]
 

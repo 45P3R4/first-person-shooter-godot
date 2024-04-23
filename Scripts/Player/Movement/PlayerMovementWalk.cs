@@ -1,9 +1,8 @@
 using Godot;
 using System;
 
-public partial class Walk : State
+public partial class PlayerMovementWalk : State
 {
-	PlayerSingleton s;
 
 	[Export]
     float speed;
@@ -13,21 +12,21 @@ public partial class Walk : State
 	public override void Process(float delta) {
 		input_dir = Input.GetVector("left", "right", "up", "down");
 		dir = (GlobalTransform.Basis * new Vector3(input_dir.X, 0, input_dir.Y)).Normalized();
-        PlayerSingleton.body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed;
+        Player.body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed;
 		
-		PlayerSingleton.body.MoveAndSlide();
+		Player.body.MoveAndSlide();
 
-		if (!PlayerSingleton.body.IsOnFloor()) {
-			fsm.TransitionTo("InAir");
+		if (!Player.body.IsOnFloor()) {
+			fsm.TransitionTo("PlayerMovementInAir");
 		}
 
 		if (Input.IsActionJustPressed("jump"))
-			fsm.TransitionTo("Jump");
+			fsm.TransitionTo("PlayerMovementJump");
 
 		if(Input.IsActionPressed("sprint"))
-			fsm.TransitionTo("Run");
+			fsm.TransitionTo("PlayerMovementRun");
 
 		if (Input.GetVector("left", "right", "up", "down") == Vector2.Zero)
-			fsm.TransitionTo("Idle");
+			fsm.TransitionTo("PlayerMovementIdle");
 	}
 }

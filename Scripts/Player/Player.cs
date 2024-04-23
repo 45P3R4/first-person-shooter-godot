@@ -1,16 +1,16 @@
 using Godot;
 using System;
 
-public partial class PlayerSingleton : Node3D
+public partial class Player : Node3D
 {
-	public PlayerSingleton Instance;
+	public Player Instance;
 
 	public static CharacterBody3D body;
 	public static float gravity = -0.5f;
 
 	public override void _Ready()
 	{
-		if(Instance != null)
+		if (Instance != null)
 		{
 			QueueFree();
 			return;

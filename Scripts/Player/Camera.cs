@@ -7,8 +7,6 @@ namespace player_camera {
 	{
 		[Export]
 		Camera3D cam;
-		[Export]
-		Node3D body;
 
 		[Export]
 		float sensetive_x = 1;
@@ -34,7 +32,7 @@ namespace player_camera {
 		{
 			if (@event is InputEventMouseMotion) {
 				InputEventMouseMotion mouseMotion = @event as InputEventMouseMotion;
-				body.RotateY(-mouseMotion.Relative.X * sensetive_x);
+				Player.body.RotateY(-mouseMotion.Relative.X * sensetive_x);
 				cam.RotateX(-mouseMotion.Relative.Y * sensetive_y);
 
 				cam_rotation.X = Mathf.Clamp(cam.Rotation.X, Mathf.DegToRad(-90), Mathf.DegToRad(90));

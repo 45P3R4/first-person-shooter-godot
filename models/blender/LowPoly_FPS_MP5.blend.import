@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cv6qwvtibrtvg"
-path="res://.godot/imported/LowPoly_FPS_MP5.blend-c2dded27724875f4ca353a2f58697ad2.scn"
+path="res://.godot/imported/LowPoly_FPS_MP5.blend-502f50bfe1aac1941eecf89c0724edec.scn"
 
 [deps]
 
-source_file="res://models/blender/LowPoly_FPS_MP5.blend"
-dest_files=["res://.godot/imported/LowPoly_FPS_MP5.blend-c2dded27724875f4ca353a2f58697ad2.scn"]
+source_file="res://Models/blender/LowPoly_FPS_MP5.blend"
+dest_files=["res://.godot/imported/LowPoly_FPS_MP5.blend-502f50bfe1aac1941eecf89c0724edec.scn"]
 
 [params]
 
