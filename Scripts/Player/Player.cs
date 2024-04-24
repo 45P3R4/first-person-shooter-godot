@@ -6,6 +6,8 @@ public partial class Player : Node3D
 	public Player Instance;
 
 	public static CharacterBody3D Body;
+	public static float Speed = 3;
+	public static float SprintSpeed = 6;
 	public static float Gravity = -0.5f;
 
 	public override void _Ready()

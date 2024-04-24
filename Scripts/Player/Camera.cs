@@ -22,7 +22,7 @@ public partial class Camera : Camera3D
 		if (@event is InputEventMouseMotion) {
 			InputEventMouseMotion mouseMotion = @event as InputEventMouseMotion;
 			Player.Body.RotateY(-mouseMotion.Relative.X * sensetiveX);
-			RotateX(-mouseMotion.Relative.Y * sensetiveY);
+			RotateX(mouseMotion.Relative.Y * sensetiveY);
 			camRotation.X = Mathf.Clamp(Rotation.X, Mathf.DegToRad(-90), Mathf.DegToRad(90));
 			Rotation = camRotation;
 		}

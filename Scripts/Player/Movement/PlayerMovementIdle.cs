@@ -13,7 +13,7 @@ public partial class PlayerMovementIdle : State
 			Fsm.TransitionTo("PlayerMovementWalk");
 
 		if (Input.GetVector("left", "right", "up", "down") != Vector2.Zero && Input.IsActionPressed("sprint"))
-			Fsm.TransitionTo("PlayerMovementWalk");
+			Fsm.TransitionTo("PlayerMovementRun");
 
 		if (!Player.Body.IsOnFloor()) {
 			Fsm.TransitionTo("PlayerMovementInAir");

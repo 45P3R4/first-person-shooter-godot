@@ -3,17 +3,13 @@ using System;
 
 public partial class PlayerMovementRun : State
 {
-
-	[Export]
-    float speed;
-
 	Vector2 inputDir;
     Vector3 dir;
 
 	public override void Process(float delta) {
 		inputDir = Input.GetVector("left", "right", "up", "down");
 		dir = (GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-		Player.Body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed;
+		Player.Body.Velocity = Vector3.Right * dir.X * Player.SprintSpeed + Vector3.Back * dir.Z * Player.SprintSpeed;
 
 		Player.Body.MoveAndSlide();
 
