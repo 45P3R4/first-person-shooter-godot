@@ -17,9 +17,8 @@ public partial class PlayerMovementRun : State
 
 		Player.Body.MoveAndSlide();
 
-		if (!Player.Body.IsOnFloor()) {
+		if (!Player.Body.IsOnFloor()) 
 			Fsm.TransitionTo("PlayerMovementInAir");
-		}
 
 		if (Input.IsActionJustPressed("jump"))
 			Fsm.TransitionTo("PlayerMovementJump");

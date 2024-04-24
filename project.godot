@@ -18,7 +18,6 @@ config/icon="res://Textures/icon.svg"
 [dotnet]
 
 project/assembly_name="fps"
-project/solution_directory="D:\\pratov\\"
 
 [editor]
 

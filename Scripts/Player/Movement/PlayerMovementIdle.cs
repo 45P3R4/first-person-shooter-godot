@@ -4,7 +4,7 @@ using System;
 public partial class PlayerMovementIdle : State
 {
 
-	public override void PhysicsProcess(float delta) {
+	public override void Process(float delta) {
 
 		if (Input.IsActionJustPressed("jump"))
 			Fsm.TransitionTo("PlayerMovementJump");

@@ -20,10 +20,6 @@ public partial class Camera : Node3D
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
 
-	public override void _PhysicsProcess(double delta)
-	{
-		
-	}
 	public override void _Input(InputEvent @event)
 	{
 		if (@event is InputEventMouseMotion) {

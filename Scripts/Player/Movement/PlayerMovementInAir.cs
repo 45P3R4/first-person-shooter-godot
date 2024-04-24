@@ -10,7 +10,7 @@ public partial class PlayerMovementInAir : State
 		Player.Body.MoveAndSlide();
 
 		if (Player.Body.IsOnFloor()) {
-			Fsm.TransitionTo("PlayerMovementIdle");
+			Fsm.TransitionTo("PlayerMovementLanding");
 		}
 	}
 }

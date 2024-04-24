@@ -36,7 +36,7 @@ uv2_world_triplanar = true
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_p6p1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.24012, 1.05784, 10.359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.24012, 4.4182, 10.359)
 
 [node name="Enemy" parent="." instance=ExtResource("6_62c5i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00448, 0.999265, -5.96985)

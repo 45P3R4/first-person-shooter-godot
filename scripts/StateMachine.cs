@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public partial class StateMachine : Node3D
 {
 	[Signal]
-	public delegate void StateChangedEventHandler(State newState, State prevState, StateMachine machine);
+	public delegate void OnStateChangedEventHandler(State newState, State prevState, StateMachine machine);
 
 	[Export]
 	public State initialState;
@@ -53,7 +53,7 @@ public partial class StateMachine : Node3D
 		CurrentState.Enter();
 
 
-		EmitSignal(SignalName.StateChanged, CurrentState, PrevState, this);
+		EmitSignal(SignalName.OnStateChanged, CurrentState, PrevState, this);
 	}
 
 	public State GetCurrentState() {

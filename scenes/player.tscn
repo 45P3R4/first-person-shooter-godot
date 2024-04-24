@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bd5v6py7keiiq"]
+[gd_scene load_steps=42 format=3 uid="uid://bd5v6py7keiiq"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Camera.cs" id="1_02tyf"]
 [ext_resource type="PackedScene" uid="uid://cv6qwvtibrtvg" path="res://Models/blender/LowPoly_FPS_MP5.blend" id="1_4naph"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/StateMachine.cs" id="7_ju0y3"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementIdle.cs" id="9_hgku5"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementWalk.cs" id="10_ro4mx"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementLanding.cs" id="11_54bry"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementRun.cs" id="11_33753"]
 [ext_resource type="Texture2D" uid="uid://cf70qvs6t8obi" path="res://Textures/cross.png" id="12_euvy4"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementJump.cs" id="12_pe6a0"]
@@ -173,7 +174,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.
 
 [node name="Skeleton3D" parent="CharacterBody3D/Cam/Camera3D/LowPoly_FPS_MP5/Arms" index="0"]
 bones/1/position = Vector3(-0.00654852, 0.424412, 0.261959)
-bones/1/rotation = Quaternion(-0.929935, -0.316207, -0.125525, 0.139565)
+bones/1/rotation = Quaternion(-0.929702, -0.316001, -0.126056, 0.141095)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(0.015265, -0.109479, -0.0891798)
 bones/2/rotation = Quaternion(-0.651459, 0.034364, 0.0106243, 0.757831)
@@ -204,8 +205,8 @@ bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(0.252867, 0.0952959, -0.367268)
 bones/12/rotation = Quaternion(-0.646953, 0.285398, -0.285398, 0.646953)
 bones/13/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/14/position = Vector3(-0.0983952, 0.348625, 0.00123056)
-bones/14/rotation = Quaternion(-0.702681, 0.693106, -0.00393578, 0.16071)
+bones/14/position = Vector3(-0.0984302, 0.349448, 0.00113817)
+bones/14/rotation = Quaternion(-0.702415, 0.69311, -0.00279984, 0.161875)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-0.0441879, -0.0894969, -0.113706)
 bones/15/rotation = Quaternion(-0.38348, -0.0231289, 0.000207206, 0.92326)
@@ -232,9 +233,9 @@ bones/24/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(-0.646953, -0.285398, 0.285398, 0.646953)
 bones/26/position = Vector3(-0.0981148, 0.449481, -0.264995)
 bones/27/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/27/rotation = Quaternion(0.569034, 0.172299, 0.768707, 0.235804)
+bones/27/rotation = Quaternion(0.568925, 0.172513, 0.768532, 0.236478)
 bones/28/rotation = Quaternion(-0.105366, 4.12874e-05, -0.723097, 0.682664)
-bones/29/rotation = Quaternion(0.27142, -0.367141, 0.3112, 0.833482)
+bones/29/rotation = Quaternion(0.272443, -0.367305, 0.312724, 0.832505)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/rotation = Quaternion(0.367876, 0.510019, -0.461173, 0.625994)
 bones/30/scale = Vector3(1, 1, 1)
@@ -264,9 +265,9 @@ bones/49/scale = Vector3(1, 1, 1)
 bones/50/rotation = Quaternion(7.08565e-09, -0.19207, -1.24889e-08, 0.981381)
 bones/51/rotation = Quaternion(-7.02881e-08, -0.118053, -1.54008e-08, 0.993007)
 bones/52/position = Vector3(-0.0981148, 0.449481, -0.264995)
-bones/52/rotation = Quaternion(0.589305, -0.292883, -0.697642, -0.283257)
-bones/53/rotation = Quaternion(-0.117761, -3.48426e-05, 0.808164, 0.577064)
-bones/54/rotation = Quaternion(0.190258, 0.327891, -0.222092, 0.898312)
+bones/52/rotation = Quaternion(0.590033, -0.293682, -0.696427, -0.283904)
+bones/53/rotation = Quaternion(-0.117933, -3.47868e-05, 0.809339, 0.57538)
+bones/54/rotation = Quaternion(0.189484, 0.328787, -0.225322, 0.897343)
 bones/54/scale = Vector3(1, 1, 1)
 bones/55/rotation = Quaternion(0.315419, -0.334144, 0.720446, 0.519439)
 bones/55/scale = Vector3(1, 1, 1)
@@ -296,7 +297,7 @@ bones/74/scale = Vector3(1, 1, 1)
 bones/75/rotation = Quaternion(4.28802e-08, 0.140685, -1.54934e-09, 0.990054)
 bones/76/rotation = Quaternion(-1.19694e-07, 0.0863127, 3.09437e-08, 0.996268)
 bones/77/position = Vector3(-0.0488726, 0.447867, 0.330354)
-bones/77/rotation = Quaternion(0.471547, -0.521782, -0.519052, 0.485769)
+bones/77/rotation = Quaternion(0.472352, -0.52093, -0.519907, 0.484986)
 bones/82/rotation = Quaternion(0.408674, 0.491589, 0.491589, 0.591326)
 bones/83/rotation = Quaternion(0.5, 0.5, 0.5, -0.5)
 bones/84/rotation = Quaternion(-0.629095, 0.322861, 0.629095, 0.322862)
@@ -322,8 +323,8 @@ shape = SubResource("CapsuleShape3D_j8ojb")
 [node name="Camera" type="Node3D" parent="CharacterBody3D/Scripts" node_paths=PackedStringArray("cam")]
 script = ExtResource("1_02tyf")
 cam = NodePath("../../Cam/Camera3D")
-sensetive_x = 0.005
-sensetive_y = 0.005
+sensetiveX = 0.01
+sensetiveY = 0.01
 
 [node name="Animation" type="Node3D" parent="CharacterBody3D/Scripts" node_paths=PackedStringArray("anim")]
 script = ExtResource("3_7ob0h")
@@ -349,6 +350,9 @@ script = ExtResource("12_pe6a0")
 
 [node name="PlayerMovementInAir" type="Node3D" parent="CharacterBody3D/PlayerMovementStateMachine"]
 script = ExtResource("13_1twm2")
+
+[node name="PlayerMovementLanding" type="Node3D" parent="CharacterBody3D/PlayerMovementStateMachine"]
+script = ExtResource("11_54bry")
 
 [node name="PlayerWeaponStateMachine" type="Node3D" parent="CharacterBody3D" node_paths=PackedStringArray("initialState")]
 script = ExtResource("7_ju0y3")
@@ -383,7 +387,6 @@ offset_bottom = 342.0
 pivot_offset = Vector2(12, 12)
 texture = ExtResource("12_euvy4")
 
-[connection signal="StateChanged" from="CharacterBody3D/PlayerMovementStateMachine" to="CharacterBody3D/Scripts/Animation" method="StateChanged"]
-[connection signal="StateChanged" from="CharacterBody3D/PlayerWeaponStateMachine" to="CharacterBody3D/Scripts/Animation" method="StateChanged"]
+[connection signal="OnStateChanged" from="CharacterBody3D/PlayerMovementStateMachine" to="CharacterBody3D/Scripts/Animation" method="OnStateChanged"]
 
 [editable path="CharacterBody3D/Cam/Camera3D/LowPoly_FPS_MP5"]
