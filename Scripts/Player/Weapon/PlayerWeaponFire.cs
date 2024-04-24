@@ -13,6 +13,6 @@ public partial class PlayerWeaponFire : State
 				e.TakeDamage(10);
 			}
 		}
-		fsm.TransitionTo("PlayerWeaponCooldown");
+		Fsm.TransitionTo("PlayerWeaponCooldown");
     }
 }

@@ -5,8 +5,8 @@ public partial class Player : Node3D
 {
 	public Player Instance;
 
-	public static CharacterBody3D body;
-	public static float gravity = -0.5f;
+	public static CharacterBody3D Body;
+	public static float Gravity = -0.5f;
 
 	public override void _Ready()
 	{
@@ -17,6 +17,6 @@ public partial class Player : Node3D
 		}
 		Instance = this;
 
-		body = GetNode<CharacterBody3D>("/root/Node3D/Player/CharacterBody3D");
+		Body = GetNode<CharacterBody3D>("/root/Node3D/Player/CharacterBody3D");
 	}
 }

@@ -6,27 +6,27 @@ public partial class PlayerMovementWalk : State
 
 	[Export]
     float speed;
-	Vector2 input_dir;
+	Vector2 inputDir;
     Vector3 dir;
 
 	public override void Process(float delta) {
-		input_dir = Input.GetVector("left", "right", "up", "down");
-		dir = (GlobalTransform.Basis * new Vector3(input_dir.X, 0, input_dir.Y)).Normalized();
-        Player.body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed;
+		inputDir = Input.GetVector("left", "right", "up", "down");
+		dir = (GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
+        Player.Body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed;
 		
-		Player.body.MoveAndSlide();
+		Player.Body.MoveAndSlide();
 
-		if (!Player.body.IsOnFloor()) {
-			fsm.TransitionTo("PlayerMovementInAir");
+		if (!Player.Body.IsOnFloor()) {
+			Fsm.TransitionTo("PlayerMovementInAir");
 		}
 
 		if (Input.IsActionJustPressed("jump"))
-			fsm.TransitionTo("PlayerMovementJump");
+			Fsm.TransitionTo("PlayerMovementJump");
 
 		if(Input.IsActionPressed("sprint"))
-			fsm.TransitionTo("PlayerMovementRun");
+			Fsm.TransitionTo("PlayerMovementRun");
 
 		if (Input.GetVector("left", "right", "up", "down") == Vector2.Zero)
-			fsm.TransitionTo("PlayerMovementIdle");
+			Fsm.TransitionTo("PlayerMovementIdle");
 	}
 }

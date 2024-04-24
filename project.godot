@@ -20,6 +20,10 @@ config/icon="res://Textures/icon.svg"
 project/assembly_name="fps"
 project/solution_directory="D:\\pratov\\"
 
+[editor]
+
+naming/scene_name_casing=1
+
 [filesystem]
 
 import/fbx/enabled=false

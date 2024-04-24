@@ -3,7 +3,7 @@ using System;
 
 public partial class State : Node3D
 {
-	public StateMachine fsm;
+	public StateMachine Fsm;
 
 	public virtual void Enter() {}
 

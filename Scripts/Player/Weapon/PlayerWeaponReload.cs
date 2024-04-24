@@ -5,6 +5,6 @@ public partial class PlayerWeaponReload : State
 {
 	public override void Enter()
 	{
-		fsm.TransitionTo("PlayerWeaponIdle");
+		Fsm.TransitionTo("PlayerWeaponIdle");
 	}
 }

@@ -6,11 +6,11 @@ public partial class PlayerMovementInAir : State
 
 	public override void PhysicsProcess(float delta)
 	{
-		Player.body.Velocity += Vector3.Up * Player.gravity;
-		Player.body.MoveAndSlide();
+		Player.Body.Velocity += Vector3.Up * Player.Gravity;
+		Player.Body.MoveAndSlide();
 
-		if (Player.body.IsOnFloor()) {
-			fsm.TransitionTo("PlayerMovementIdle");
+		if (Player.Body.IsOnFloor()) {
+			Fsm.TransitionTo("PlayerMovementIdle");
 		}
 	}
 }

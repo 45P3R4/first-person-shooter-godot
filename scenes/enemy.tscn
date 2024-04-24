@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dq7kwckjmo2ly"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_npky1"]
-[ext_resource type="PackedScene" uid="uid://ba2647m5k8pit" path="res://Models/blender/test_character.blend" id="2_uv3pv"]
+[ext_resource type="PackedScene" uid="uid://ba2647m5k8pit" path="res://Models/blender/TestCharacter.blend" id="2_uv3pv"]
 [ext_resource type="Texture2D" uid="uid://d0cm42q6j66f4" path="res://Models/blender/textures/Soldier_Body_diffuse.png" id="3_67byr"]
 [ext_resource type="Texture2D" uid="uid://bydjlt61sfook" path="res://Models/blender/textures/Soldier_Body_normal.png" id="4_m8a76"]
 [ext_resource type="Texture2D" uid="uid://ceojppvlxayc0" path="res://Models/blender/textures/Soldier_head_normal.png" id="5_q8vb4"]
