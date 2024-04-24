@@ -7,7 +7,7 @@ public partial class PlayerMovementJump : State
 	[Export]
 	float jumpEnegry = 5;
 
-	public override void Enter()
+	public override void Process(float delta)
 	{
 		Player.Body.Velocity += Vector3.Up * jumpEnegry;
 		Player.Body.MoveAndSlide();

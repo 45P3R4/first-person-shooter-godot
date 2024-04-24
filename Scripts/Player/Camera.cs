@@ -1,22 +1,19 @@
 using Godot;
 using System;
 
-public partial class Camera : Node3D
+public partial class Camera : Camera3D
 {
 	[Export]
-	Camera3D cam;
+	float sensetiveX = 0.005f;
 
 	[Export]
-	float sensetiveX = 1;
-
-	[Export]
-	float sensetiveY = 1;
+	float sensetiveY = 0.005f;
 
 	Vector3 camRotation;
 	
 	public override void _Ready()
 	{
-		camRotation = cam.Rotation;
+		camRotation = Rotation;
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
 
@@ -25,9 +22,9 @@ public partial class Camera : Node3D
 		if (@event is InputEventMouseMotion) {
 			InputEventMouseMotion mouseMotion = @event as InputEventMouseMotion;
 			Player.Body.RotateY(-mouseMotion.Relative.X * sensetiveX);
-			cam.RotateX(-mouseMotion.Relative.Y * sensetiveY);
-			camRotation.X = Mathf.Clamp(cam.Rotation.X, Mathf.DegToRad(-90), Mathf.DegToRad(90));
-			cam.Rotation = camRotation;
+			RotateX(-mouseMotion.Relative.Y * sensetiveY);
+			camRotation.X = Mathf.Clamp(Rotation.X, Mathf.DegToRad(-90), Mathf.DegToRad(90));
+			Rotation = camRotation;
 		}
 	}
 }

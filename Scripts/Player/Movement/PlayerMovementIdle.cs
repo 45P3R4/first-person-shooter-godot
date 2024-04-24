@@ -12,6 +12,9 @@ public partial class PlayerMovementIdle : State
 		if (Input.GetVector("left", "right", "up", "down") != Vector2.Zero)
 			Fsm.TransitionTo("PlayerMovementWalk");
 
+		if (Input.GetVector("left", "right", "up", "down") != Vector2.Zero && Input.IsActionPressed("sprint"))
+			Fsm.TransitionTo("PlayerMovementWalk");
+
 		if (!Player.Body.IsOnFloor()) {
 			Fsm.TransitionTo("PlayerMovementInAir");
 		}

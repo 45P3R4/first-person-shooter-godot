@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://syuje46aluto"]
+[gd_scene load_steps=8 format=3 uid="uid://syuje46aluto"]
 
 [ext_resource type="Texture2D" uid="uid://b52xak6jsus2s" path="res://Textures/concrete.jpg" id="1_fmmlo"]
 [ext_resource type="PackedScene" uid="uid://bd5v6py7keiiq" path="res://Scenes/Player.tscn" id="1_p6p1l"]
 [ext_resource type="Texture2D" uid="uid://bucsr31dbs8jn" path="res://Textures/tiles.jpg" id="2_bdqtn"]
 [ext_resource type="Script" path="res://Levels/Sun.cs" id="2_tkr8m"]
-[ext_resource type="PackedScene" uid="uid://dq7kwckjmo2ly" path="res://Scenes/Enemy.tscn" id="6_62c5i"]
 
 [sub_resource type="Environment" id="Environment_dhoh4"]
 background_mode = 1
@@ -37,9 +36,6 @@ uv2_world_triplanar = true
 
 [node name="Player" parent="." instance=ExtResource("1_p6p1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.24012, 4.4182, 10.359)
-
-[node name="Enemy" parent="." instance=ExtResource("6_62c5i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00448, 0.999265, -5.96985)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.8841, 0.398921, -0.243369, 0, 0.520801, 0.853678, 0.467297, -0.754737, 0.46044, 0, 3.19008, 0)

@@ -4,7 +4,7 @@ using System;
 public partial class PlayerMovementInAir : State
 {
 
-	public override void PhysicsProcess(float delta)
+	public override void Process(float delta)
 	{
 		Player.Body.Velocity += Vector3.Up * Player.Gravity;
 		Player.Body.MoveAndSlide();
