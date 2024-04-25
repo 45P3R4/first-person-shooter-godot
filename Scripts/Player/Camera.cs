@@ -49,7 +49,7 @@ public partial class Camera : Camera3D
 		arms.Position = arms.Position.Lerp(armsOrigin, (float)delta * 5);
 		
 		arms.Position += new Vector3(
-			Mathf.Clamp(Player.Body.Velocity.X*0.001f, -0.0005f, 0.01f),
+			Mathf.Clamp(Player.Body.Velocity.X*0.001f, -0.0005f, 0.0005f),
 			0,
 			0);
     }
@@ -58,6 +58,6 @@ public partial class Camera : Camera3D
 		swayY = Mathf.Clamp(swayY, -7, 7);
 		swayX = Mathf.Clamp(swayX, -7, 7);
 		arms.Rotation += new Vector3(swayY * 0.001f, 0, swayX * 0.001f);
-		arms.Position += new Vector3(swayY * 0.0005f, 0, swayX * 0.0005f);
+		arms.Position += new Vector3(swayY * 0.0003f, 0, swayX * 0.0003f);
 	}
 }

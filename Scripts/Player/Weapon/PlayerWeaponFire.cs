@@ -12,9 +12,18 @@ public partial class PlayerWeaponFire : State
 	[Export]
 	Node3D fireNode;
 
+	[Export]
+	PackedScene holeScene;
+
     public override void Process(float delta)
     {
 		if(raycast.IsColliding()) {
+			BulletHole hole = holeScene.Instantiate<BulletHole>();
+			GetTree().CurrentScene.AddChild(hole);
+			hole.Position = raycast.GetCollisionPoint();
+			if (raycast.GetCollisionNormal() != Vector3.Up)
+				hole.LookAt(hole.GlobalPosition + raycast.GetCollisionNormal());
+
 			if (raycast.GetCollider() is Enemy e) {
 				e.TakeDamage(10);
 			}

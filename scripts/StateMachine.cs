@@ -52,7 +52,6 @@ public partial class StateMachine : Node3D
 		CurrentState = states[key];
 		CurrentState.Enter();
 
-		GD.Print(CurrentState.Name);
 		EmitSignal(SignalName.OnStateChanged, this);
 	}
 
