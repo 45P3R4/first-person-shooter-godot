@@ -1,4 +1,4 @@
-[gd_scene load_steps=304 format=3 uid="uid://sb1k3l2n6rmw"]
+[gd_scene load_steps=306 format=3 uid="uid://sb1k3l2n6rmw"]
 
 [ext_resource type="LightmapGIData" uid="uid://c0yfshs865xcx" path="res://Levels/TestLevel.lmbake" id="2_2vyrn"]
 [ext_resource type="Material" uid="uid://4a4fsxqioi8e" path="res://Thirdparty/KenneyPrototypetextures/Dark.tres" id="3_ekkwp"]
@@ -7,10 +7,27 @@
 [ext_resource type="Texture2D" uid="uid://bdg6hvqqjurv2" path="res://Thirdparty/KenneyPrototypetextures/PNG/Purple/texture_07.png" id="4_whi45"]
 [ext_resource type="Material" uid="uid://e0dqoskuncmy" path="res://Thirdparty/KenneyPrototypetextures/Orange.tres" id="5_nqhtn"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ilhjn"]
+sky_top_color = Color(0, 0.382589, 0.990319, 1)
+sky_curve = 0.321532
+ground_bottom_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_gi6g6"]
+sky_material = SubResource("ProceduralSkyMaterial_ilhjn")
+
 [sub_resource type="Environment" id="Environment_rgy2c"]
-background_mode = 1
+background_mode = 2
 background_color = Color(0.162938, 0.630728, 1, 1)
+sky = SubResource("Sky_gi6g6")
+ambient_light_source = 3
+ambient_light_color = Color(0, 0, 0, 0.815686)
+reflected_light_source = 2
 tonemap_mode = 2
+ssr_enabled = true
+ssr_max_steps = 128
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxp1m"]
 
@@ -1022,7 +1039,7 @@ data = PackedVector3Array(-1, 0, 1, -1, 0.2, -1, -1, 0.2, 1, -1, 0, 1, -1, 0, -1
 [node name="TestLevel" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("3_hk50k")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 7.1759, 0.901812, 14.2585)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 4.5759, 0.901812, 14.2585)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.987746, -0.0566884, 0.145413, -0.156072, -0.358768, 0.920286, 0, -0.931704, -0.363219, 5.4, 4.4, 11.4)

@@ -12,5 +12,6 @@ public partial class BulletHole : Node3D
 	private async void timer(float time) 
 	{
 		await ToSignal(GetTree().CreateTimer(time), SceneTreeTimer.SignalName.Timeout);
+		QueueFree();
 	}
 }
