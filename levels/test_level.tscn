@@ -35,7 +35,7 @@ uv2_world_triplanar = true
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_p6p1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.24012, 4.4182, 10.359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.24012, 11.4182, 10.359)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.8841, 0.398921, -0.243369, 0, 0.520801, 0.853678, 0.467297, -0.754737, 0.46044, 0, 3.19008, 0)
