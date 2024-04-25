@@ -13,13 +13,6 @@ public partial class Player : Node3D
 
 	public override void _Ready()
 	{
-		if (Instance != null)
-		{
-			QueueFree();
-			return;
-		}
-		Instance = this;
-
-		Body = GetNode<CharacterBody3D>("/root/Node3D/Player/CharacterBody3D");
+		Body = GetNode<CharacterBody3D>("CharacterBody3D");
 	}
 }
