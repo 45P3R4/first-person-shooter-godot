@@ -55,7 +55,6 @@ public partial class Camera : Camera3D
     }
 
 	private void sway(float swayX, float swayY) {
-		GD.Print(swayY);
 		swayY = Mathf.Clamp(swayY, -7, 7);
 		swayX = Mathf.Clamp(swayX, -7, 7);
 		arms.Rotation += new Vector3(swayY * 0.001f, 0, swayX * 0.001f);
