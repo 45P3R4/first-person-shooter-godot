@@ -13,6 +13,6 @@ public partial class Player : Node3D
 
 	public override void _Ready()
 	{
-		Body = GetNode<CharacterBody3D>("CharacterBody3D");
+		Body = GetTree().CurrentScene.GetNode("Player").GetNode<CharacterBody3D>("CharacterBody3D");
 	}
 }

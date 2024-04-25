@@ -202,7 +202,7 @@ script = ExtResource("2_ef5hd")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 floor_constant_speed = true
-floor_max_angle = 0.872665
+floor_max_angle = 1.22173
 
 [node name="AnimationTree" type="AnimationTree" parent="CharacterBody3D"]
 root_node = NodePath("../Cam/LowPoly_FPS_MP5")
@@ -246,7 +246,7 @@ transform = Transform3D(1, 0, -6.51683e-07, 0, 1, 0, 6.51683e-07, 0, 1, -2.30926
 [node name="Skeleton3D" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera/Arms" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 bones/1/position = Vector3(-0.00654852, 0.424412, 0.26196)
-bones/1/rotation = Quaternion(-0.929843, -0.316103, -0.125678, 0.140274)
+bones/1/rotation = Quaternion(-0.929773, -0.316052, -0.125866, 0.140684)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(0.015265, -0.109479, -0.0891798)
 bones/2/rotation = Quaternion(-0.651459, 0.034364, 0.0106243, 0.757831)
@@ -277,8 +277,8 @@ bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(0.252867, 0.0952959, -0.367268)
 bones/12/rotation = Quaternion(-0.646953, 0.285398, -0.285398, 0.646953)
 bones/13/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/14/position = Vector3(-0.0984566, 0.350065, 0.00106888)
-bones/14/rotation = Quaternion(-0.702563, 0.693123, -0.00336677, 0.161166)
+bones/14/position = Vector3(-0.0984434, 0.349757, 0.00110344)
+bones/14/rotation = Quaternion(-0.702489, 0.693117, -0.00308396, 0.16152)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-0.0441879, -0.0894969, -0.113706)
 bones/15/rotation = Quaternion(-0.38348, -0.0231289, 0.000207206, 0.92326)
@@ -305,9 +305,9 @@ bones/24/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(-0.646953, -0.285398, 0.285398, 0.646953)
 bones/26/position = Vector3(-0.0981148, 0.449481, -0.264995)
 bones/27/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/27/rotation = Quaternion(0.56882, 0.172805, 0.768338, 0.237149)
+bones/27/rotation = Quaternion(0.568859, 0.172664, 0.76842, 0.23689)
 bones/28/rotation = Quaternion(-0.105366, 4.12855e-05, -0.723097, 0.682664)
-bones/29/rotation = Quaternion(0.272359, -0.366845, 0.312659, 0.832761)
+bones/29/rotation = Quaternion(0.272413, -0.367074, 0.31271, 0.832622)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/rotation = Quaternion(0.367876, 0.510019, -0.461173, 0.625994)
 bones/30/scale = Vector3(1, 1, 1)
@@ -337,9 +337,9 @@ bones/49/scale = Vector3(1, 1, 1)
 bones/50/rotation = Quaternion(7.08564e-09, -0.19207, -1.24889e-08, 0.981381)
 bones/51/rotation = Quaternion(-7.02881e-08, -0.118053, -1.54008e-08, 0.993007)
 bones/52/position = Vector3(-0.0981148, 0.449481, -0.264995)
-bones/52/rotation = Quaternion(0.590052, -0.29418, -0.696328, -0.283592)
-bones/53/rotation = Quaternion(-0.11793, -3.48054e-05, 0.809318, 0.57541)
-bones/54/rotation = Quaternion(0.189547, 0.328832, -0.224548, 0.897508)
+bones/52/rotation = Quaternion(0.590164, -0.294112, -0.696168, -0.283822)
+bones/53/rotation = Quaternion(-0.117931, -3.47979e-05, 0.809329, 0.575395)
+bones/54/rotation = Quaternion(0.189431, 0.328915, -0.225257, 0.897324)
 bones/54/scale = Vector3(1, 1, 1)
 bones/55/rotation = Quaternion(0.315419, -0.334144, 0.720446, 0.519439)
 bones/55/scale = Vector3(1, 1, 1)
@@ -369,7 +369,7 @@ bones/74/scale = Vector3(1, 1, 1)
 bones/75/rotation = Quaternion(4.28802e-08, 0.140685, -1.54934e-09, 0.990054)
 bones/76/rotation = Quaternion(-1.19694e-07, 0.0863127, 3.09437e-08, 0.996268)
 bones/77/position = Vector3(-0.0488726, 0.447867, 0.330354)
-bones/77/rotation = Quaternion(0.471859, -0.52136, -0.519476, 0.485468)
+bones/77/rotation = Quaternion(0.472105, -0.521146, -0.519691, 0.485227)
 bones/82/rotation = Quaternion(0.408674, 0.491589, 0.491589, 0.591326)
 bones/83/rotation = Quaternion(0.5, 0.5, 0.5, -0.499999)
 bones/84/rotation = Quaternion(-0.629095, 0.322861, 0.629095, 0.322862)
@@ -378,6 +378,7 @@ bones/85/rotation = Quaternion(-1.11075e-08, 0.707107, 2.18197e-08, 0.707107)
 
 [node name="Cylinder_001" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D" index="0"]
 cast_shadow = 0
+gi_mode = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D/Cylinder_001" index="0"]
 transform = Transform3D(0.5, -2.8213e-07, -7.72001e-15, 0, -2.18557e-08, 0.313, -2.8213e-07, -0.5, -1.36817e-08, 0.013017, 0.468837, 0.673491)
@@ -393,6 +394,7 @@ light_color = Color(0.816126, 0.731923, 0.563575, 1)
 
 [node name="Low_Poly_Male_Arms" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D" index="1"]
 cast_shadow = 0
+gi_mode = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_j8ojb")
