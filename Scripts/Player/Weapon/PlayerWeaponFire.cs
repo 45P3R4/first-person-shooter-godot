@@ -1,10 +1,14 @@
 using Godot;
+using GodotPlugins.Game;
 using System;
 
 public partial class PlayerWeaponFire : State
 {
 	[Signal]
 	public delegate void OnFireEventHandler();
+
+	[Export]
+	Camera cam;
 
 	[Export]
 	RayCast3D raycast;
@@ -17,6 +21,10 @@ public partial class PlayerWeaponFire : State
 
     public override void Process(float delta)
     {
+		var rand = new RandomNumberGenerator();
+		cam.RotateX(-rand.RandfRange(-0.05f, 0.05f));
+		cam.RotateY(-rand.RandfRange(-0.05f, 0.05f));
+
 		if(raycast.IsColliding()) {
 			BulletHole hole = holeScene.Instantiate<BulletHole>();
 			GetTree().CurrentScene.AddChild(hole);
