@@ -13,6 +13,7 @@ public partial class StateMachine : Node3D
 	private Dictionary<string, State> states;
 	public State CurrentState;
 	public State PrevState;
+	public bool Locked = false;
 
     public override void _Ready()
     {
@@ -43,6 +44,8 @@ public partial class StateMachine : Node3D
     }
 
 	public void TransitionTo (string key) {
+		if (!Locked) {
+
 		if (!states.ContainsKey(key) || CurrentState == states[key])
 			return;
 
@@ -51,8 +54,10 @@ public partial class StateMachine : Node3D
 		CurrentState.Exit();
 		CurrentState = states[key];
 		CurrentState.Enter();
+		CurrentState.Start();
 
 		EmitSignal(SignalName.OnStateChanged, this);
+		}
 	}
 
 	public State GetCurrentState() {

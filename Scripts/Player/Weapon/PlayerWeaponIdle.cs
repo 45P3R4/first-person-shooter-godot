@@ -15,7 +15,7 @@ public partial class PlayerWeaponIdle : State
 			Fsm.TransitionTo("PlayerWeaponInspect");
 		}
 		else {
-			Fsm.TransitionTo("PlayerMovementIdle");
+			Fsm.TransitionTo("PlayerWeaponIdle");
 		}
 	}
 }

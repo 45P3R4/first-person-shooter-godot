@@ -27,7 +27,7 @@ public partial class PlayerWeaponFire : State
     {
 		var rand = new RandomNumberGenerator();
 		rand.Seed = Time.GetTicksMsec();
-		
+
 		maxRecoil = Weapon.recoil;
 
 		recoil.X = rand.RandfRange(-maxRecoil, maxRecoil);
@@ -42,8 +42,6 @@ public partial class PlayerWeaponFire : State
 			BulletHole hole = holeScene.Instantiate<BulletHole>();
 			GetTree().CurrentScene.AddChild(hole);
 			hole.Position = raycast.GetCollisionPoint();
-			if (raycast.GetCollisionNormal() != Vector3.Up)
-				hole.LookAt(hole.GlobalPosition + raycast.GetCollisionNormal());
 
 			if (raycast.GetCollider() is Enemy e) {
 				e.TakeDamage(10);

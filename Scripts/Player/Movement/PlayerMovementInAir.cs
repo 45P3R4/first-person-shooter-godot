@@ -3,6 +3,10 @@ using System;
 
 public partial class PlayerMovementInAir : State
 {
+	public override void Start()
+    {
+        Player.WeaponStateMachine.Locked = true;
+    }
 
 	public override void Process(float delta)
 	{

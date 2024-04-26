@@ -7,11 +7,14 @@ public partial class PlayerMovementRun : State
     Vector3 dir;
 
 	public override void Process(float delta) {
+
 		inputDir = Input.GetVector("left", "right", "up", "down");
-		dir = (GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
+		dir = (Player.Body.GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 		Player.Body.Velocity = Vector3.Right * dir.X * Player.SprintSpeed + Vector3.Back * dir.Z * Player.SprintSpeed;
 
 		Player.Body.MoveAndSlide();
+
+		Player.WeaponStateMachine.Locked = true;
 
 		if (!Player.Body.IsOnFloor()) 
 			Fsm.TransitionTo("PlayerMovementInAir");
@@ -22,7 +25,7 @@ public partial class PlayerMovementRun : State
 		if (Input.GetVector("left", "right", "up", "down") == Vector2.Zero)
 			Fsm.TransitionTo("PlayerMovementIdle");
 
-		if(!Input.IsActionPressed("sprint"))
+		if (!Input.IsActionPressed("sprint"))
 			Fsm.TransitionTo("PlayerMovementWalk");
 	}
 }

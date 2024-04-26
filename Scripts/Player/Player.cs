@@ -4,6 +4,9 @@ using System;
 public partial class Player : Node3D
 {
 	public Player Instance;
+	
+	public static  StateMachine WeaponStateMachine;
+	public static StateMachine MovementStateMachine;
 
 	public static CharacterBody3D Body;
 	public static float Speed = 3;
@@ -14,5 +17,7 @@ public partial class Player : Node3D
 	public override void _Ready()
 	{
 		Body = GetTree().CurrentScene.GetNode("Player").GetNode<CharacterBody3D>("CharacterBody3D");
+		MovementStateMachine = GetTree().CurrentScene.GetNode("Player").GetNode<StateMachine>("PlayerMovementStateMachine");
+		WeaponStateMachine = GetTree().CurrentScene.GetNode("Player").GetNode<StateMachine>("PlayerWeaponStateMachine");
 	}
 }
