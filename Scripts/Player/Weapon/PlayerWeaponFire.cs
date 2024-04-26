@@ -19,11 +19,26 @@ public partial class PlayerWeaponFire : State
 	[Export]
 	PackedScene holeScene;
 
+	[Export]
+	float maxRecoil = 0.1f;
+
+	Vector2 recoil = Vector2.Zero;
+
     public override void Process(float delta)
     {
 		var rand = new RandomNumberGenerator();
-		cam.RotateX(-rand.RandfRange(-0.05f, 0.05f));
-		cam.RotateY(-rand.RandfRange(-0.05f, 0.05f));
+		rand.Seed = (ulong)Time.GetUnixTimeFromSystem();
+
+		recoil.X = rand.RandfRange(-maxRecoil, maxRecoil);
+		recoil.Y = rand.RandfRange(-maxRecoil, maxRecoil);
+
+		cam.Rotation += new Vector3(recoil.X, recoil.Y, 0);
+
+		// cam.RotateObjectLocal(Vector3.Right, recoil.X);
+		
+
+		raycast.RotateObjectLocal(Vector3.Right, recoil.X);
+		raycast.RotateObjectLocal(Vector3.Up, recoil.Y);
 
 		if(raycast.IsColliding()) {
 			BulletHole hole = holeScene.Instantiate<BulletHole>();
@@ -38,7 +53,10 @@ public partial class PlayerWeaponFire : State
 		}
 		timer(0.05f);
 		
+		raycast.Rotation =  Vector3.Zero;
+
 		EmitSignal(SignalName.OnFire);
+		
 		Fsm.TransitionTo("PlayerWeaponCooldown");
     }
 

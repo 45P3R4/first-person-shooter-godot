@@ -206,9 +206,9 @@ floor_constant_speed = true
 floor_max_angle = 1.22173
 
 [node name="AnimationTree" type="AnimationTree" parent="CharacterBody3D"]
-root_node = NodePath("../Cam/LowPoly_FPS_MP5")
+root_node = NodePath("../hands/LowPoly_FPS_MP5")
 tree_root = SubResource("AnimationNodeBlendTree_1d8wg")
-anim_player = NodePath("../Cam/LowPoly_FPS_MP5/AnimationPlayer")
+anim_player = NodePath("../hands/LowPoly_FPS_MP5/AnimationPlayer")
 parameters/PlayerMovementStateMachine/conditions/PlayerMovementIdle = false
 parameters/PlayerMovementStateMachine/conditions/PlayerMovementRun = false
 parameters/PlayerMovementStateMachine/conditions/PlayerMovementWalk = false
@@ -225,30 +225,30 @@ stream = ExtResource("4_2ctpm")
 doppler_tracking = 2
 script = ExtResource("5_xbjg8")
 
-[node name="Cam" type="Node3D" parent="CharacterBody3D"]
+[node name="hands" type="Node3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.577075, 0)
 
-[node name="LowPoly_FPS_MP5" parent="CharacterBody3D/Cam" instance=ExtResource("1_4naph")]
+[node name="LowPoly_FPS_MP5" parent="CharacterBody3D/hands" instance=ExtResource("1_4naph")]
 transform = Transform3D(-1, 0, -8.74232e-08, 0, 1, 0, 8.74232e-08, 0, -1, 0, -0.426192, 0)
 
-[node name="Camera" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5" index="0"]
+[node name="Camera" parent="CharacterBody3D/hands/LowPoly_FPS_MP5" index="0"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.350301, 0)
 current = true
 fov = 70.0
 near = 0.005
 script = ExtResource("1_02tyf")
 
-[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera" index="0"]
-transform = Transform3D(-1, 0, 8.74232e-08, 0, 1, 0, -8.74232e-08, 0, -1, 0, 0, 0)
-target_position = Vector3(0, 0, 100)
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera" index="0"]
+transform = Transform3D(1, 0, -4.05009e-13, 0, 1, 0, 4.05009e-13, 0, 1, 0, 0, 0)
+target_position = Vector3(0, 0, -100)
 
-[node name="Arms" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera" index="1"]
+[node name="Arms" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera" index="1"]
 transform = Transform3D(1, 0, -6.51683e-07, 0, 1, 0, 6.51683e-07, 0, 1, -2.30926e-14, -0.581788, -0.0939433)
 
-[node name="Skeleton3D" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera/Arms" index="0"]
+[node name="Skeleton3D" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 bones/1/position = Vector3(-0.00654852, 0.424412, 0.26196)
-bones/1/rotation = Quaternion(-0.929841, -0.316138, -0.125776, 0.140117)
+bones/1/rotation = Quaternion(-0.929862, -0.316153, -0.12572, 0.139994)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(0.015265, -0.109479, -0.0891798)
 bones/2/rotation = Quaternion(-0.651459, 0.034364, 0.0106243, 0.757831)
@@ -279,8 +279,8 @@ bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(0.252867, 0.0952959, -0.367268)
 bones/12/rotation = Quaternion(-0.646953, 0.285398, -0.285398, 0.646953)
 bones/13/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/14/position = Vector3(-0.0984009, 0.348761, 0.00121537)
-bones/14/rotation = Quaternion(-0.702582, 0.693099, -0.00355249, 0.161183)
+bones/14/position = Vector3(-0.0983973, 0.348676, 0.00122484)
+bones/14/rotation = Quaternion(-0.702604, 0.693101, -0.00363734, 0.161079)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-0.0441879, -0.0894969, -0.113706)
 bones/15/rotation = Quaternion(-0.38348, -0.0231289, 0.000207206, 0.92326)
@@ -307,9 +307,9 @@ bones/24/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(-0.646953, -0.285398, 0.285398, 0.646953)
 bones/26/position = Vector3(-0.0981148, 0.449481, -0.264995)
 bones/27/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/27/rotation = Quaternion(0.56907, 0.172179, 0.768781, 0.235563)
+bones/27/rotation = Quaternion(0.569088, 0.172137, 0.768811, 0.235451)
 bones/28/rotation = Quaternion(-0.105366, 4.12855e-05, -0.723097, 0.682664)
-bones/29/rotation = Quaternion(0.271681, -0.367323, 0.311576, 0.833177)
+bones/29/rotation = Quaternion(0.271623, -0.367283, 0.311493, 0.833244)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/rotation = Quaternion(0.367876, 0.510019, -0.461173, 0.625994)
 bones/30/scale = Vector3(1, 1, 1)
@@ -339,9 +339,9 @@ bones/49/scale = Vector3(1, 1, 1)
 bones/50/rotation = Quaternion(7.08564e-09, -0.19207, -1.24889e-08, 0.981381)
 bones/51/rotation = Quaternion(-7.02881e-08, -0.118053, -1.54008e-08, 0.993007)
 bones/52/position = Vector3(-0.0981148, 0.449481, -0.264995)
-bones/52/rotation = Quaternion(0.589552, -0.293073, -0.697242, -0.283533)
-bones/53/rotation = Quaternion(-0.117817, -3.48054e-05, 0.808547, 0.576516)
-bones/54/rotation = Quaternion(0.190201, 0.327886, -0.222652, 0.898187)
+bones/52/rotation = Quaternion(0.589497, -0.293031, -0.69733, -0.283472)
+bones/53/rotation = Quaternion(-0.117805, -3.48128e-05, 0.808462, 0.576637)
+bones/54/rotation = Quaternion(0.190213, 0.327887, -0.222528, 0.898215)
 bones/54/scale = Vector3(1, 1, 1)
 bones/55/rotation = Quaternion(0.315419, -0.334144, 0.720446, 0.519439)
 bones/55/scale = Vector3(1, 1, 1)
@@ -371,19 +371,19 @@ bones/74/scale = Vector3(1, 1, 1)
 bones/75/rotation = Quaternion(4.28802e-08, 0.140685, -1.54934e-09, 0.990054)
 bones/76/rotation = Quaternion(-1.19694e-07, 0.0863127, 3.09437e-08, 0.996268)
 bones/77/position = Vector3(-0.0488726, 0.447867, 0.330354)
-bones/77/rotation = Quaternion(0.471876, -0.521493, -0.519344, 0.485448)
+bones/77/rotation = Quaternion(0.471803, -0.521557, -0.51928, 0.485519)
 bones/82/rotation = Quaternion(0.408674, 0.491589, 0.491589, 0.591326)
 bones/83/rotation = Quaternion(0.5, 0.5, 0.5, -0.499999)
 bones/84/rotation = Quaternion(-0.629095, 0.322861, 0.629095, 0.322862)
 bones/84/scale = Vector3(1, 1, 1)
 bones/85/rotation = Quaternion(-1.11075e-08, 0.707107, 2.18197e-08, 0.707107)
 
-[node name="Cylinder_001" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D" index="0"]
+[node name="Cylinder_001" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D" index="0"]
 material_override = ExtResource("8_6hc5m")
 cast_shadow = 0
 gi_mode = 2
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D/Cylinder_001" index="0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D/Cylinder_001" index="0"]
 transform = Transform3D(0.5, -2.8213e-07, -7.72001e-15, 0, -2.18557e-08, 0.313, -2.8213e-07, -0.5, -1.36817e-08, 0.013017, 0.468837, 0.673491)
 visible = false
 material_override = SubResource("StandardMaterial3D_hi81e")
@@ -391,11 +391,11 @@ cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("PlaneMesh_bfcgg")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D/Cylinder_001/MeshInstance3D"]
+[node name="OmniLight3D" type="OmniLight3D" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D/Cylinder_001/MeshInstance3D"]
 transform = Transform3D(1, -5.68434e-14, -1.13687e-14, 0, 1, -3.55271e-15, 0, 0, 1.6, -0.0575849, 0.0314789, -0.0048492)
 light_color = Color(0.816126, 0.731923, 0.563575, 1)
 
-[node name="Low_Poly_Male_Arms" parent="CharacterBody3D/Cam/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D" index="1"]
+[node name="Low_Poly_Male_Arms" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D" index="1"]
 cast_shadow = 0
 gi_mode = 2
 
@@ -434,9 +434,9 @@ script = ExtResource("14_8c7hj")
 
 [node name="PlayerWeaponFire" type="Node3D" parent="CharacterBody3D/PlayerWeaponStateMachine" node_paths=PackedStringArray("cam", "raycast", "fireNode")]
 script = ExtResource("15_gbna7")
-cam = NodePath("../../Cam/LowPoly_FPS_MP5/Camera")
-raycast = NodePath("../../Cam/LowPoly_FPS_MP5/Camera/RayCast3D")
-fireNode = NodePath("../../Cam/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D/Cylinder_001/MeshInstance3D")
+cam = NodePath("../../hands/LowPoly_FPS_MP5/Camera")
+raycast = NodePath("../../hands/LowPoly_FPS_MP5/Camera/RayCast3D")
+fireNode = NodePath("../../hands/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D/Cylinder_001/MeshInstance3D")
 holeScene = ExtResource("18_e1kb8")
 
 [node name="PlayerWeaponCooldown" type="Node3D" parent="CharacterBody3D/PlayerWeaponStateMachine"]
@@ -468,4 +468,4 @@ texture = ExtResource("12_euvy4")
 [connection signal="OnStateChanged" from="CharacterBody3D/PlayerWeaponStateMachine" to="CharacterBody3D/AnimationTree" method="OnStateChanged"]
 [connection signal="OnFire" from="CharacterBody3D/PlayerWeaponStateMachine/PlayerWeaponFire" to="CharacterBody3D/AudioStreamPlayer3D" method="OnFire"]
 
-[editable path="CharacterBody3D/Cam/LowPoly_FPS_MP5"]
+[editable path="CharacterBody3D/hands/LowPoly_FPS_MP5"]
