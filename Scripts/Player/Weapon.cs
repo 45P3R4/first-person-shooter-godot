@@ -7,4 +7,5 @@ public partial class Weapon : Node3D
 
 	public static float Cooldown = 0.1f;
 	public static float ReloadSpeed = 0.5f;
+	public static float recoil = 0.1f;
 }

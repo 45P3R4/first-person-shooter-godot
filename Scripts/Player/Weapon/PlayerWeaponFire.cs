@@ -19,23 +19,21 @@ public partial class PlayerWeaponFire : State
 	[Export]
 	PackedScene holeScene;
 
-	[Export]
-	float maxRecoil = 0.1f;
+	float maxRecoil = 0;
 
 	Vector2 recoil = Vector2.Zero;
 
     public override void Process(float delta)
     {
 		var rand = new RandomNumberGenerator();
-		rand.Seed = (ulong)Time.GetUnixTimeFromSystem();
+		rand.Seed = Time.GetTicksMsec();
+		
+		maxRecoil = Weapon.recoil;
 
 		recoil.X = rand.RandfRange(-maxRecoil, maxRecoil);
 		recoil.Y = rand.RandfRange(-maxRecoil, maxRecoil);
 
 		cam.Rotation += new Vector3(recoil.X, recoil.Y, 0);
-
-		// cam.RotateObjectLocal(Vector3.Right, recoil.X);
-		
 
 		raycast.RotateObjectLocal(Vector3.Right, recoil.X);
 		raycast.RotateObjectLocal(Vector3.Up, recoil.Y);
