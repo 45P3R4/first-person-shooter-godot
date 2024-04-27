@@ -8,14 +8,11 @@ public partial class PlayerWeaponIdle : State
 		if (Input.IsActionPressed("fire")) {
 			Fsm.TransitionTo("PlayerWeaponFire");
 		}
-		else if (Input.IsActionPressed("reload")) {
+		else if (Input.IsActionJustPressed("reload")) {
 			Fsm.TransitionTo("PlayerWeaponReload");
 		}
-		else if (Input.IsActionPressed("inspect")) {
+		else if (Input.IsActionJustPressed("inspect")) {
 			Fsm.TransitionTo("PlayerWeaponInspect");
-		}
-		else {
-			Fsm.TransitionTo("PlayerWeaponIdle");
 		}
 	}
 }
