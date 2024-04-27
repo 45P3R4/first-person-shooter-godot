@@ -13,7 +13,7 @@ public partial class PlayerMovementInAir : State
 		Player.Body.Velocity += Vector3.Up * Player.Gravity;
 		Player.Body.MoveAndSlide();
 
-		if (Player.Body.IsOnFloor()) {
+		if (Player.Body.IsOnFloor() && Player.Body.Velocity.Y == 0) {
 			Fsm.TransitionTo("PlayerMovementLanding");
 		}
 	}
