@@ -31,7 +31,7 @@ public partial class PlayerWeaponFire : State
 		recoil.X = rand.RandfRange(-Weapon.recoil.X, Weapon.recoil.X);
 		recoil.Y = rand.RandfRange(-Weapon.recoil.Y, Weapon.recoil.Y);
 
-		cam.Rotation += new Vector3(recoil.X, recoil.Y, 0);
+		cam.Rotation += new Vector3(recoil.X * 0.1f, recoil.Y * 0.1f, 0);
 
 		raycast.RotateObjectLocal(Vector3.Right, recoil.X);
 		raycast.RotateObjectLocal(Vector3.Up, recoil.Y);
