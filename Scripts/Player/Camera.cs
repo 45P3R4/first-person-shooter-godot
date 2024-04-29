@@ -45,7 +45,7 @@ public partial class Camera : Camera3D
 	//hands rotation
     public override void _Process(double delta)
     {	
-		Rotation = Rotation.Lerp(camRotation, (float)delta * 5);
+		Rotation = Rotation.Lerp(camRotation, (float)delta * 10);
 
 		arms.Rotation = arms.Rotation.Lerp(Vector3.Zero, (float)delta * 5);
 		arms.Position = arms.Position.Lerp(armsOrigin, (float)delta * 5);
