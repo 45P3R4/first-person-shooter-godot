@@ -1,4 +1,4 @@
-[gd_scene load_steps=303 format=3 uid="uid://sb1k3l2n6rmw"]
+[gd_scene load_steps=302 format=3 uid="uid://sb1k3l2n6rmw"]
 
 [ext_resource type="LightmapGIData" uid="uid://c0yfshs865xcx" path="res://Levels/TestLevel.lmbake" id="2_2vyrn"]
 [ext_resource type="Material" uid="uid://4a4fsxqioi8e" path="res://Thirdparty/KenneyPrototypetextures/Dark.tres" id="3_ekkwp"]
@@ -8,7 +8,6 @@
 [ext_resource type="Material" uid="uid://e0dqoskuncmy" path="res://Thirdparty/KenneyPrototypetextures/Orange.tres" id="5_nqhtn"]
 [ext_resource type="Material" uid="uid://h6k0vn3j4ole" path="res://Thirdparty/KenneyPrototypetextures/White.tres" id="7_7j6g7"]
 [ext_resource type="Material" uid="uid://b2dtx6gyugwus" path="res://emission.tres" id="8_khtbw"]
-[ext_resource type="PackedScene" uid="uid://bs0olnlka3lce" path="res://Scenes/BulletHole.tscn" id="9_5g3pb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ilhjn"]
 sky_top_color = Color(0.66, 0.66, 0.66, 1)
@@ -4882,7 +4881,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 2.9, -0.3)
 use_collision = true
 size = Vector3(1.6, 0.8, 0.4)
 material = ExtResource("7_7j6g7")
-
-[node name="Decal" parent="." instance=ExtResource("9_5g3pb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.324, 0.349728, -0.0809245)
-rotation_edit_mode = 1

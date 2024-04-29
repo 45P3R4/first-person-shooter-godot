@@ -28,10 +28,8 @@ public partial class PlayerWeaponFire : State
 		var rand = new RandomNumberGenerator();
 		rand.Seed = Time.GetTicksMsec();
 
-		maxRecoil = Weapon.recoil;
-
-		recoil.X = rand.RandfRange(-maxRecoil, maxRecoil);
-		recoil.Y = rand.RandfRange(-maxRecoil, maxRecoil);
+		recoil.X = rand.RandfRange(-Weapon.recoil.X, Weapon.recoil.X);
+		recoil.Y = rand.RandfRange(-Weapon.recoil.Y, Weapon.recoil.Y);
 
 		cam.Rotation += new Vector3(recoil.X, recoil.Y, 0);
 
@@ -49,7 +47,7 @@ public partial class PlayerWeaponFire : State
 				e.TakeDamage(10);
 			}
 		}
-		timer(Weapon.Cooldown);
+		timer(0.03f);
 		
 		raycast.Rotation =  Vector3.Zero;
 
