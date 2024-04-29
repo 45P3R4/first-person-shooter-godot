@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bs0olnlka3lce"]
 
-[ext_resource type="Texture2D" uid="uid://cl3r1iipqcf2q" path="res://Textures/bullet_hole.png" id="1_j03pb"]
+[ext_resource type="Texture2D" uid="uid://bcefxiyqcgmbt" path="res://Textures/hole.png" id="1_gtihg"]
 [ext_resource type="Script" path="res://Scenes/BulletHole.cs" id="2_xoymp"]
 
 [node name="Decal" type="Decal"]
-size = Vector3(0.2, 0.2, 0.2)
-texture_albedo = ExtResource("1_j03pb")
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+size = Vector3(0.1, 0.1, 0.1)
+texture_albedo = ExtResource("1_gtihg")
 script = ExtResource("2_xoymp")

@@ -7,7 +7,6 @@ public partial class BulletHole : Node3D
 	public override void _Ready()
 	{
 		timer(30);
-		LookAt(Vector3.Forward);
 	}
 
 	private async void timer(float time) 

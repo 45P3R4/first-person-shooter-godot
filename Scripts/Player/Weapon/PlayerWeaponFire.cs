@@ -41,13 +41,15 @@ public partial class PlayerWeaponFire : State
 		if(raycast.IsColliding()) {
 			BulletHole hole = holeScene.Instantiate<BulletHole>();
 			GetTree().CurrentScene.AddChild(hole);
-			hole.Position = raycast.GetCollisionPoint();
+			Vector3 pos = raycast.GetCollisionPoint();
+			hole.Position = pos;
+			hole.LookAt(Vector3.Zero, raycast.GetCollisionNormal());
 
 			if (raycast.GetCollider() is Enemy e) {
 				e.TakeDamage(10);
 			}
 		}
-		timer(0.05f);
+		timer(Weapon.Cooldown);
 		
 		raycast.Rotation =  Vector3.Zero;
 
