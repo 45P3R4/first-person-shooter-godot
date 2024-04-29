@@ -24,6 +24,10 @@ config/icon="res://icon.png"
 
 Game="*res://Scripts/Game.cs"
 
+[display]
+
+mouse_cursor/custom_image="res://Textures/cursor.png"
+
 [dotnet]
 
 project/assembly_name="fps"
