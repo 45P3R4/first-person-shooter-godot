@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cv6qwvtibrtvg" path="res://Models/blender/LowPoly_FPS_MP5.blend" id="1_4naph"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_26yc0"]
 [ext_resource type="Script" path="res://Scripts/Player/Weapon.cs" id="2_ef5hd"]
-[ext_resource type="Script" path="res://Scripts/Player/Animation.cs" id="3_7ob0h"]
+[ext_resource type="Script" path="res://Scripts/Animation.cs" id="3_7ob0h"]
 [ext_resource type="AudioStream" uid="uid://b8chvn7qbgt0l" path="res://Audio/fireshot.wav" id="4_2ctpm"]
 [ext_resource type="Script" path="res://Scripts/Player/Audio.cs" id="5_xbjg8"]
 [ext_resource type="Texture2D" uid="uid://bikq8rgukpw8g" path="res://Textures/fireshot.png" id="6_jymmm"]
@@ -154,7 +154,7 @@ input_1/auto_advance = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1d8wg"]
-graph_offset = Vector2(32.3636, 334)
+graph_offset = Vector2(180, 190)
 nodes/PlayerMovementStateMachine/node = SubResource("AnimationNodeStateMachine_sxdd7")
 nodes/PlayerMovementStateMachine/position = Vector2(400, 160)
 nodes/PlayerWeaponStateMachine/node = SubResource("AnimationNodeStateMachine_vd277")
@@ -281,7 +281,7 @@ transform = Transform3D(1, 0, -6.51683e-07, 0, 1, 0, 6.51683e-07, 0, 1, -2.30926
 [node name="Skeleton3D" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 bones/1/position = Vector3(-0.00654852, 0.424412, 0.26196)
-bones/1/rotation = Quaternion(-0.929842, -0.316102, -0.12568, 0.14028)
+bones/1/rotation = Quaternion(-0.929958, -0.316224, -0.125464, 0.139428)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(0.015265, -0.109479, -0.0891798)
 bones/2/rotation = Quaternion(-0.651459, 0.034364, 0.0106243, 0.757831)
@@ -312,8 +312,8 @@ bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(0.252867, 0.0952959, -0.367268)
 bones/12/rotation = Quaternion(-0.646953, 0.285398, -0.285398, 0.646953)
 bones/13/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/14/position = Vector3(-0.0984564, 0.350061, 0.00106933)
-bones/14/rotation = Quaternion(-0.702562, 0.693123, -0.00336304, 0.161171)
+bones/14/position = Vector3(-0.0984041, 0.348835, 0.00120702)
+bones/14/rotation = Quaternion(-0.702705, 0.693108, -0.00403057, 0.160593)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-0.0441879, -0.0894969, -0.113706)
 bones/15/rotation = Quaternion(-0.38348, -0.0231289, 0.000207206, 0.92326)
@@ -340,9 +340,9 @@ bones/24/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(-0.646953, -0.285398, 0.285398, 0.646953)
 bones/26/position = Vector3(-0.0981148, 0.449481, -0.264995)
 bones/27/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/27/rotation = Quaternion(0.568821, 0.172803, 0.768339, 0.237145)
+bones/27/rotation = Quaternion(0.568997, 0.172403, 0.768637, 0.236043)
 bones/28/rotation = Quaternion(-0.105366, 4.12855e-05, -0.723097, 0.682664)
-bones/29/rotation = Quaternion(0.272359, -0.366848, 0.31266, 0.832759)
+bones/29/rotation = Quaternion(0.271356, -0.367096, 0.311107, 0.833558)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/rotation = Quaternion(0.367876, 0.510019, -0.461173, 0.625994)
 bones/30/scale = Vector3(1, 1, 1)
@@ -372,9 +372,9 @@ bones/49/scale = Vector3(1, 1, 1)
 bones/50/rotation = Quaternion(7.08564e-09, -0.19207, -1.24889e-08, 0.981381)
 bones/51/rotation = Quaternion(-7.02881e-08, -0.118053, -1.54008e-08, 0.993007)
 bones/52/position = Vector3(-0.0981148, 0.449481, -0.264995)
-bones/52/rotation = Quaternion(0.590054, -0.294179, -0.696325, -0.283595)
-bones/53/rotation = Quaternion(-0.11793, -3.48017e-05, 0.809318, 0.57541)
-bones/54/rotation = Quaternion(0.189543, 0.328837, -0.22457, 0.897501)
+bones/52/rotation = Quaternion(0.589382, -0.293051, -0.697503, -0.283267)
+bones/53/rotation = Quaternion(-0.117778, -3.48408e-05, 0.808275, 0.576906)
+bones/54/rotation = Quaternion(0.190273, 0.327892, -0.221954, 0.898343)
 bones/54/scale = Vector3(1, 1, 1)
 bones/55/rotation = Quaternion(0.315419, -0.334144, 0.720446, 0.519439)
 bones/55/scale = Vector3(1, 1, 1)
@@ -404,7 +404,7 @@ bones/74/scale = Vector3(1, 1, 1)
 bones/75/rotation = Quaternion(4.28802e-08, 0.140685, -1.54934e-09, 0.990054)
 bones/76/rotation = Quaternion(-1.19694e-07, 0.0863127, 3.09437e-08, 0.996268)
 bones/77/position = Vector3(-0.0488726, 0.447867, 0.330354)
-bones/77/rotation = Quaternion(0.471862, -0.521357, -0.519478, 0.485464)
+bones/77/rotation = Quaternion(0.471465, -0.521854, -0.51898, 0.485849)
 bones/82/rotation = Quaternion(0.408674, 0.491589, 0.491589, 0.591326)
 bones/83/rotation = Quaternion(0.5, 0.5, 0.5, -0.499999)
 bones/84/rotation = Quaternion(-0.629095, 0.322861, 0.629095, 0.322862)
@@ -435,19 +435,25 @@ shape = SubResource("CapsuleShape3D_j8ojb")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="UI/CenterContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("12_euvy4")
+stretch_mode = 3
 
 [connection signal="OnStateChanged" from="PlayerMovementStateMachine" to="CharacterBody3D/AnimationTree" method="OnStateChanged"]
 [connection signal="OnStateChanged" from="PlayerWeaponStateMachine" to="CharacterBody3D/AnimationTree" method="OnStateChanged"]

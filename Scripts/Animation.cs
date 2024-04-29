@@ -9,6 +9,5 @@ public partial class Animation : AnimationTree
 
         Set("parameters/" + machine.Name + "/conditions/" + machine.PrevState.Name, 0);
         Set("parameters/" + machine.Name + "/conditions/" + machine.CurrentState.Name, 1);
-        Set("speed_scale", Weapon.ReloadSpeed);
     }
 }
