@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu3fh5vhvx2gx"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.cs" id="1_3s4uj"]
+[ext_resource type="PackedScene" uid="uid://sb1k3l2n6rmw" path="res://Levels/TestLevel.tscn" id="2_3yu5n"]
+
+[node name="Menu" type="Control" node_paths=PackedStringArray("startBtn", "exitBtn")]
+clip_contents = true
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3s4uj")
+game = ExtResource("2_3yu5n")
+startBtn = NodePath("CenterContainer/VBoxContainer/StartButton")
+exitBtn = NodePath("CenterContainer/VBoxContainer/ExitButton")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+icon_alignment = 1
+
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit
+"
+icon_alignment = 1

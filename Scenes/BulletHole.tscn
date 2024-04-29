@@ -1,10 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs0olnlka3lce"]
+[gd_scene load_steps=11 format=3 uid="uid://bs0olnlka3lce"]
 
 [ext_resource type="Texture2D" uid="uid://bcefxiyqcgmbt" path="res://Textures/hole.png" id="1_gtihg"]
 [ext_resource type="Script" path="res://Scenes/BulletHole.cs" id="2_xoymp"]
+[ext_resource type="Texture2D" uid="uid://j3i1enjp14s8" path="res://Textures/smoke.png" id="3_6s6ro"]
 
-[node name="Decal" type="Decal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sypl"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.617455, 0.617455, 0.617455, 1)
+albedo_texture = ExtResource("3_6s6ro")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_b1ydl"]
+material = SubResource("StandardMaterial3D_2sypl")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="Curve" id="Curve_npas5"]
+max_value = 5.0
+_data = [Vector2(0.00682594, 0), 0.0, 40.1107, 0, 0, Vector2(0.211604, 5), -1.68391, -1.68391, 0, 0, Vector2(1, 0), -7.75801, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_fvydq"]
+colors = PackedColorArray(0.560784, 0.560784, 0.560784, 0.776471, 0.513726, 0.513726, 0.513726, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71kd2"]
+vertex_color_use_as_albedo = true
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_txa4f"]
+material = SubResource("StandardMaterial3D_71kd2")
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="Curve" id="Curve_kjhqe"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Decal" type="Decal" node_paths=PackedStringArray("Particles")]
 size = Vector3(0.1, 0.1, 0.1)
 texture_albedo = ExtResource("1_gtihg")
 script = ExtResource("2_xoymp")
+Particles = [NodePath("Dust"), NodePath("Parts")]
+
+[node name="Dust" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+emitting = false
+amount = 2
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_b1ydl")
+direction = Vector3(0, 0, 1)
+spread = 23.08
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.5
+scale_amount_curve = SubResource("Curve_npas5")
+color_ramp = SubResource("Gradient_fvydq")
+
+[node name="Parts" type="CPUParticles3D" parent="."]
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_txa4f")
+direction = Vector3(0, 0, 1)
+initial_velocity_max = 2.5
+scale_amount_curve = SubResource("Curve_kjhqe")
+color = Color(0.419813, 0.419813, 0.419813, 1)

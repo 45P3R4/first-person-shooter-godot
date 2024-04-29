@@ -43,6 +43,11 @@ public partial class PlayerWeaponFire : State
 			hole.Position = pos;
 			hole.LookAt(Vector3.Zero, raycast.GetCollisionNormal());
 
+			foreach (CpuParticles3D item in hole.Particles) {
+				item.Emitting = true;
+			}
+			
+
 			if (raycast.GetCollider() is Enemy e) {
 				e.TakeDamage(10);
 			}
