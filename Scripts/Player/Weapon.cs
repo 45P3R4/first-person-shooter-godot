@@ -56,9 +56,10 @@ public partial class Weapon : State
 					e.TakeDamage(10);
 				}
 			}
+		
+			ShowEffect(0.04f, fireEffect);
+			Player.Raycast.Rotation =  Vector3.Zero;
 		}
-		ShowEffect(0.04f, fireEffect);
-		Player.Raycast.Rotation =  Vector3.Zero;
 	}
 
 	public virtual void Reload() {

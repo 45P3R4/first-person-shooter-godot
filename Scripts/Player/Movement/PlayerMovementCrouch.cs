@@ -5,7 +5,7 @@ public partial class PlayerMovementCrouch : State
 {
     public override void Process(float delta)
     {
-		if (!Input.IsActionPressed("crouch"))
+		if (Input.IsActionJustPressed("crouch"))
 			if (!Player.CrouchCast.IsColliding())
 				Fsm.TransitionTo("PlayerMovementCrouchOut");
 

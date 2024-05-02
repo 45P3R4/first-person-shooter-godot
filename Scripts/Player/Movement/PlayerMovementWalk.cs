@@ -13,7 +13,7 @@ public partial class PlayerMovementWalk : State
 		if (Input.IsActionJustPressed("jump"))
 			Fsm.TransitionTo("PlayerMovementJump");
 
-		if (Input.IsActionPressed("crouch"))
+		if (Input.IsActionJustPressed("crouch"))
 			Fsm.TransitionTo("PlayerMovementCrouchIn");
 
 		if(Input.IsActionPressed("sprint"))
