@@ -7,6 +7,6 @@ public partial class PlayerWeaponFire : State
     public override void Process(float delta)
     {
         Player.CurrentWeapon.Shoot();
-      Fsm.TransitionTo("PlayerWeaponCooldown");
+        Fsm.TransitionTo("PlayerWeaponCooldown");
     }
 }

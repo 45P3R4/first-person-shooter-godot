@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bd5v6py7keiiq"]
+[gd_scene load_steps=59 format=3 uid="uid://bd5v6py7keiiq"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Camera.cs" id="1_02tyf"]
 [ext_resource type="PackedScene" uid="uid://cv6qwvtibrtvg" path="res://Models/blender/LowPoly_FPS_MP5.blend" id="1_4naph"]
@@ -10,10 +10,13 @@
 [ext_resource type="Script" path="res://Scripts/StateMachine.cs" id="7_ju0y3"]
 [ext_resource type="Material" uid="uid://53ku081urwxs" path="res://Scenes/Weapon.tres" id="8_6hc5m"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementIdle.cs" id="9_hgku5"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementCrouch.cs" id="10_8botg"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementWalk.cs" id="10_ro4mx"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementLanding.cs" id="11_54bry"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementRun.cs" id="11_33753"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementCrouchIn.cs" id="11_nyjep"]
 [ext_resource type="Texture2D" uid="uid://cf70qvs6t8obi" path="res://Textures/cross.png" id="12_euvy4"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementCrouchOut.cs" id="12_k6d1d"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementJump.cs" id="12_pe6a0"]
 [ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementInAir.cs" id="13_1twm2"]
 [ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponIdle.cs" id="14_8c7hj"]
@@ -197,6 +200,15 @@ script = ExtResource("13_1twm2")
 [node name="PlayerMovementLanding" type="Node3D" parent="PlayerMovementStateMachine"]
 script = ExtResource("11_54bry")
 
+[node name="PlayerMovementCrouch" type="Node3D" parent="PlayerMovementStateMachine"]
+script = ExtResource("10_8botg")
+
+[node name="PlayerMovementCrouchIn" type="Node3D" parent="PlayerMovementStateMachine"]
+script = ExtResource("11_nyjep")
+
+[node name="PlayerMovementCrouchOut" type="Node3D" parent="PlayerMovementStateMachine"]
+script = ExtResource("12_k6d1d")
+
 [node name="PlayerWeaponStateMachine" type="Node3D" parent="." node_paths=PackedStringArray("initialState")]
 script = ExtResource("7_ju0y3")
 initialState = NodePath("PlayerWeaponIdle")
@@ -242,7 +254,7 @@ doppler_tracking = 2
 script = ExtResource("5_xbjg8")
 
 [node name="hands" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.577075, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47643, 0)
 
 [node name="LowPoly_FPS_MP5" parent="CharacterBody3D/hands" instance=ExtResource("1_4naph")]
 transform = Transform3D(-1, 0, -8.74232e-08, 0, 1, 0, 8.74232e-08, 0, -1, 0, -0.426192, 0)
@@ -377,9 +389,8 @@ layers = 524288
 cast_shadow = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899353, 0)
 shape = SubResource("CapsuleShape3D_j8ojb")
-
-[node name="SubViewport" type="SubViewport" parent="."]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

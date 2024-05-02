@@ -11,5 +11,8 @@ public partial class PlayerMovementInAir : State
 		if (Player.Body.IsOnFloor() && Player.Body.Velocity.Y == 0) {
 			Fsm.TransitionTo("PlayerMovementLanding");
 		}
+
+		if (Input.IsActionPressed("crouch"))
+			Fsm.TransitionTo("PlayerMovementCrouchIn");
 	}
 }

@@ -3,22 +3,18 @@ using System;
 
 public partial class PlayerMovementWalk : State
 {
-	Vector2 inputDir;
-    Vector3 dir;
-
 	public override void Process(float delta) {
 		
-		inputDir = Input.GetVector("left", "right", "up", "down");
-		dir = (Player.Body.GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-        Player.Body.Velocity = Vector3.Right * dir.X * Player.Speed + Vector3.Back * dir.Z * Player.Speed;
-		
-		Player.Body.MoveAndSlide();
+		Player.Move(Player.NormalSpeed);
 
 		if (!Player.Body.IsOnFloor())
 			Fsm.TransitionTo("PlayerMovementInAir");
 
 		if (Input.IsActionJustPressed("jump"))
 			Fsm.TransitionTo("PlayerMovementJump");
+
+		if (Input.IsActionPressed("crouch"))
+			Fsm.TransitionTo("PlayerMovementCrouchIn");
 
 		if(Input.IsActionPressed("sprint"))
 			Fsm.TransitionTo("PlayerMovementRun");
