@@ -98,6 +98,10 @@ crouch={
 ]
 }
 
+[layer_names]
+
+3d_navigation/layer_5="Player"
+
 [rendering]
 
 occlusion_culling/use_occlusion_culling=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bd5v6py7keiiq"]
+[gd_scene load_steps=60 format=3 uid="uid://bd5v6py7keiiq"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Camera.cs" id="1_02tyf"]
 [ext_resource type="PackedScene" uid="uid://cv6qwvtibrtvg" path="res://Models/blender/LowPoly_FPS_MP5.blend" id="1_4naph"]
@@ -170,6 +170,10 @@ node_connections = [&"TimeScale", 0, &"PlayerStateMachine", &"output", 0, &"Time
 radius = 0.4
 height = 1.8
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tgcw3"]
+radius = 0.4
+height = 1.2
+
 [node name="Player" type="Node3D"]
 
 [node name="PlayerSingleton" type="Node3D" parent="."]
@@ -232,6 +236,7 @@ script = ExtResource("17_3ppcw")
 script = ExtResource("15_iwsxo")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+collision_layer = 16
 floor_constant_speed = true
 floor_max_angle = 1.22173
 
@@ -391,6 +396,11 @@ cast_shadow = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899353, 0)
 shape = SubResource("CapsuleShape3D_j8ojb")
+
+[node name="CrouchCast" type="ShapeCast3D" parent="CharacterBody3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.820807, 0)
+shape = SubResource("CapsuleShape3D_tgcw3")
+target_position = Vector3(0, 0, 0)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

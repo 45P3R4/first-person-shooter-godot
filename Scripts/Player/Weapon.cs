@@ -9,7 +9,7 @@ public partial class Weapon : State
 	public bool IsBurst = true;
 	public float Cooldown = 0.11f;
 	public float ReloadSpeed = 2f;
-	public Vector2 Recoil = new Vector2(1, 1);
+	public Vector2 Recoil = new Vector2(0.5f, 0.5f);
 	public int MaxAmmo = 60;
 
 	public int Ammo = 60;

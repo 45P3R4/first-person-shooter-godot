@@ -15,6 +15,7 @@ public partial class Player : Node3D
 	public static Camera3D Camera;
 	public static AnimationTree Animation;
 	public static CollisionShape3D Collision;
+	public static ShapeCast3D CrouchCast;
 
 	public static float NormalSpeed = 3;
 	public static float SprintSpeed = 6;
@@ -27,6 +28,7 @@ public partial class Player : Node3D
 
 	public override void _Ready()
 	{
+		CrouchCast = GetParent().GetNode<ShapeCast3D>("./CharacterBody3D/CollisionShape3D/CrouchCast");
 		Collision = GetParent().GetNode<CollisionShape3D>("CharacterBody3D/CollisionShape3D");
 		Animation = GetParent().GetNode<AnimationTree>("CharacterBody3D/AnimationTree");
 		CurrentWeapon = GetParent().GetNode<Weapon>("./CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D/Cylinder_001/MP5");
