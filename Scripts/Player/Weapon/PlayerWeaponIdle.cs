@@ -19,5 +19,9 @@ public partial class PlayerWeaponIdle : State
 			
 		if (Input.IsActionJustPressed("inspect")) {
 			Fsm.TransitionTo("PlayerWeaponInspect"); }
+
+		if (Input.IsActionPressed("aim")) {
+			Fsm.TransitionTo("PlayerWeaponAim");
+		}
 	}
 }
