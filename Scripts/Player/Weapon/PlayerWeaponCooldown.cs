@@ -13,6 +13,11 @@ public partial class PlayerWeaponCooldown : State
 	{
 		await ToSignal(GetTree().CreateTimer(time), SceneTreeTimer.SignalName.Timeout);
 
-		Fsm.TransitionTo("PlayerWeaponIdle");
+		if (Player.IsAiming) {
+			Fsm.TransitionTo("PlayerWeaponAim");
+		}
+		else {
+			Fsm.TransitionTo("PlayerWeaponIdle");
+		}
 	}
 }

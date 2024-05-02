@@ -12,7 +12,7 @@ public partial class Weapon : State
 	public Vector2 Recoil = new Vector2(0.5f, 0.5f);
 	public int MaxAmmo = 60;
 
-	public int Ammo = 60;
+	private int ammo = 60;
 
 	private Vector2 currentRecoil = Vector2.Zero;
 	private PackedScene holeScene = ResourceLoader.Load<PackedScene>("res://Scenes/BulletHole.tscn");
@@ -27,9 +27,9 @@ public partial class Weapon : State
     }
 
     public virtual void Shoot() {
-		if (Ammo > 0) {
-			Ammo--;
-			UISingleton.SetAmmo(Ammo);
+		if (ammo > 0) {
+			ammo--;
+			UISingleton.SetAmmo(ammo);
 
 			var rand = new RandomNumberGenerator();
 			rand.Seed = Time.GetTicksMsec();
@@ -63,11 +63,11 @@ public partial class Weapon : State
 	}
 
 	public virtual void Reload() {
-		Ammo = MaxAmmo;
+		ammo = MaxAmmo;
 	}
 
 	public int GetAmmo() {
-		return Ammo;
+		return ammo;
 	}
 
 	private async void ShowEffect(float time, Node3D effect) 

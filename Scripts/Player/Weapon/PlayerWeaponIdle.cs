@@ -1,27 +1,33 @@
 using Godot;
-using System;
 
 public partial class PlayerWeaponIdle : State
 {
-	public override void Process(float delta)
-	{
-		if (Player.CurrentWeapon.IsBurst) {
+    public override void Process(float delta)
+    {
+        if (Player.CurrentWeapon.IsBurst) {
 			if (Input.IsActionPressed("fire")) {
-				Fsm.TransitionTo("PlayerWeaponFire"); }
+				Fsm.TransitionTo("PlayerWeaponFire"); 
+			}
 		}
 		else {
 			if (Input.IsActionJustPressed("fire")) {
-				Fsm.TransitionTo("PlayerWeaponFire"); }
+				Fsm.TransitionTo("PlayerWeaponFire"); 
+			}
 		}
-
-		if (Input.IsActionJustPressed("reload")) {
-			Fsm.TransitionTo("PlayerWeaponReload"); }
-			
-		if (Input.IsActionJustPressed("inspect")) {
-			Fsm.TransitionTo("PlayerWeaponInspect"); }
-
 		if (Input.IsActionPressed("aim")) {
-			Fsm.TransitionTo("PlayerWeaponAim");
+			Fsm.TransitionTo("PlayerWeaponAimIn");
 		}
-	}
+    }
+
+    public override void HandleInput(InputEvent @event)
+    {
+		if (InputMap.EventIsAction(@event, "reload"))
+			Fsm.TransitionTo("PlayerWeaponReload");
+
+		if (InputMap.EventIsAction(@event, "inspect"))
+			Fsm.TransitionTo("PlayerWeaponInspect");
+		
+		if (InputMap.EventIsAction(@event, "fire"))
+			GD.Print("Action");
+    }
 }

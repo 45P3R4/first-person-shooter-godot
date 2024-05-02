@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bd5v6py7keiiq"]
+[gd_scene load_steps=69 format=3 uid="uid://bd5v6py7keiiq"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Camera.cs" id="1_02tyf"]
 [ext_resource type="PackedScene" uid="uid://cv6qwvtibrtvg" path="res://Models/blender/LowPoly_FPS_MP5.blend" id="1_4naph"]
@@ -26,6 +26,8 @@
 [ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponReload.cs" id="16_j46n1"]
 [ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponInspect.cs" id="17_3ppcw"]
 [ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponAim.cs" id="19_gntx8"]
+[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponAimIn.cs" id="20_1t1ap"]
+[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponAimOut.cs" id="21_0fyic"]
 [ext_resource type="Script" path="res://Scripts/MP5.cs" id="22_vnvbv"]
 [ext_resource type="Script" path="res://Scripts/UISingleton.cs" id="24_5or2o"]
 [ext_resource type="Texture2D" uid="uid://bt7a1barigy55" path="res://icon.png" id="24_fc7n3"]
@@ -68,11 +70,6 @@ xfade_time = 0.2
 advance_mode = 2
 advance_condition = &"PlayerMovementRun"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gvmhq"]
-xfade_time = 0.2
-advance_mode = 2
-advance_condition = &"PlayerMovementIdle"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n6346"]
 xfade_time = 0.2
 advance_mode = 2
@@ -92,10 +89,6 @@ advance_condition = &"PlayerMovementRun"
 advance_mode = 2
 advance_condition = &"PlayerWeaponFire"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qmmhd"]
-advance_mode = 2
-advance_condition = &"PlayerWeaponIdle"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j23ks"]
 advance_mode = 2
 advance_condition = &"PlayerWeaponReload"
@@ -109,19 +102,6 @@ advance_condition = &"PlayerWeaponIdle"
 advance_mode = 2
 advance_condition = &"PlayerWeaponReload"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_067m6"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"PlayerMovementWalk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8vwlv"]
-advance_mode = 2
-advance_condition = &"PlayerWeaponFire"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eamup"]
-advance_mode = 2
-advance_condition = &"PlayerMovementWalk"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dmcgi"]
 xfade_time = 0.03
 advance_mode = 2
@@ -131,11 +111,6 @@ advance_condition = &"PlayerWeaponInspect"
 switch_mode = 2
 advance_mode = 2
 advance_condition = &"PlayerMovementIdle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nu3he"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"PlayerMovementWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ruf3v"]
 xfade_time = 0.03
@@ -149,7 +124,7 @@ advance_condition = &"PlayerMovementRun"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6y5pj"]
 advance_mode = 2
-advance_condition = &"PlayerWeaponAim"
+advance_condition = &"PlayerWeaponAimIn"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dp1lf"]
 advance_mode = 2
@@ -158,12 +133,39 @@ advance_condition = &"PlayerWeaponAim"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ajj2p"]
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"PlayerWeaponIdle"
+advance_condition = &"PlayerWeaponAimOut"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dt02q"]
 switch_mode = 2
 advance_mode = 2
 advance_condition = &"PlayerWeaponIdle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8vwlv"]
+advance_mode = 2
+advance_condition = &"PlayerWeaponFire"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qmmhd"]
+advance_mode = 2
+advance_condition = &"PlayerWeaponIdle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gvmhq"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"PlayerMovementIdle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eamup"]
+advance_mode = 2
+advance_condition = &"PlayerMovementWalk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nu3he"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"PlayerMovementWalk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_067m6"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"PlayerMovementWalk"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sxdd7"]
 states/Arms_Aim/node = SubResource("AnimationNodeAnimation_nphbl")
@@ -183,8 +185,8 @@ states/Sprint/position = Vector2(498, 204)
 states/Start/position = Vector2(230, 55)
 states/Walk/node = SubResource("AnimationNodeAnimation_853y3")
 states/Walk/position = Vector2(654, 16)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_os0i3"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_l68um"), "Walk", "Sprint", SubResource("AnimationNodeStateMachineTransition_0dhd7"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_gvmhq"), "Sprint", "Walk", SubResource("AnimationNodeStateMachineTransition_n6346"), "Sprint", "Idle", SubResource("AnimationNodeStateMachineTransition_p2ie7"), "Idle", "Sprint", SubResource("AnimationNodeStateMachineTransition_guof4"), "Idle", "Fire", SubResource("AnimationNodeStateMachineTransition_kbuwf"), "Fire", "Idle", SubResource("AnimationNodeStateMachineTransition_qmmhd"), "Idle", "Reload", SubResource("AnimationNodeStateMachineTransition_j23ks"), "Reload", "Idle", SubResource("AnimationNodeStateMachineTransition_nfqgt"), "Walk", "Reload", SubResource("AnimationNodeStateMachineTransition_yyrnq"), "Reload", "Walk", SubResource("AnimationNodeStateMachineTransition_067m6"), "Walk", "Fire", SubResource("AnimationNodeStateMachineTransition_8vwlv"), "Fire", "Walk", SubResource("AnimationNodeStateMachineTransition_eamup"), "Idle", "Arms_Inspect", SubResource("AnimationNodeStateMachineTransition_dmcgi"), "Arms_Inspect", "Idle", SubResource("AnimationNodeStateMachineTransition_u3awu"), "Arms_Inspect", "Walk", SubResource("AnimationNodeStateMachineTransition_nu3he"), "Walk", "Arms_Inspect", SubResource("AnimationNodeStateMachineTransition_ruf3v"), "Arms_Inspect", "Sprint", SubResource("AnimationNodeStateMachineTransition_mu5sn"), "Idle", "Arms_Aim", SubResource("AnimationNodeStateMachineTransition_6y5pj"), "Walk", "Arms_Aim", SubResource("AnimationNodeStateMachineTransition_dp1lf"), "Arms_Aim", "Arms_Aim 2", SubResource("AnimationNodeStateMachineTransition_ajj2p"), "Arms_Aim 2", "Idle", SubResource("AnimationNodeStateMachineTransition_dt02q")]
-graph_offset = Vector2(211, -197)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_os0i3"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_l68um"), "Walk", "Sprint", SubResource("AnimationNodeStateMachineTransition_0dhd7"), "Sprint", "Walk", SubResource("AnimationNodeStateMachineTransition_n6346"), "Sprint", "Idle", SubResource("AnimationNodeStateMachineTransition_p2ie7"), "Idle", "Sprint", SubResource("AnimationNodeStateMachineTransition_guof4"), "Idle", "Fire", SubResource("AnimationNodeStateMachineTransition_kbuwf"), "Idle", "Reload", SubResource("AnimationNodeStateMachineTransition_j23ks"), "Reload", "Idle", SubResource("AnimationNodeStateMachineTransition_nfqgt"), "Walk", "Reload", SubResource("AnimationNodeStateMachineTransition_yyrnq"), "Idle", "Arms_Inspect", SubResource("AnimationNodeStateMachineTransition_dmcgi"), "Arms_Inspect", "Idle", SubResource("AnimationNodeStateMachineTransition_u3awu"), "Walk", "Arms_Inspect", SubResource("AnimationNodeStateMachineTransition_ruf3v"), "Arms_Inspect", "Sprint", SubResource("AnimationNodeStateMachineTransition_mu5sn"), "Idle", "Arms_Aim", SubResource("AnimationNodeStateMachineTransition_6y5pj"), "Walk", "Arms_Aim", SubResource("AnimationNodeStateMachineTransition_dp1lf"), "Arms_Aim", "Arms_Aim 2", SubResource("AnimationNodeStateMachineTransition_ajj2p"), "Arms_Aim 2", "Idle", SubResource("AnimationNodeStateMachineTransition_dt02q"), "Walk", "Fire", SubResource("AnimationNodeStateMachineTransition_8vwlv"), "Fire", "Idle", SubResource("AnimationNodeStateMachineTransition_qmmhd"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_gvmhq"), "Fire", "Walk", SubResource("AnimationNodeStateMachineTransition_eamup"), "Arms_Inspect", "Walk", SubResource("AnimationNodeStateMachineTransition_nu3he"), "Reload", "Walk", SubResource("AnimationNodeStateMachineTransition_067m6")]
+graph_offset = Vector2(41, -136)
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_a35rm"]
 
@@ -269,6 +271,12 @@ script = ExtResource("15_iwsxo")
 [node name="PlayerWeaponAim" type="Node3D" parent="PlayerWeaponStateMachine"]
 script = ExtResource("19_gntx8")
 
+[node name="PlayerWeaponAimIn" type="Node3D" parent="PlayerWeaponStateMachine"]
+script = ExtResource("20_1t1ap")
+
+[node name="PlayerWeaponAimOut" type="Node3D" parent="PlayerWeaponStateMachine"]
+script = ExtResource("21_0fyic")
+
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 collision_layer = 16
 floor_constant_speed = true
@@ -282,6 +290,8 @@ parameters/PlayerStateMachine/conditions/PlayerMovementIdle = false
 parameters/PlayerStateMachine/conditions/PlayerMovementRun = false
 parameters/PlayerStateMachine/conditions/PlayerMovementWalk = false
 parameters/PlayerStateMachine/conditions/PlayerWeaponAim = false
+parameters/PlayerStateMachine/conditions/PlayerWeaponAimIn = false
+parameters/PlayerStateMachine/conditions/PlayerWeaponAimOut = false
 parameters/PlayerStateMachine/conditions/PlayerWeaponFire = false
 parameters/PlayerStateMachine/conditions/PlayerWeaponIdle = false
 parameters/PlayerStateMachine/conditions/PlayerWeaponInspect = false
@@ -317,7 +327,7 @@ transform = Transform3D(1, 0, -6.51683e-07, 0, 1, 0, 6.51683e-07, 0, 1, -2.30926
 [node name="Skeleton3D" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 bones/1/position = Vector3(-0.00654852, 0.424412, 0.26196)
-bones/1/rotation = Quaternion(-0.929757, -0.31606, -0.12596, 0.140688)
+bones/1/rotation = Quaternion(-0.929891, -0.316151, -0.125582, 0.139934)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(0.015265, -0.109479, -0.0891798)
 bones/2/rotation = Quaternion(-0.651459, 0.034364, 0.0106243, 0.757831)
@@ -347,10 +357,9 @@ bones/11/rotation = Quaternion(-0.307869, -0.11208, -0.0558412, 0.943152)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(0.252867, 0.0952959, -0.367268)
 bones/12/rotation = Quaternion(-0.646953, 0.285398, -0.285398, 0.646953)
-bones/12/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/14/position = Vector3(-0.098415, 0.349089, 0.00117843)
-bones/14/rotation = Quaternion(-0.702483, 0.693103, -0.00312194, 0.161606)
+bones/14/position = Vector3(-0.0984413, 0.349706, 0.00110914)
+bones/14/rotation = Quaternion(-0.702621, 0.693119, -0.00362982, 0.160927)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-0.0441879, -0.0894969, -0.113706)
 bones/15/rotation = Quaternion(-0.38348, -0.0231289, 0.000207206, 0.92326)
@@ -375,13 +384,11 @@ bones/23/scale = Vector3(1, 1, 1)
 bones/24/rotation = Quaternion(-0.307869, 0.11208, 0.0558412, 0.943152)
 bones/24/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(-0.646953, -0.285398, 0.285398, 0.646953)
-bones/25/scale = Vector3(1, 1, 1)
 bones/26/position = Vector3(-0.0981148, 0.449481, -0.264995)
 bones/27/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/27/rotation = Quaternion(0.569001, 0.172339, 0.768662, 0.236001)
-bones/27/scale = Vector3(1, 1, 1)
+bones/27/rotation = Quaternion(0.56887, 0.172696, 0.768421, 0.236838)
 bones/28/rotation = Quaternion(-0.105366, 4.12855e-05, -0.723097, 0.682664)
-bones/29/rotation = Quaternion(0.271906, -0.367481, 0.311901, 0.832912)
+bones/29/rotation = Quaternion(0.272046, -0.36687, 0.312173, 0.833034)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/rotation = Quaternion(0.367876, 0.510019, -0.461173, 0.625994)
 bones/30/scale = Vector3(1, 1, 1)
@@ -411,10 +418,9 @@ bones/49/scale = Vector3(1, 1, 1)
 bones/50/rotation = Quaternion(7.08564e-09, -0.19207, -1.24889e-08, 0.981381)
 bones/51/rotation = Quaternion(-7.02881e-08, -0.118053, -1.54008e-08, 0.993007)
 bones/52/position = Vector3(-0.0981148, 0.449481, -0.264995)
-bones/52/rotation = Quaternion(0.589765, -0.293236, -0.696896, -0.283771)
-bones/52/scale = Vector3(1, 1, 1)
-bones/53/rotation = Quaternion(-0.117882, -3.4783e-05, 0.808989, 0.575883)
-bones/54/rotation = Quaternion(0.18997, 0.328142, -0.223728, 0.897875)
+bones/52/rotation = Quaternion(0.589847, -0.293879, -0.696682, -0.283461)
+bones/53/rotation = Quaternion(-0.11788, -3.4824e-05, 0.808979, 0.575898)
+bones/54/rotation = Quaternion(0.189766, 0.328555, -0.223623, 0.897793)
 bones/54/scale = Vector3(1, 1, 1)
 bones/55/rotation = Quaternion(0.315419, -0.334144, 0.720446, 0.519439)
 bones/55/scale = Vector3(1, 1, 1)
@@ -444,13 +450,12 @@ bones/74/scale = Vector3(1, 1, 1)
 bones/75/rotation = Quaternion(4.28802e-08, 0.140685, -1.54934e-09, 0.990054)
 bones/76/rotation = Quaternion(-1.19694e-07, 0.0863127, 3.09437e-08, 0.996268)
 bones/77/position = Vector3(-0.0488726, 0.447867, 0.330354)
-bones/77/rotation = Quaternion(0.472168, -0.52117, -0.519667, 0.485164)
+bones/77/rotation = Quaternion(0.471694, -0.521556, -0.519279, 0.485627)
 bones/82/rotation = Quaternion(0.408674, 0.491589, 0.491589, 0.591326)
 bones/83/rotation = Quaternion(0.5, 0.5, 0.5, -0.499999)
 bones/84/rotation = Quaternion(-0.629095, 0.322861, 0.629095, 0.322862)
 bones/84/scale = Vector3(1, 1, 1)
 bones/85/rotation = Quaternion(-1.11075e-08, 0.707107, 2.18197e-08, 0.707107)
-bones/85/scale = Vector3(1, 1, 1)
 
 [node name="Cylinder_001" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D" index="0"]
 material_override = ExtResource("8_6hc5m")

@@ -3,12 +3,17 @@ using System;
 
 public partial class PlayerWeaponAim : State
 {
+    public override void Enter()
+    {
+        Player.IsAiming = true;
+    }
+
     public override void Process(float delta)
     {
-		Player.IsAiming = true;
+		
         if (!Input.IsActionPressed("aim")) {
 			Player.IsAiming = false;
-			Fsm.TransitionTo("PlayerWeaponIdle");
+			Fsm.TransitionTo("PlayerWeaponAimOut");
 		}
 
 		if (Input.IsActionPressed("fire")) {

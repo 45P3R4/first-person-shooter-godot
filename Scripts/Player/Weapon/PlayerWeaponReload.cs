@@ -16,7 +16,7 @@ public partial class PlayerWeaponReload : State
     private void OnAnimationEnd(StringName animName)
     {
         Player.CurrentWeapon.Reload();
-        UISingleton.SetAmmo(Player.CurrentWeapon.Ammo);
+        UISingleton.SetAmmo(Player.CurrentWeapon.GetAmmo());
         Player.IsReloading = false;
 		Fsm.TransitionTo("PlayerWeaponIdle");
     }

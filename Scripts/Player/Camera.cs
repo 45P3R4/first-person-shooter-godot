@@ -38,7 +38,8 @@ public partial class Camera : Camera3D
 			RotateX(motionY * sensetiveY);
 			camRotation.X = Mathf.Clamp(Rotation.X, Mathf.DegToRad(-90), Mathf.DegToRad(90));
 			Rotation = camRotation;
-			sway(motionX, motionY);
+			if(!Player.IsAiming)
+				sway(motionX, motionY);
 		}
 	}
 
@@ -49,9 +50,6 @@ public partial class Camera : Camera3D
 
 		arms.Rotation = arms.Rotation.Lerp(Vector3.Zero, (float)delta * 5);
 		arms.Position = arms.Position.Lerp(armsOrigin, (float)delta * 5);
-		
-		arms.Position += new Vector3(Mathf.Clamp(Player.Body.Velocity.X*0.001f, -0.0005f, 0.0005f), 0, 0);
-		arms.Rotation += new Vector3(Mathf.Clamp(-Player.Body.Velocity.Y/1000, -0.008f, 0.005f), 0, 0);
     }
 
 	private void sway(float swayX, float swayY) {
