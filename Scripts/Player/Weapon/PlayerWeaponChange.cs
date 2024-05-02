@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerWeaponChanging : State
+public partial class PlayerWeaponChange : State
 {
 	Weapon currentWeapon;
 	Weapon nextWeapon;

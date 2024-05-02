@@ -4,9 +4,9 @@ using System;
 
 public partial class PlayerWeaponFire : State
 {
-    public override void Enter()
+    public override void Process(float delta)
     {
-		Player.CurrentWeapon.Shoot();
-		Fsm.TransitionTo("PlayerWeaponCooldown");
+        Player.CurrentWeapon.Shoot();
+      Fsm.TransitionTo("PlayerWeaponCooldown");
     }
 }
