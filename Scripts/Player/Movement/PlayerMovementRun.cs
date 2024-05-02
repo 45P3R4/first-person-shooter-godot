@@ -6,7 +6,7 @@ public partial class PlayerMovementRun : State
 	Vector2 inputDir;
     Vector3 dir;
 
-    public override void Start()
+    public override void Enter()
     {
         Player.WeaponStateMachine.Locked = true;
     }
@@ -19,16 +19,24 @@ public partial class PlayerMovementRun : State
 
 		Player.Body.MoveAndSlide();
 
-		if (!Player.Body.IsOnFloor()) 
+		if (!Player.Body.IsOnFloor()) {
 			Fsm.TransitionTo("PlayerMovementInAir");
+			Player.WeaponStateMachine.Locked = false;
+		}
 
-		if (Input.IsActionJustPressed("jump"))
+		if (Input.IsActionJustPressed("jump")) {
 			Fsm.TransitionTo("PlayerMovementJump");
+			Player.WeaponStateMachine.Locked = false;
+		}
 
-		if (Input.GetVector("left", "right", "up", "down") == Vector2.Zero)
+		if (Input.GetVector("left", "right", "up", "down") == Vector2.Zero) {
 			Fsm.TransitionTo("PlayerMovementIdle");
+			Player.WeaponStateMachine.Locked = false;
+		}
 
-		if (!Input.IsActionPressed("sprint"))
+		if (!Input.IsActionPressed("sprint")) {
 			Fsm.TransitionTo("PlayerMovementWalk");
+			Player.WeaponStateMachine.Locked = false;
+		}
 	}
 }

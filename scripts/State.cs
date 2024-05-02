@@ -4,6 +4,7 @@ using System;
 public partial class State : Node3D
 {
 	public StateMachine Fsm;
+	public bool Locked = false;
 
 	public virtual void Enter() {}
 

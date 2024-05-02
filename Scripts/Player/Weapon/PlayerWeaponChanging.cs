@@ -9,7 +9,7 @@ public partial class PlayerWeaponChanging : State
 	[Export]
 	float changingSpeed = 1;
 
-	public override void Start() {
+	public override void Enter() {
 
 		GetTree().CurrentScene.GetNode("Player").GetNode<Weapon>("WeaponSingleton");
 

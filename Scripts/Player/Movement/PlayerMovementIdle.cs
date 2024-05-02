@@ -3,11 +3,6 @@ using System;
 
 public partial class PlayerMovementIdle : State
 {
-    public override void Start()
-    {
-        Player.WeaponStateMachine.Locked = false;
-    }
-
     public override void Process(float delta) {
 
 		if (Input.IsActionJustPressed("jump"))

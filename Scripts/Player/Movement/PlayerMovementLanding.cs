@@ -3,12 +3,7 @@ using System;
 
 public partial class PlayerMovementLanding : State
 {
-    public override void Start()
-    {
-        Player.WeaponStateMachine.Locked = true;
-    }
-
-    public override void Process(float delta)
+    public override void Enter()
 	{
 		Player.Body.Velocity = Vector3.Zero;
 		Fsm.TransitionTo("PlayerMovementIdle");
