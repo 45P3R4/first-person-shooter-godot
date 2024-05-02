@@ -3,7 +3,7 @@ using System;
 
 public partial class PlayerWeaponReload : State
 {
-    public override void Enter()
+    public override void Start()
     {
         Player.Animation.AnimationFinished += OnAnimationEnd;
     }
