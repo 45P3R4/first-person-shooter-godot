@@ -4,67 +4,13 @@ using System;
 
 public partial class PlayerWeaponFire : State
 {
-	[Signal]
-	public delegate void OnFireEventHandler();
-
-	[Export]
-	Camera cam;
-
-	[Export]
-	RayCast3D raycast;
-
-	[Export]
-	Node3D fireNode;
-
-	[Export]
-	PackedScene holeScene;
-
 	float maxRecoil = 0;
 
-	Vector2 recoil = Vector2.Zero;
+	Vector2 Recoil = Vector2.Zero;
 
-    public override void Process(float delta)
+    public override void Enter()
     {
-		var rand = new RandomNumberGenerator();
-		rand.Seed = Time.GetTicksMsec();
-
-		recoil.X = rand.RandfRange(-Weapon.recoil.X, Weapon.recoil.X);
-		recoil.Y = rand.RandfRange(-Weapon.recoil.Y, Weapon.recoil.Y);
-
-		cam.Rotation += new Vector3(recoil.X * 0.1f, recoil.Y * 0.1f, 0);
-
-		raycast.RotateObjectLocal(Vector3.Right, recoil.X);
-		raycast.RotateObjectLocal(Vector3.Up, recoil.Y);
-
-		if(raycast.IsColliding()) {
-			BulletHole hole = holeScene.Instantiate<BulletHole>();
-			GetTree().CurrentScene.AddChild(hole);
-			Vector3 pos = raycast.GetCollisionPoint();
-			hole.Position = pos;
-			hole.LookAt(Vector3.Zero, raycast.GetCollisionNormal());
-
-			foreach (CpuParticles3D item in hole.Particles) {
-				item.Emitting = true;
-			}
-			
-
-			if (raycast.GetCollider() is Enemy e) {
-				e.TakeDamage(10);
-			}
-		}
-		timer(0.03f);
-		
-		raycast.Rotation =  Vector3.Zero;
-
-		EmitSignal(SignalName.OnFire);
-		
+		Player.CurrentWeapon.Shoot();
 		Fsm.TransitionTo("PlayerWeaponCooldown");
     }
-
-	private async void timer(float time) 
-	{
-		fireNode.Visible = true;
-		await ToSignal(GetTree().CreateTimer(time), SceneTreeTimer.SignalName.Timeout);
-		fireNode.Visible = false;
-	}
 }

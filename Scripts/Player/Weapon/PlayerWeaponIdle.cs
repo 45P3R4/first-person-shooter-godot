@@ -5,7 +5,7 @@ public partial class PlayerWeaponIdle : State
 {
 	public override void Process(float delta)
 	{
-		if (Weapon.IsBurst) {
+		if (Player.CurrentWeapon.IsBurst) {
 			if (Input.IsActionPressed("fire")) {
 				Fsm.TransitionTo("PlayerWeaponFire"); }
 		}

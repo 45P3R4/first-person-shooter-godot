@@ -6,7 +6,7 @@ public partial class PlayerWeaponCooldown : State
 
     public override void Enter()
     {
-        timer(Weapon.Cooldown);
+        timer(Player.CurrentWeapon.Cooldown);
     }
 
 	private async void timer(float time) 

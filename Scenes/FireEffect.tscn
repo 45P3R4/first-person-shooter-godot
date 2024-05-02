@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy4e1nsgxwnce"]
+
+[ext_resource type="Texture2D" uid="uid://bikq8rgukpw8g" path="res://Textures/fireshot.png" id="1_72pfd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5is4g"]
+transparency = 1
+albedo_texture = ExtResource("1_72pfd")
+emission_enabled = true
+emission = Color(1, 0.867833, 0.39, 1)
+emission_energy_multiplier = 2.0
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e0era"]
+size = Vector2(1, 0.58)
+orientation = 2
+
+[node name="FireEffect" type="Node3D"]
+
+[node name="FireEffect" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 8.88178e-16, 0, 0, 0.313, 0, 0, 0)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_5is4g")
+cast_shadow = 0
+gi_mode = 2
+mesh = SubResource("PlaneMesh_e0era")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="FireEffect"]
+transform = Transform3D(2, 1.13687e-13, -1.66018e-19, -1.13687e-13, 2, -2.13163e-13, 0, 0, 3.19489, 0, 0, 0)
+light_color = Color(0.816126, 0.731923, 0.563575, 1)
