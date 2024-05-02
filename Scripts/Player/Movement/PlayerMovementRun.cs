@@ -20,23 +20,23 @@ public partial class PlayerMovementRun : State
 		Player.Body.MoveAndSlide();
 
 		if (!Player.Body.IsOnFloor()) {
-			Fsm.TransitionTo("PlayerMovementInAir");
 			Player.WeaponStateMachine.Locked = false;
+			Fsm.TransitionTo("PlayerMovementInAir");
 		}
 
 		if (Input.IsActionJustPressed("jump")) {
-			Fsm.TransitionTo("PlayerMovementJump");
 			Player.WeaponStateMachine.Locked = false;
+			Fsm.TransitionTo("PlayerMovementJump");
 		}
 
 		if (Input.GetVector("left", "right", "up", "down") == Vector2.Zero) {
-			Fsm.TransitionTo("PlayerMovementIdle");
 			Player.WeaponStateMachine.Locked = false;
+			Fsm.TransitionTo("PlayerMovementIdle");
 		}
 
 		if (!Input.IsActionPressed("sprint")) {
-			Fsm.TransitionTo("PlayerMovementWalk");
 			Player.WeaponStateMachine.Locked = false;
+			Fsm.TransitionTo("PlayerMovementWalk");
 		}
 	}
 }

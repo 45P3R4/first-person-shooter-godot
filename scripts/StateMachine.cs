@@ -44,7 +44,7 @@ public partial class StateMachine : Node3D
     }
 
 	public void TransitionTo (string key) {
-		if (!Locked && !states[key].Locked) {
+		if (!Locked) {
 
 			if (!states.ContainsKey(key) || CurrentState == states[key])
 				return;
@@ -54,12 +54,14 @@ public partial class StateMachine : Node3D
 			CurrentState.Exit();
 			CurrentState = states[key];
 			CurrentState.Enter();
-			CurrentState.Start();
 
 			GD.Print(CurrentState.Name);
 
 			EmitSignal(SignalName.OnStateChanged, this);
-			}
+		}
+		else {
+			CurrentState = initialState;
+		}
 	}
 
 	public State GetCurrentState() {
