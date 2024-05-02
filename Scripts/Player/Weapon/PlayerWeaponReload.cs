@@ -3,17 +3,14 @@ using System;
 
 public partial class PlayerWeaponReload : State
 {
-	AnimationTree anim;
-	public override void Enter()
+    public override void _Ready()
     {
-        timer(Player.CurrentWeapon.ReloadSpeed);
+        Player.Animation.AnimationFinished += OnAnimationEnd;
     }
-	private async void timer(float time) 
-	{
-		await ToSignal(GetTree().CreateTimer(time), SceneTreeTimer.SignalName.Timeout);
-		Player.CurrentWeapon.Reload();
 
+    private void OnAnimationEnd(StringName animName)
+    {
+        Player.CurrentWeapon.Reload();
 		Fsm.TransitionTo("PlayerWeaponIdle");
-		
-	}
+    }
 }

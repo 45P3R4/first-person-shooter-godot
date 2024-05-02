@@ -12,9 +12,4 @@ public partial class Enemy : CharacterBody3D
 			QueueFree();
 		}
 	}
-
-	public override void _PhysicsProcess(double delta)
-	{
-		
-	}
 }
