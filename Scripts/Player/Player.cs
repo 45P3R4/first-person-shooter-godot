@@ -25,6 +25,7 @@ public partial class Player : Node3D
 	public static float NormalHeight = 1.8f;
 	public static float CrouchedHeight = 0.9f;
 	public static float InCrouchSpeed = 5;
+	public static float AimInSpeed = 2;
 
 	public static bool IsCrouching = false;
 	public static bool IsAiming = false;
