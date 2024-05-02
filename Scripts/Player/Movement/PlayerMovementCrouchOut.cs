@@ -11,6 +11,7 @@ public partial class PlayerMovementCrouchOut : State
     {
         root = Player.Body.GetParent() as Node3D;
 		capsule = Player.Collision.Shape as CapsuleShape3D;
+		Player.IsCrouching = false;
     }
 
     public override void Process(float delta)

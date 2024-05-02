@@ -8,6 +8,7 @@ public partial class PlayerMovementCrouchIn : State
     public override void Enter()
     {
         root = Player.Body.GetParent() as Node3D;
+		Player.IsCrouching = true;
     }
 
     public override void Process(float delta)

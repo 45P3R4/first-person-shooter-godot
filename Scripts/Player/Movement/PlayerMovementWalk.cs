@@ -16,7 +16,7 @@ public partial class PlayerMovementWalk : State
 		if (Input.IsActionJustPressed("crouch"))
 			Fsm.TransitionTo("PlayerMovementCrouchIn");
 
-		if(Input.IsActionPressed("sprint"))
+		if(Input.IsActionPressed("sprint") && !Player.IsAiming && !Player.IsReloading)
 			Fsm.TransitionTo("PlayerMovementRun");
 
 		if (Input.GetVector("left", "right", "up", "down") == Vector2.Zero)

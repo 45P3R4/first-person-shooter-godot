@@ -26,6 +26,10 @@ public partial class Player : Node3D
 	public static float CrouchedHeight = 0.9f;
 	public static float InCrouchSpeed = 5;
 
+	public static bool IsCrouching = false;
+	public static bool IsAiming = false;
+	public static bool IsReloading = false;
+
 	public override void _Ready()
 	{
 		CrouchCast = GetParent().GetNode<ShapeCast3D>("./CharacterBody3D/CollisionShape3D/CrouchCast");
