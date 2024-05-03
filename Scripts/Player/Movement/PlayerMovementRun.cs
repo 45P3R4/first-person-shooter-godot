@@ -19,7 +19,7 @@ public partial class PlayerMovementRun : State
 			Fsm.TransitionTo("PlayerMovementIdle");
 		}
 
-		if (!Input.IsActionPressed("sprint")) {
+		if (Input.IsActionJustPressed("sprint")) {
 			Fsm.TransitionTo("PlayerMovementWalk");
 		}
 	}
