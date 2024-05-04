@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://sb1k3l2n6rmw"]
+[gd_scene load_steps=17 format=3 uid="uid://sb1k3l2n6rmw"]
 
 [ext_resource type="PackedScene" uid="uid://c0u52olw1cum0" path="res://Models/blender/locator.blend" id="3_ggxed"]
 [ext_resource type="PackedScene" uid="uid://bd5v6py7keiiq" path="res://Scenes/Player.tscn" id="3_hk50k"]
+[ext_resource type="PackedScene" uid="uid://bood3w8skolrq" path="res://Models/blender/tv.blend" id="5_6hxky"]
+[ext_resource type="PackedScene" uid="uid://c2onnfty2a2oi" path="res://Models/blender/concrete_fence.blend" id="5_t85ms"]
 [ext_resource type="Material" uid="uid://h6k0vn3j4ole" path="res://Thirdparty/KenneyPrototypetextures/White.tres" id="7_7j6g7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ilhjn"]
@@ -20,10 +22,112 @@ sky = SubResource("Sky_gi6g6")
 tonemap_mode = 2
 ssr_enabled = true
 ssr_max_steps = 128
+ssao_enabled = true
 sdfgi_use_occlusion = true
 glow_enabled = true
 fog_light_color = Color(0.61, 0.61, 0.61, 1)
 fog_aerial_perspective = 0.684
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0ioe"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcm1q"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xsb4r"]
+_surfaces = [{
+"aabb": AABB(-7.54979e-08, -0.461753, -1, 0.191128, 0.923506, 2.00001),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray(4, 0, 9, 0, 5, 0, 4, 0, 8, 0, 9, 0, 5, 0, 2, 0, 4, 0, 5, 0, 0, 0, 2, 0, 6, 0, 0, 0, 5, 0, 6, 0, 1, 0, 0, 0, 7, 0, 1, 0, 6, 0, 7, 0, 3, 0, 1, 0, 4, 0, 3, 0, 7, 0, 4, 0, 2, 0, 3, 0, 9, 0, 11, 0, 10, 0, 9, 0, 8, 0, 11, 0, 7, 0, 8, 0, 4, 0, 7, 0, 11, 0, 8, 0, 5, 0, 10, 0, 6, 0, 5, 0, 9, 0, 10, 0, 6, 0, 11, 0, 7, 0, 6, 0, 10, 0, 11, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 210, 52, 100, 24, 0, 0, 0, 0, 210, 52, 154, 231, 0, 0, 0, 0, 44, 203, 154, 231, 0, 0, 0, 0, 44, 203, 100, 24, 0, 0, 254, 255, 210, 52, 100, 24, 0, 0, 254, 255, 210, 52, 154, 231, 0, 0, 255, 255, 44, 203, 154, 231, 0, 0, 255, 255, 44, 203, 100, 24, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m0j4q"]
+resource_name = "street_Plane_007"
+_surfaces = [{
+"aabb": AABB(-7.54979e-08, -0.461753, -1, 0.191128, 0.923506, 2.00001),
+"attribute_data": PackedByteArray(132, 11, 232, 143, 132, 11, 146, 198, 230, 129, 232, 143, 230, 129, 146, 198, 97, 11, 228, 95, 97, 11, 228, 95, 159, 118, 48, 155, 97, 11, 237, 255, 97, 11, 17, 0, 203, 22, 48, 155, 97, 11, 210, 223, 97, 11, 210, 223, 203, 22, 75, 187, 97, 11, 255, 127, 97, 11, 255, 127, 159, 118, 75, 187, 17, 0, 228, 95, 17, 0, 228, 95, 9, 130, 70, 149, 17, 0, 237, 255, 17, 0, 17, 0, 220, 225, 70, 149, 17, 0, 210, 223, 17, 0, 210, 223, 220, 225, 43, 117, 17, 0, 255, 127, 17, 0, 255, 127, 9, 130, 43, 117),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray(5, 0, 20, 0, 8, 0, 5, 0, 17, 0, 20, 0, 9, 0, 2, 0, 6, 0, 9, 0, 0, 0, 2, 0, 12, 0, 0, 0, 9, 0, 12, 0, 1, 0, 0, 0, 15, 0, 1, 0, 12, 0, 15, 0, 3, 0, 1, 0, 6, 0, 3, 0, 15, 0, 6, 0, 2, 0, 3, 0, 21, 0, 27, 0, 24, 0, 21, 0, 18, 0, 27, 0, 13, 0, 16, 0, 4, 0, 13, 0, 25, 0, 16, 0, 7, 0, 22, 0, 10, 0, 7, 0, 19, 0, 22, 0, 11, 0, 26, 0, 14, 0, 11, 0, 23, 0, 26, 0),
+"material": SubResource("StandardMaterial3D_rcm1q"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 255, 255, 254, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 210, 52, 100, 24, 255, 255, 0, 0, 210, 52, 100, 24, 255, 255, 0, 0, 210, 52, 100, 24, 255, 255, 0, 0, 210, 52, 154, 231, 255, 255, 0, 0, 210, 52, 154, 231, 255, 255, 0, 0, 210, 52, 154, 231, 255, 255, 0, 0, 44, 203, 154, 231, 255, 255, 0, 0, 44, 203, 154, 231, 255, 255, 0, 0, 44, 203, 154, 231, 255, 255, 0, 0, 44, 203, 100, 24, 255, 255, 0, 0, 44, 203, 100, 24, 255, 255, 0, 0, 44, 203, 100, 24, 255, 255, 254, 255, 210, 52, 100, 24, 255, 255, 254, 255, 210, 52, 100, 24, 255, 255, 254, 255, 210, 52, 100, 24, 255, 191, 254, 255, 210, 52, 154, 231, 255, 255, 254, 255, 210, 52, 154, 231, 255, 255, 254, 255, 210, 52, 154, 231, 255, 191, 255, 255, 44, 203, 154, 231, 255, 255, 255, 255, 44, 203, 154, 231, 255, 255, 255, 255, 44, 203, 154, 231, 255, 191, 255, 255, 44, 203, 100, 24, 255, 255, 255, 255, 44, 203, 100, 24, 255, 255, 255, 255, 44, 203, 100, 24, 255, 191, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 127, 255, 127, 255, 127, 255, 191, 255, 63, 255, 127, 255, 127, 255, 255, 255, 127, 255, 191, 255, 63, 255, 127, 255, 127, 255, 255, 255, 127, 255, 63, 255, 63, 255, 127, 255, 127, 255, 127, 255, 127, 255, 63, 255, 63, 255, 127, 255, 127, 255, 127, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 127, 255, 127, 255, 63, 255, 127, 255, 255)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xsb4r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_th8xk"]
+resource_name = "Material.059"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8ysi"]
+resource_name = "Material.060"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_37au7"]
+_surfaces = [{
+"aabb": AABB(-3.74161e-08, -1, -1, 0.640812, 2, 2),
+"format": 34896613377,
+"index_count": 120,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 2, 0, 7, 0, 3, 0, 2, 0, 6, 0, 7, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 5, 0, 4, 0, 1, 0, 5, 0, 4, 0, 0, 0, 1, 0, 15, 0, 16, 0, 19, 0, 15, 0, 12, 0, 16, 0, 11, 0, 22, 0, 23, 0, 11, 0, 10, 0, 22, 0, 8, 0, 21, 0, 20, 0, 8, 0, 9, 0, 21, 0, 9, 0, 23, 0, 21, 0, 9, 0, 11, 0, 23, 0, 10, 0, 20, 0, 22, 0, 10, 0, 8, 0, 20, 0, 13, 0, 18, 0, 17, 0, 13, 0, 14, 0, 18, 0, 14, 0, 19, 0, 18, 0, 14, 0, 15, 0, 19, 0, 12, 0, 17, 0, 16, 0, 12, 0, 13, 0, 17, 0, 15, 0, 21, 0, 23, 0, 15, 0, 14, 0, 21, 0, 12, 0, 23, 0, 22, 0, 12, 0, 15, 0, 23, 0, 13, 0, 22, 0, 20, 0, 13, 0, 12, 0, 22, 0, 14, 0, 20, 0, 21, 0, 14, 0, 13, 0, 20, 0, 24, 0, 27, 0, 25, 0, 24, 0, 26, 0, 27, 0, 26, 0, 31, 0, 27, 0, 26, 0, 30, 0, 31, 0, 30, 0, 29, 0, 31, 0, 30, 0, 28, 0, 29, 0, 28, 0, 25, 0, 29, 0, 28, 0, 24, 0, 25, 0),
+"name": "Material.059",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray(177, 106, 162, 55, 126, 138, 0, 0, 177, 106, 0, 231, 126, 138, 0, 0, 177, 106, 162, 55, 128, 117, 0, 0, 177, 106, 0, 231, 128, 117, 0, 0, 10, 138, 162, 55, 126, 138, 0, 0, 10, 138, 0, 231, 126, 138, 0, 0, 10, 138, 162, 55, 128, 117, 0, 0, 10, 138, 0, 231, 128, 117, 0, 0, 0, 0, 254, 255, 254, 255, 0, 0, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 74, 1, 228, 193, 26, 0, 0, 24, 74, 1, 228, 61, 229, 0, 0, 24, 74, 7, 60, 61, 229, 0, 0, 24, 74, 7, 60, 193, 26, 0, 0, 255, 255, 1, 228, 193, 26, 0, 0, 255, 255, 1, 228, 61, 229, 0, 0, 255, 255, 7, 60, 61, 229, 0, 0, 255, 255, 7, 60, 193, 26, 0, 0, 0, 0, 64, 245, 64, 245, 0, 0, 0, 0, 190, 10, 64, 245, 0, 0, 0, 0, 64, 245, 190, 10, 0, 0, 0, 0, 190, 10, 190, 10, 0, 0, 111, 109, 145, 168, 195, 22, 0, 0, 111, 109, 145, 168, 59, 233, 0, 0, 111, 109, 142, 189, 195, 22, 0, 0, 111, 109, 142, 189, 59, 233, 0, 0, 199, 140, 145, 168, 195, 22, 0, 0, 199, 140, 145, 168, 59, 233, 0, 0, 199, 140, 142, 189, 195, 22, 0, 0, 199, 140, 142, 189, 59, 233, 0, 0)
+}, {
+"aabb": AABB(0.640812, -0.531006, -0.790975, 1.00136e-05, 1.31235, 1.58195),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(1, 0, 3, 0, 0, 0, 1, 0, 2, 0, 3, 0),
+"name": "Material.060",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hdyw8"]
+resource_name = "street_Cube_035"
+_surfaces = [{
+"aabb": AABB(-3.74161e-08, -1, -1, 0.640812, 2, 2),
+"attribute_data": PackedByteArray(9, 130, 174, 102, 9, 130, 174, 102, 34, 211, 174, 102, 34, 211, 174, 102, 9, 130, 249, 92, 9, 130, 249, 92, 34, 211, 249, 92, 34, 211, 249, 92, 9, 130, 83, 107, 9, 130, 83, 107, 34, 211, 83, 107, 34, 211, 83, 107, 9, 130, 84, 88, 9, 130, 8, 117, 34, 211, 84, 88, 34, 211, 8, 117, 132, 11, 197, 143, 230, 129, 37, 98, 132, 11, 37, 98, 230, 129, 237, 255, 230, 129, 175, 7, 230, 129, 197, 143, 132, 11, 237, 255, 132, 11, 175, 7, 245, 116, 229, 25, 135, 117, 60, 125, 245, 116, 229, 25, 135, 117, 60, 125, 245, 116, 239, 79, 227, 23, 60, 125, 245, 116, 239, 79, 227, 23, 60, 125, 71, 39, 239, 79, 135, 117, 169, 225, 71, 39, 239, 79, 135, 117, 169, 225, 71, 39, 229, 25, 227, 23, 169, 225, 71, 39, 229, 25, 227, 23, 169, 225, 245, 116, 217, 52, 135, 117, 72, 98, 245, 116, 251, 52, 227, 23, 72, 98, 71, 39, 251, 52, 135, 117, 181, 198, 71, 39, 217, 52, 227, 23, 181, 198, 238, 124, 45, 93, 124, 16, 206, 138, 124, 16, 206, 138, 238, 124, 45, 93, 124, 16, 45, 93, 238, 124, 245, 250, 124, 16, 45, 93, 238, 124, 245, 250, 238, 124, 167, 12, 238, 124, 206, 138, 238, 124, 167, 12, 238, 124, 206, 138, 124, 16, 167, 12, 124, 16, 245, 250, 124, 16, 167, 12, 124, 16, 245, 250, 94, 227, 147, 241, 94, 227, 147, 241, 9, 130, 147, 241, 9, 130, 147, 241, 94, 227, 72, 251, 94, 227, 72, 251, 9, 130, 72, 251, 9, 130, 72, 251, 94, 227, 238, 236, 94, 227, 238, 236, 9, 130, 238, 236, 9, 130, 238, 236, 94, 227, 237, 255, 94, 227, 57, 227, 9, 130, 237, 255, 9, 130, 57, 227),
+"format": 34896613399,
+"index_count": 120,
+"index_data": PackedByteArray(1, 0, 7, 0, 3, 0, 1, 0, 5, 0, 7, 0, 4, 0, 14, 0, 6, 0, 4, 0, 12, 0, 14, 0, 13, 0, 11, 0, 15, 0, 13, 0, 9, 0, 11, 0, 8, 0, 2, 0, 10, 0, 8, 0, 0, 0, 2, 0, 36, 0, 40, 0, 46, 0, 36, 0, 24, 0, 40, 0, 23, 0, 58, 0, 62, 0, 23, 0, 20, 0, 58, 0, 17, 0, 54, 0, 51, 0, 17, 0, 18, 0, 54, 0, 19, 0, 63, 0, 55, 0, 19, 0, 22, 0, 63, 0, 21, 0, 50, 0, 59, 0, 21, 0, 16, 0, 50, 0, 28, 0, 44, 0, 42, 0, 28, 0, 32, 0, 44, 0, 33, 0, 47, 0, 45, 0, 33, 0, 37, 0, 47, 0, 25, 0, 43, 0, 41, 0, 25, 0, 29, 0, 43, 0, 39, 0, 53, 0, 61, 0, 39, 0, 35, 0, 53, 0, 26, 0, 60, 0, 56, 0, 26, 0, 38, 0, 60, 0, 31, 0, 57, 0, 49, 0, 31, 0, 27, 0, 57, 0, 34, 0, 48, 0, 52, 0, 34, 0, 30, 0, 48, 0, 65, 0, 71, 0, 67, 0, 65, 0, 69, 0, 71, 0, 68, 0, 78, 0, 70, 0, 68, 0, 76, 0, 78, 0, 77, 0, 75, 0, 79, 0, 77, 0, 73, 0, 75, 0, 72, 0, 66, 0, 74, 0, 72, 0, 64, 0, 66, 0),
+"material": SubResource("StandardMaterial3D_th8xk"),
+"name": "Material.059",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 80,
+"vertex_data": PackedByteArray(177, 106, 162, 55, 126, 138, 255, 191, 177, 106, 162, 55, 126, 138, 84, 213, 177, 106, 0, 231, 126, 138, 255, 191, 177, 106, 0, 231, 126, 138, 84, 213, 177, 106, 162, 55, 128, 117, 255, 255, 177, 106, 162, 55, 128, 117, 84, 213, 177, 106, 0, 231, 128, 117, 255, 255, 177, 106, 0, 231, 128, 117, 84, 213, 10, 138, 162, 55, 126, 138, 255, 191, 10, 138, 162, 55, 126, 138, 84, 213, 10, 138, 0, 231, 126, 138, 255, 191, 10, 138, 0, 231, 126, 138, 84, 213, 10, 138, 162, 55, 128, 117, 255, 255, 10, 138, 162, 55, 128, 117, 84, 213, 10, 138, 0, 231, 128, 117, 255, 255, 10, 138, 0, 231, 128, 117, 84, 213, 0, 0, 254, 255, 254, 255, 255, 255, 0, 0, 254, 255, 254, 255, 84, 213, 0, 0, 0, 0, 254, 255, 84, 213, 0, 0, 0, 0, 254, 255, 255, 191, 0, 0, 254, 255, 0, 0, 84, 213, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 84, 213, 24, 74, 1, 228, 193, 26, 255, 191, 24, 74, 1, 228, 193, 26, 84, 213, 24, 74, 1, 228, 193, 26, 123, 195, 24, 74, 1, 228, 193, 26, 92, 229, 24, 74, 1, 228, 61, 229, 255, 255, 24, 74, 1, 228, 61, 229, 84, 213, 24, 74, 1, 228, 61, 229, 7, 239, 24, 74, 1, 228, 61, 229, 92, 229, 24, 74, 7, 60, 61, 229, 255, 255, 24, 74, 7, 60, 61, 229, 84, 213, 24, 74, 7, 60, 61, 229, 7, 239, 24, 74, 7, 60, 61, 229, 4, 194, 24, 74, 7, 60, 193, 26, 255, 191, 24, 74, 7, 60, 193, 26, 84, 213, 24, 74, 7, 60, 193, 26, 123, 195, 24, 74, 7, 60, 193, 26, 4, 194, 255, 255, 1, 228, 193, 26, 255, 191, 255, 255, 1, 228, 193, 26, 84, 213, 255, 255, 1, 228, 61, 229, 255, 255, 255, 255, 1, 228, 61, 229, 84, 213, 255, 255, 7, 60, 61, 229, 255, 255, 255, 255, 7, 60, 61, 229, 84, 213, 255, 255, 7, 60, 193, 26, 255, 191, 255, 255, 7, 60, 193, 26, 84, 213, 0, 0, 64, 245, 64, 245, 7, 239, 0, 0, 64, 245, 64, 245, 92, 229, 0, 0, 64, 245, 64, 245, 255, 255, 0, 0, 64, 245, 64, 245, 84, 213, 0, 0, 190, 10, 64, 245, 7, 239, 0, 0, 190, 10, 64, 245, 4, 194, 0, 0, 190, 10, 64, 245, 84, 213, 0, 0, 190, 10, 64, 245, 255, 191, 0, 0, 64, 245, 190, 10, 123, 195, 0, 0, 64, 245, 190, 10, 92, 229, 0, 0, 64, 245, 190, 10, 84, 213, 0, 0, 64, 245, 190, 10, 255, 255, 0, 0, 190, 10, 190, 10, 123, 195, 0, 0, 190, 10, 190, 10, 4, 194, 0, 0, 190, 10, 190, 10, 84, 213, 0, 0, 190, 10, 190, 10, 255, 191, 111, 109, 145, 168, 195, 22, 84, 213, 111, 109, 145, 168, 195, 22, 255, 255, 111, 109, 145, 168, 59, 233, 84, 213, 111, 109, 145, 168, 59, 233, 255, 255, 111, 109, 142, 189, 195, 22, 84, 213, 111, 109, 142, 189, 195, 22, 255, 255, 111, 109, 142, 189, 59, 233, 84, 213, 111, 109, 142, 189, 59, 233, 255, 255, 199, 140, 145, 168, 195, 22, 84, 213, 199, 140, 145, 168, 195, 22, 255, 191, 199, 140, 145, 168, 59, 233, 84, 213, 199, 140, 145, 168, 59, 233, 255, 191, 199, 140, 142, 189, 195, 22, 84, 213, 199, 140, 142, 189, 195, 22, 255, 191, 199, 140, 142, 189, 59, 233, 84, 213, 199, 140, 142, 189, 59, 233, 255, 191, 255, 255, 255, 255, 84, 213, 84, 213, 255, 255, 255, 255, 84, 213, 84, 213, 255, 191, 255, 191, 84, 213, 84, 213, 255, 191, 255, 191, 84, 213, 84, 213, 255, 255, 255, 255, 170, 42, 170, 42, 255, 255, 255, 255, 170, 42, 170, 42, 255, 191, 255, 191, 170, 42, 170, 42, 255, 191, 255, 191, 170, 42, 170, 42, 255, 63, 255, 127, 84, 213, 84, 213, 84, 213, 84, 213, 255, 127, 255, 255, 84, 213, 84, 213, 255, 63, 255, 127, 255, 127, 255, 255, 84, 213, 84, 213, 255, 255, 255, 255, 84, 85, 84, 85, 182, 231, 182, 231, 254, 76, 1, 102, 255, 191, 255, 191, 84, 85, 84, 85, 123, 200, 123, 200, 254, 76, 1, 102, 255, 191, 255, 191, 170, 170, 170, 170, 123, 200, 123, 200, 15, 148, 222, 215, 255, 255, 255, 255, 170, 170, 170, 170, 182, 231, 182, 231, 15, 148, 222, 215, 255, 255, 255, 255, 84, 85, 84, 85, 255, 191, 255, 191, 84, 85, 84, 85, 255, 191, 255, 191, 170, 170, 170, 170, 255, 255, 255, 255, 170, 170, 170, 170, 123, 200, 123, 200, 254, 76, 1, 102, 255, 63, 255, 127, 84, 213, 84, 213, 123, 200, 123, 200, 15, 148, 222, 215, 84, 213, 84, 213, 255, 127, 255, 255, 182, 231, 182, 231, 254, 76, 1, 102, 84, 213, 84, 213, 255, 63, 255, 127, 182, 231, 182, 231, 15, 148, 222, 215, 84, 213, 84, 213, 255, 127, 255, 255, 84, 85, 84, 85, 255, 63, 255, 127, 84, 85, 84, 85, 255, 63, 255, 127, 84, 213, 170, 42, 255, 63, 255, 127, 84, 213, 170, 42, 255, 63, 255, 127, 84, 85, 84, 85, 255, 127, 0, 0, 84, 85, 84, 85, 255, 127, 0, 0, 84, 213, 170, 42, 255, 127, 0, 0, 84, 213, 170, 42, 255, 127, 0, 0)
+}, {
+"aabb": AABB(0.640812, -0.531006, -0.790975, 1.00136e-05, 1.31235, 1.58195),
+"attribute_data": PackedByteArray(9, 130, 105, 149, 173, 223, 105, 149, 173, 223, 23, 227, 9, 130, 23, 227),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(1, 0, 3, 0, 0, 0, 1, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_v8ysi"),
+"name": "Material.060",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 254, 255, 0, 0, 255, 191, 0, 0, 254, 255, 255, 255, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_37au7")
 
 [node name="TestLevel" type="Node3D"]
 
@@ -144,5 +248,492 @@ use_collision = true
 size = Vector3(1, 1.6, 1.4)
 material = ExtResource("7_7j6g7")
 
+[node name="CSGBox3D" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.7, 10.4)
+use_collision = true
+size = Vector3(7, 7.2, 0.2)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.7, 34.4)
+use_collision = true
+size = Vector3(7, 7.2, 0.2)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1.7, 18.4)
+use_collision = true
+size = Vector3(7, 3.2, 0.2)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 7.2, 22.4)
+use_collision = true
+size = Vector3(7, 0.2, 23.8)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1.7, 26.4)
+use_collision = true
+size = Vector3(7, 3.2, 0.2)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.2, 22.4)
+use_collision = true
+size = Vector3(7, 0.2, 7.8)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.7, 22.5)
+use_collision = true
+size = Vector3(0.4, 3.2, 0.4)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 1.7, 22.5)
+use_collision = true
+size = Vector3(0.4, 3.2, 0.4)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.7, 30.5)
+use_collision = true
+size = Vector3(6.8, 1.2, 8)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.7, 14.3)
+use_collision = true
+size = Vector3(6.8, 1.2, 8)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.3, 14.4)
+use_collision = true
+size = Vector3(6, 5.6, 7.8)
+material = SubResource("StandardMaterial3D_u0ioe")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.3, 30.4)
+use_collision = true
+size = Vector3(6, 5.6, 7.8)
+material = SubResource("StandardMaterial3D_u0ioe")
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="blockout/csg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 5.2, 22.4)
+use_collision = true
+size = Vector3(6, 3.8, 7.8)
+material = SubResource("StandardMaterial3D_u0ioe")
+
 [node name="locator" parent="." instance=ExtResource("3_ggxed")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70125, -0.0087063, 3.29397)
+
+[node name="tv" parent="." instance=ExtResource("5_6hxky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.0999999, 1.2)
+
+[node name="street" type="Node3D" parent="."]
+
+[node name="building" type="Node3D" parent="street"]
+
+[node name="Plane_006" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 11.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Cube_038" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_039" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_040" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_041" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_042" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_043" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_044" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_045" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_046" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_047" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_048" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_049" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_050" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 19.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_051" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 21.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_052" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 23.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_053" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 25.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_054" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 19.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_055" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 21.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_056" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 23.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_057" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 25.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_058" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_059" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_060" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 31.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_061" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 33.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_062" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_063" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_064" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 31.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_065" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 33.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_070" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_071" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_072" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 31.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_073" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 33.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Plane_007" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 13.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_008" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 15.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_009" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 17.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_010" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 27.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_011" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 29.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_012" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 31.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_013" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 33.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_014" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 33.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Cube_066" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 33.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_067" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 31.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_068" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_069" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_074" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 33.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_075" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 31.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_076" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_077" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_078" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 33.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_079" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 31.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_080" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_081" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_082" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 25.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_083" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 23.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_084" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 21.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_085" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 19.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_086" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 25.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_087" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 23.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_088" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 21.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_089" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 19.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_090" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_091" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_092" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_093" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_094" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_095" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_096" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_097" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_098" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_099" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_100" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_101" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Plane_015" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 31.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_016" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 29.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_017" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 27.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_018" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 17.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_019" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 15.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_020" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 13.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_021" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 11.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="concrete_fence" parent="street" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.6, 1.15468, 7.6)
+
+[node name="concrete_fence2" parent="street" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.2, 1.15468, 7.6)
+
+[node name="concrete_fence3" parent="street" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.2, 1.15468, 7.6)
+
+[node name="concrete_fence" parent="." instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 1.15468, 7.6)
