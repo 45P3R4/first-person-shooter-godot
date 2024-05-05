@@ -15,9 +15,8 @@ public partial class PlayerMovementRun : State
 			Fsm.TransitionTo("PlayerMovementJump");
 		}
 
-		if (Input.GetVector("left", "right", "up", "down") == Vector2.Zero) {
+		if (Player.Body.Velocity == Vector3.Zero)
 			Fsm.TransitionTo("PlayerMovementIdle");
-		}
 
 		if (Input.IsActionJustPressed("sprint")) {
 			Fsm.TransitionTo("PlayerMovementWalk");

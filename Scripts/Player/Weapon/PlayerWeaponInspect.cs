@@ -3,7 +3,7 @@ using System;
 
 public partial class PlayerWeaponInspect : State
 {
-    public override void Process(float delta)
+    public override void Enter()
     {
         Fsm.TransitionTo("PlayerWeaponIdle");
     }

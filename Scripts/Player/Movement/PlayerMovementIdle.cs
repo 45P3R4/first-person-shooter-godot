@@ -12,14 +12,11 @@ public partial class PlayerMovementIdle : State
 		if (!Player.Body.IsOnFloor()) {
 			Fsm.TransitionTo("PlayerMovementInAir");
 		}
-	}
 
-    public override void HandleInput(InputEvent @event)
-    {
-        if (InputMap.EventIsAction(@event, "jump"))
-			Fsm.TransitionTo("PlayerWeaponJump");
+		if (Input.IsActionJustPressed("jump"))
+			Fsm.TransitionTo("PlayerMovementJump");
 
-		if (InputMap.EventIsAction(@event, "crouch"))
+		if (Input.IsActionJustPressed("crouch"))
 			Fsm.TransitionTo("PlayerMovementCrouchIn");
-    }
+	}
 }

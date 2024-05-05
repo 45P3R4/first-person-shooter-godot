@@ -3,7 +3,7 @@ using System;
 
 public partial class PlayerMovementJump : State
 {
-    public override void Process(float delta)
+    public override void Enter()
     {
         Player.Body.Velocity += Vector3.Up * Player.JumpEnergy;
 		Player.Body.MoveAndSlide();

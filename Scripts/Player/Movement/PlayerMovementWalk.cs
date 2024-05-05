@@ -7,6 +7,9 @@ public partial class PlayerMovementWalk : State
 		
 		Player.Move(Player.NormalSpeed);
 
+		if (Player.Body.Velocity == Vector3.Zero)
+			Fsm.TransitionTo("PlayerMovementIdle");
+
 		if (!Player.Body.IsOnFloor())
 			Fsm.TransitionTo("PlayerMovementInAir");
 
@@ -18,8 +21,5 @@ public partial class PlayerMovementWalk : State
 
 		if(Input.IsActionJustPressed("sprint") && !Player.IsAiming && !Player.IsReloading)
 			Fsm.TransitionTo("PlayerMovementRun");
-
-		if (Input.GetVector("left", "right", "up", "down") == Vector2.Zero)
-			Fsm.TransitionTo("PlayerMovementIdle");
 	}
 }
