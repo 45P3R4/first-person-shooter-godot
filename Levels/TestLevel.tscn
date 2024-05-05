@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://sb1k3l2n6rmw"]
+[gd_scene load_steps=17 format=3 uid="uid://sb1k3l2n6rmw"]
 
+[ext_resource type="Material" uid="uid://b6sru7f1r6ruq" path="res://Materials/concrete.tres" id="3_6pwuu"]
 [ext_resource type="PackedScene" uid="uid://c0u52olw1cum0" path="res://Models/blender/locator.blend" id="3_ggxed"]
 [ext_resource type="PackedScene" uid="uid://bd5v6py7keiiq" path="res://Scenes/Player.tscn" id="3_hk50k"]
 [ext_resource type="PackedScene" uid="uid://bood3w8skolrq" path="res://Models/blender/tv.blend" id="5_6hxky"]
@@ -24,16 +25,11 @@ tonemap_mode = 2
 ssr_enabled = true
 ssr_max_steps = 128
 ssao_enabled = true
+sdfgi_enabled = true
 sdfgi_use_occlusion = true
 glow_enabled = true
 fog_light_color = Color(0.61, 0.61, 0.61, 1)
 fog_aerial_perspective = 0.684
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0ioe"]
-shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcm1q"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xsb4r"]
 _surfaces = [{
@@ -56,7 +52,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 54,
 "index_data": PackedByteArray(5, 0, 20, 0, 8, 0, 5, 0, 17, 0, 20, 0, 9, 0, 2, 0, 6, 0, 9, 0, 0, 0, 2, 0, 12, 0, 0, 0, 9, 0, 12, 0, 1, 0, 0, 0, 15, 0, 1, 0, 12, 0, 15, 0, 3, 0, 1, 0, 6, 0, 3, 0, 15, 0, 6, 0, 2, 0, 3, 0, 21, 0, 27, 0, 24, 0, 21, 0, 18, 0, 27, 0, 13, 0, 16, 0, 4, 0, 13, 0, 25, 0, 16, 0, 7, 0, 22, 0, 10, 0, 7, 0, 19, 0, 22, 0, 11, 0, 26, 0, 14, 0, 11, 0, 23, 0, 26, 0),
-"material": SubResource("StandardMaterial3D_rcm1q"),
+"material": ExtResource("3_6pwuu"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 28,
@@ -64,12 +60,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xsb4r")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_th8xk"]
-resource_name = "Material.059"
-cull_mode = 2
-albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8ysi"]
 resource_name = "Material.060"
@@ -108,7 +98,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 120,
 "index_data": PackedByteArray(1, 0, 7, 0, 3, 0, 1, 0, 5, 0, 7, 0, 4, 0, 14, 0, 6, 0, 4, 0, 12, 0, 14, 0, 13, 0, 11, 0, 15, 0, 13, 0, 9, 0, 11, 0, 8, 0, 2, 0, 10, 0, 8, 0, 0, 0, 2, 0, 36, 0, 40, 0, 46, 0, 36, 0, 24, 0, 40, 0, 23, 0, 58, 0, 62, 0, 23, 0, 20, 0, 58, 0, 17, 0, 54, 0, 51, 0, 17, 0, 18, 0, 54, 0, 19, 0, 63, 0, 55, 0, 19, 0, 22, 0, 63, 0, 21, 0, 50, 0, 59, 0, 21, 0, 16, 0, 50, 0, 28, 0, 44, 0, 42, 0, 28, 0, 32, 0, 44, 0, 33, 0, 47, 0, 45, 0, 33, 0, 37, 0, 47, 0, 25, 0, 43, 0, 41, 0, 25, 0, 29, 0, 43, 0, 39, 0, 53, 0, 61, 0, 39, 0, 35, 0, 53, 0, 26, 0, 60, 0, 56, 0, 26, 0, 38, 0, 60, 0, 31, 0, 57, 0, 49, 0, 31, 0, 27, 0, 57, 0, 34, 0, 48, 0, 52, 0, 34, 0, 30, 0, 48, 0, 65, 0, 71, 0, 67, 0, 65, 0, 69, 0, 71, 0, 68, 0, 78, 0, 70, 0, 68, 0, 76, 0, 78, 0, 77, 0, 75, 0, 79, 0, 77, 0, 73, 0, 75, 0, 72, 0, 66, 0, 74, 0, 72, 0, 64, 0, 66, 0),
-"material": SubResource("StandardMaterial3D_th8xk"),
+"material": ExtResource("3_6pwuu"),
 "name": "Material.059",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -130,6 +120,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_37au7")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0ioe"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="TestLevel" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("3_hk50k")]
@@ -143,6 +137,7 @@ transform = Transform3D(0.987746, -0.0566883, 0.145413, -0.156072, -0.358768, 0.
 light_energy = 0.5
 light_bake_mode = 1
 shadow_enabled = true
+shadow_bias = 0.05
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.2, 2.8, -2.6)
@@ -158,172 +153,971 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.59999, -0.1, 18.4)
 material_override = ExtResource("7_7j6g7")
 use_collision = true
 size = Vector3(360.2, 0.4, 322.6)
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 1.7, -0.3)
 use_collision = true
 size = Vector3(8.6, 3.2, 0.4)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.7, -0.3)
 use_collision = true
 size = Vector3(2.8, 3.2, 0.4)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.7, -4.9)
 use_collision = true
 size = Vector3(13, 3.2, 0.4)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 1.7, -2.6)
 use_collision = true
 size = Vector3(0.4, 3.2, 4.2)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 3.5, -2.6)
 use_collision = true
 size = Vector3(13, 0.4, 5)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9, 1.7, -2.6)
 use_collision = true
 size = Vector3(0.4, 3.2, 4.2)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 2.9, -0.3)
 use_collision = true
 size = Vector3(1.6, 0.8, 0.4)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 2.5, 0.6)
 use_collision = true
 size = Vector3(0.4, 2.4, 1.4)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1.9, 2.6)
 use_collision = true
 size = Vector3(0.4, 3.6, 2.6)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, 0.6)
 use_collision = true
 size = Vector3(1, 2.4, 1.4)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.9, 2.6)
 use_collision = true
 size = Vector3(5, 3.6, 2.6)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.6, 0.6)
 use_collision = true
 size = Vector3(1, 2.2, 1.4)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.7, 0.6)
 use_collision = true
 size = Vector3(1, 2, 1.4)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.8, 0.6)
 use_collision = true
 size = Vector3(1, 1.8, 1.4)
-material = ExtResource("7_7j6g7")
+material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.9, 0.6)
 use_collision = true
 size = Vector3(1, 1.6, 1.4)
-material = ExtResource("7_7j6g7")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.7, 10.4)
-use_collision = true
-size = Vector3(7, 7.2, 0.2)
-
-[node name="CSGBox3D18" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.7, 34.4)
-use_collision = true
-size = Vector3(7, 7.2, 0.2)
-
-[node name="CSGBox3D19" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1.7, 18.4)
-use_collision = true
-size = Vector3(7, 3.2, 0.2)
-
-[node name="CSGBox3D20" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 7.2, 22.4)
-use_collision = true
-size = Vector3(7, 0.2, 23.8)
-
-[node name="CSGBox3D21" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1.7, 26.4)
-use_collision = true
-size = Vector3(7, 3.2, 0.2)
-
-[node name="CSGBox3D22" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.2, 22.4)
-use_collision = true
-size = Vector3(7, 0.2, 7.8)
-
-[node name="CSGBox3D23" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.7, 22.5)
-use_collision = true
-size = Vector3(0.4, 3.2, 0.4)
-
-[node name="CSGBox3D24" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 1.7, 22.5)
-use_collision = true
-size = Vector3(0.4, 3.2, 0.4)
-
-[node name="CSGBox3D25" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.7, 30.5)
-use_collision = true
-size = Vector3(6.8, 1.2, 8)
-
-[node name="CSGBox3D26" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.7, 14.3)
-use_collision = true
-size = Vector3(6.8, 1.2, 8)
-
-[node name="CSGBox3D27" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.3, 14.4)
-use_collision = true
-size = Vector3(6, 5.6, 7.8)
-material = SubResource("StandardMaterial3D_u0ioe")
-
-[node name="CSGBox3D28" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.3, 30.4)
-use_collision = true
-size = Vector3(6, 5.6, 7.8)
-material = SubResource("StandardMaterial3D_u0ioe")
-
-[node name="CSGBox3D29" type="CSGBox3D" parent="blockout/csg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 5.2, 22.4)
-use_collision = true
-size = Vector3(6, 3.8, 7.8)
-material = SubResource("StandardMaterial3D_u0ioe")
+material = ExtResource("3_6pwuu")
 
 [node name="locator" parent="." instance=ExtResource("3_ggxed")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70125, -0.0087063, 3.29397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90125, 0.327583, 1.29397)
 
 [node name="tv" parent="." instance=ExtResource("5_6hxky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.0999999, 1.2)
 
 [node name="street" type="Node3D" parent="."]
+
+[node name="Fence" type="Node3D" parent="street"]
+
+[node name="concrete_fence" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.6, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence2" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.2, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence2" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence2" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence3" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.2, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence3" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence3" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence4" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence4" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence4" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence5" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.2, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence5" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence5" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence6" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.8, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence6" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence6" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence7" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.4, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence7" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence7" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence8" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.6, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence8" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence8" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence9" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, -8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence9" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence9" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence10" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, -10.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence10" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence10" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence11" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, -12.8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence11" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence11" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence12" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, -5.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence12" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence12" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence13" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 1.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence13" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence13" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence14" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, -0.799999)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence14" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence14" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence15" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, -3.2)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence15" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence15" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence16" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence16" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence16" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence17" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 11.2)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence17" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence17" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence18" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 8.8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence18" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence18" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence19" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 6.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence19" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence19" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence20" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 13.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence20" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence20" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence21" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 20.8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence21" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence21" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence22" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 18.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence22" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence22" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence23" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 16)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence23" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence23" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence24" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 23.2)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence24" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence24" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence25" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 30.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence25" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence25" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence26" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 28)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence26" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence26" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence27" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 25.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence27" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence27" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence28" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 32.8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence28" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence28" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence29" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 40)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence29" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence29" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence30" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 37.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence30" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence30" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence31" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 35.2)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence31" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence31" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence32" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.8, 1.15468, 42.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence32" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence32" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence33" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.6, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence33" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence33" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence34" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence34" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence34" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence35" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.4, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence35" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence35" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence36" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.2, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence36" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence36" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence37" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence37" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence37" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence38" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.4, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence38" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence38" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence39" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.8, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence39" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence39" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence40" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.6, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence40" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence40" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence41" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -35.8, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence41" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence41" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence42" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38.2, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence42" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence42" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence43" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -40.6, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence43" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence43" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence44" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.4, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence44" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence44" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence45" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.2, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence45" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence45" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence46" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28.6, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence46" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence46" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence47" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence47" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence47" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence48" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.8, 1.15468, -14)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence48" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence48" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence49" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, -8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence49" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence49" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence50" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, -10.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence50" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence50" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence51" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, -12.8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence51" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence51" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence52" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, -5.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence52" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence52" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence53" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 1.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence53" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence53" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence54" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, -0.799999)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence54" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence54" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence55" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, -3.2)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence55" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence55" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence56" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence56" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence56" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence57" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 11.2)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence57" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence57" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence58" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 8.8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence58" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence58" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence59" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 6.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence59" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence59" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence60" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 13.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence60" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence60" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence61" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 20.8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence61" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence61" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence62" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 18.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence62" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence62" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence63" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 16)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence63" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence63" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence64" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 23.2)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence64" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence64" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence65" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 30.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence65" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence65" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence66" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 28)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence66" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence66" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence67" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 25.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence67" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence67" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence68" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 32.8)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence68" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence68" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence69" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 40)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence69" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence69" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence70" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 37.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence70" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence70" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence71" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 35.2)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence71" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence71" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence72" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -41.8, 1.15468, 42.4)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence72" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence72" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence73" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.6, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence73" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence73" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence74" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.2, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence74" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence74" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence75" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.2, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence75" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence75" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence76" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence76" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence76" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence77" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.2, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence77" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence77" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence78" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.8, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence78" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence78" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence79" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.4, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence79" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence79" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence80" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.6, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence80" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence80" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence81" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.6, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence81" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence81" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence82" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence82" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence82" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence83" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.4, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence83" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence83" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence84" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.2, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence84" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence84" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence85" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence85" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence85" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence86" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.4, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence86" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence86" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence87" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.8, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence87" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence87" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence88" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.6, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence88" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence88" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence89" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -35.8, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence89" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence89" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence90" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38.2, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence90" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence90" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence91" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -40.6, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence91" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence91" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence92" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.4, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence92" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence92" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence93" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.2, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence93" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence93" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence94" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28.6, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence94" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence94" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence95" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence95" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence95" index="1"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="concrete_fence96" parent="street/Fence" instance=ExtResource("5_t85ms")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.8, 1.15468, 43.6)
+
+[node name="Cube_001" parent="street/Fence/concrete_fence96" index="0"]
+material_override = ExtResource("3_6pwuu")
+
+[node name="Cube_002" parent="street/Fence/concrete_fence96" index="1"]
+material_override = ExtResource("3_6pwuu")
 
 [node name="building" type="Node3D" parent="street"]
 
@@ -442,16 +1236,6 @@ transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 29.4)
 mesh = SubResource("ArrayMesh_hdyw8")
 skeleton = NodePath("")
 
-[node name="Cube_060" type="MeshInstance3D" parent="street/building"]
-transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 31.4)
-mesh = SubResource("ArrayMesh_hdyw8")
-skeleton = NodePath("")
-
-[node name="Cube_061" type="MeshInstance3D" parent="street/building"]
-transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 33.4)
-mesh = SubResource("ArrayMesh_hdyw8")
-skeleton = NodePath("")
-
 [node name="Cube_062" type="MeshInstance3D" parent="street/building"]
 transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 27.4)
 mesh = SubResource("ArrayMesh_hdyw8")
@@ -462,16 +1246,6 @@ transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 29.4)
 mesh = SubResource("ArrayMesh_hdyw8")
 skeleton = NodePath("")
 
-[node name="Cube_064" type="MeshInstance3D" parent="street/building"]
-transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 31.4)
-mesh = SubResource("ArrayMesh_hdyw8")
-skeleton = NodePath("")
-
-[node name="Cube_065" type="MeshInstance3D" parent="street/building"]
-transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 33.4)
-mesh = SubResource("ArrayMesh_hdyw8")
-skeleton = NodePath("")
-
 [node name="Cube_070" type="MeshInstance3D" parent="street/building"]
 transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 27.4)
 mesh = SubResource("ArrayMesh_hdyw8")
@@ -479,16 +1253,6 @@ skeleton = NodePath("")
 
 [node name="Cube_071" type="MeshInstance3D" parent="street/building"]
 transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 29.4)
-mesh = SubResource("ArrayMesh_hdyw8")
-skeleton = NodePath("")
-
-[node name="Cube_072" type="MeshInstance3D" parent="street/building"]
-transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 31.4)
-mesh = SubResource("ArrayMesh_hdyw8")
-skeleton = NodePath("")
-
-[node name="Cube_073" type="MeshInstance3D" parent="street/building"]
-transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 33.4)
 mesh = SubResource("ArrayMesh_hdyw8")
 skeleton = NodePath("")
 
@@ -514,16 +1278,6 @@ skeleton = NodePath("")
 
 [node name="Plane_011" type="MeshInstance3D" parent="street/building"]
 transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 29.4)
-mesh = SubResource("ArrayMesh_m0j4q")
-skeleton = NodePath("")
-
-[node name="Plane_012" type="MeshInstance3D" parent="street/building"]
-transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 31.4)
-mesh = SubResource("ArrayMesh_m0j4q")
-skeleton = NodePath("")
-
-[node name="Plane_013" type="MeshInstance3D" parent="street/building"]
-transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 33.4)
 mesh = SubResource("ArrayMesh_m0j4q")
 skeleton = NodePath("")
 
@@ -727,19 +1481,711 @@ transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0
 mesh = SubResource("ArrayMesh_m0j4q")
 skeleton = NodePath("")
 
-[node name="concrete_fence" parent="street" instance=ExtResource("5_t85ms")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.6, 1.15468, 7.6)
+[node name="CSGBox3D" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.5, 10.4)
+use_collision = true
+size = Vector3(7, 7.2, 0.2)
+material = ExtResource("3_6pwuu")
 
-[node name="concrete_fence2" parent="street" instance=ExtResource("5_t85ms")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.2, 1.15468, 7.6)
+[node name="CSGBox3D18" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 3.5, 34.4)
+use_collision = true
+size = Vector3(15, 7.2, 0.2)
+material = ExtResource("3_6pwuu")
 
-[node name="concrete_fence3" parent="street" instance=ExtResource("5_t85ms")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.2, 1.15468, 7.6)
+[node name="CSGBox3D19" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1.5, 18.4)
+use_collision = true
+size = Vector3(7, 3.2, 0.2)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 7, 22.4)
+use_collision = true
+size = Vector3(7, 0.2, 23.8)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1.5, 26.4)
+use_collision = true
+size = Vector3(7, 3.2, 0.2)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3, 22.4)
+use_collision = true
+size = Vector3(7, 0.2, 7.8)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.5, 22.5)
+use_collision = true
+size = Vector3(0.4, 3.2, 0.4)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 1.5, 22.5)
+use_collision = true
+size = Vector3(0.4, 3.2, 0.4)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 28.4)
+use_collision = true
+size = Vector3(6.8, 1.2, 3.8)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 14.3)
+use_collision = true
+size = Vector3(6.8, 1.2, 8)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.1, 14.4)
+use_collision = true
+size = Vector3(6, 5.6, 7.8)
+material = SubResource("StandardMaterial3D_u0ioe")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.1, 30.4)
+use_collision = true
+size = Vector3(6, 5.6, 7.8)
+material = SubResource("StandardMaterial3D_u0ioe")
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 5, 22.4)
+use_collision = true
+size = Vector3(6, 3.8, 7.8)
+material = SubResource("StandardMaterial3D_u0ioe")
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.5, 32.4)
+use_collision = true
+size = Vector3(15.4, 1.2, 4.2)
+material = ExtResource("3_6pwuu")
+
+[node name="Cube_060" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -1, 4, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_064" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -1, 6, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_072" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -1, 2, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_061" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -3, 4, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_065" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -3, 6, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_073" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -3, 2, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_102" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -5, 4, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_103" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -5, 6, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_104" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -5, 2, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_105" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -7, 4, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_106" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -7, 6, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_107" type="MeshInstance3D" parent="street/building"]
+transform = Transform3D(-4.09275e-08, 0, -1, 0, 1, 0, 0.936312, 0, -4.37114e-08, -7, 2, 30.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1, 4.1, 32.5)
+use_collision = true
+size = Vector3(8.8, 5.6, 3.6)
+material = SubResource("StandardMaterial3D_u0ioe")
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="street/building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 7, 32.3)
+use_collision = true
+size = Vector3(7.8, 0.2, 4)
+material = ExtResource("3_6pwuu")
 
 [node name="Decal" type="Decal" parent="street"]
 transform = Transform3D(-1, 0, 8.74228e-08, -8.74228e-08, -4.37114e-08, -1, 3.82137e-15, -1, 4.37114e-08, -0.6, 1.2, 7.5)
 size = Vector3(3.2, 0.2, 2)
 texture_albedo = ExtResource("6_0xw6l")
 
-[node name="concrete_fence" parent="." instance=ExtResource("5_t85ms")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 1.15468, 7.6)
+[node name="building2" type="Node3D" parent="street"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
+
+[node name="Plane_006" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 11.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Cube_038" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_039" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_040" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_041" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_042" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_043" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_044" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_045" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_046" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_047" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_048" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_049" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_050" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 19.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_051" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 21.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_052" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 23.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_053" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 25.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_054" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 19.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_055" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 21.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_056" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 23.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_057" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 25.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_058" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_059" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_060" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 31.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_061" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 33.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_062" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_063" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_064" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 31.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_065" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 33.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_070" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_071" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_072" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 31.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_073" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(0.936312, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 33.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Plane_007" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 13.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_008" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 15.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_009" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 17.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_010" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 27.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_011" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 29.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_012" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 31.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_013" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(1.04642, 0, 0, 0, 1.08283, 0, 0, 0, 1, 0, 0.5, 33.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_014" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 33.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Cube_068" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_069" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_076" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_077" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_080" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 29.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_081" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 27.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_082" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 25.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_083" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 23.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_084" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 21.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_085" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 19.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_086" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 25.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_087" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 23.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_088" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 21.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_089" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 19.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_090" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_091" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_092" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_093" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 4, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_094" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_095" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_096" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_097" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 6, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_098" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 17.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_099" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 15.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_100" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 13.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Cube_101" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-0.936312, 0, 8.74228e-08, 0, 1, 0, -8.1855e-08, 0, -1, 7, 2, 11.4)
+mesh = SubResource("ArrayMesh_hdyw8")
+skeleton = NodePath("")
+
+[node name="Plane_015" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 31.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_016" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 29.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_017" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 27.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_018" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 17.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_019" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 15.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_020" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 13.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="Plane_021" type="MeshInstance3D" parent="street/building2"]
+transform = Transform3D(-1.04642, 0, 8.74228e-08, 0, 1.08283, 0, -9.14811e-08, 0, -1, 7, 0.5, 11.4)
+mesh = SubResource("ArrayMesh_m0j4q")
+skeleton = NodePath("")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 3.5, 10.4)
+use_collision = true
+size = Vector3(7.2, 7.2, 0.2)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.5, 34.4)
+use_collision = true
+size = Vector3(7, 7.2, 0.2)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.5, 18.4)
+use_collision = true
+size = Vector3(7.2, 3.2, 0.2)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 7, 22.4)
+use_collision = true
+size = Vector3(7.2, 0.2, 23.8)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.5, 26.4)
+use_collision = true
+size = Vector3(7.2, 3.2, 0.2)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 3, 22.4)
+use_collision = true
+size = Vector3(7.2, 0.2, 7.8)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.5, 22.5)
+use_collision = true
+size = Vector3(0.4, 3.2, 0.4)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 1.5, 22.5)
+use_collision = true
+size = Vector3(0.4, 3.2, 0.4)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 30.5)
+use_collision = true
+size = Vector3(6.8, 1.2, 8)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 14.3)
+use_collision = true
+size = Vector3(6.8, 1.2, 8)
+material = ExtResource("3_6pwuu")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.1, 14.4)
+use_collision = true
+size = Vector3(6, 5.6, 7.8)
+material = SubResource("StandardMaterial3D_u0ioe")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.1, 30.4)
+use_collision = true
+size = Vector3(6, 5.6, 7.8)
+material = SubResource("StandardMaterial3D_u0ioe")
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="street/building2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 5, 22.4)
+use_collision = true
+size = Vector3(6, 3.8, 7.8)
+material = SubResource("StandardMaterial3D_u0ioe")
+
+[editable path="street/Fence/concrete_fence"]
+[editable path="street/Fence/concrete_fence2"]
+[editable path="street/Fence/concrete_fence3"]
+[editable path="street/Fence/concrete_fence4"]
+[editable path="street/Fence/concrete_fence5"]
+[editable path="street/Fence/concrete_fence6"]
+[editable path="street/Fence/concrete_fence7"]
+[editable path="street/Fence/concrete_fence8"]
+[editable path="street/Fence/concrete_fence9"]
+[editable path="street/Fence/concrete_fence10"]
+[editable path="street/Fence/concrete_fence11"]
+[editable path="street/Fence/concrete_fence12"]
+[editable path="street/Fence/concrete_fence13"]
+[editable path="street/Fence/concrete_fence14"]
+[editable path="street/Fence/concrete_fence15"]
+[editable path="street/Fence/concrete_fence16"]
+[editable path="street/Fence/concrete_fence17"]
+[editable path="street/Fence/concrete_fence18"]
+[editable path="street/Fence/concrete_fence19"]
+[editable path="street/Fence/concrete_fence20"]
+[editable path="street/Fence/concrete_fence21"]
+[editable path="street/Fence/concrete_fence22"]
+[editable path="street/Fence/concrete_fence23"]
+[editable path="street/Fence/concrete_fence24"]
+[editable path="street/Fence/concrete_fence25"]
+[editable path="street/Fence/concrete_fence26"]
+[editable path="street/Fence/concrete_fence27"]
+[editable path="street/Fence/concrete_fence28"]
+[editable path="street/Fence/concrete_fence29"]
+[editable path="street/Fence/concrete_fence30"]
+[editable path="street/Fence/concrete_fence31"]
+[editable path="street/Fence/concrete_fence32"]
+[editable path="street/Fence/concrete_fence33"]
+[editable path="street/Fence/concrete_fence34"]
+[editable path="street/Fence/concrete_fence35"]
+[editable path="street/Fence/concrete_fence36"]
+[editable path="street/Fence/concrete_fence37"]
+[editable path="street/Fence/concrete_fence38"]
+[editable path="street/Fence/concrete_fence39"]
+[editable path="street/Fence/concrete_fence40"]
+[editable path="street/Fence/concrete_fence41"]
+[editable path="street/Fence/concrete_fence42"]
+[editable path="street/Fence/concrete_fence43"]
+[editable path="street/Fence/concrete_fence44"]
+[editable path="street/Fence/concrete_fence45"]
+[editable path="street/Fence/concrete_fence46"]
+[editable path="street/Fence/concrete_fence47"]
+[editable path="street/Fence/concrete_fence48"]
+[editable path="street/Fence/concrete_fence49"]
+[editable path="street/Fence/concrete_fence50"]
+[editable path="street/Fence/concrete_fence51"]
+[editable path="street/Fence/concrete_fence52"]
+[editable path="street/Fence/concrete_fence53"]
+[editable path="street/Fence/concrete_fence54"]
+[editable path="street/Fence/concrete_fence55"]
+[editable path="street/Fence/concrete_fence56"]
+[editable path="street/Fence/concrete_fence57"]
+[editable path="street/Fence/concrete_fence58"]
+[editable path="street/Fence/concrete_fence59"]
+[editable path="street/Fence/concrete_fence60"]
+[editable path="street/Fence/concrete_fence61"]
+[editable path="street/Fence/concrete_fence62"]
+[editable path="street/Fence/concrete_fence63"]
+[editable path="street/Fence/concrete_fence64"]
+[editable path="street/Fence/concrete_fence65"]
+[editable path="street/Fence/concrete_fence66"]
+[editable path="street/Fence/concrete_fence67"]
+[editable path="street/Fence/concrete_fence68"]
+[editable path="street/Fence/concrete_fence69"]
+[editable path="street/Fence/concrete_fence70"]
+[editable path="street/Fence/concrete_fence71"]
+[editable path="street/Fence/concrete_fence72"]
+[editable path="street/Fence/concrete_fence73"]
+[editable path="street/Fence/concrete_fence74"]
+[editable path="street/Fence/concrete_fence75"]
+[editable path="street/Fence/concrete_fence76"]
+[editable path="street/Fence/concrete_fence77"]
+[editable path="street/Fence/concrete_fence78"]
+[editable path="street/Fence/concrete_fence79"]
+[editable path="street/Fence/concrete_fence80"]
+[editable path="street/Fence/concrete_fence81"]
+[editable path="street/Fence/concrete_fence82"]
+[editable path="street/Fence/concrete_fence83"]
+[editable path="street/Fence/concrete_fence84"]
+[editable path="street/Fence/concrete_fence85"]
+[editable path="street/Fence/concrete_fence86"]
+[editable path="street/Fence/concrete_fence87"]
+[editable path="street/Fence/concrete_fence88"]
+[editable path="street/Fence/concrete_fence89"]
+[editable path="street/Fence/concrete_fence90"]
+[editable path="street/Fence/concrete_fence91"]
+[editable path="street/Fence/concrete_fence92"]
+[editable path="street/Fence/concrete_fence93"]
+[editable path="street/Fence/concrete_fence94"]
+[editable path="street/Fence/concrete_fence95"]
+[editable path="street/Fence/concrete_fence96"]
