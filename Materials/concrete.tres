@@ -6,3 +6,4 @@
 albedo_texture = ExtResource("1_2hay3")
 uv1_triplanar = true
 uv1_world_triplanar = true
+grow_amount = 0.205

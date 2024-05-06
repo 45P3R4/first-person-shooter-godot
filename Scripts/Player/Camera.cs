@@ -30,18 +30,26 @@ public partial class Camera : Camera3D
 
 	public override void _Input(InputEvent @event)
 	{
+		
 		if (@event is InputEventMouseMotion) {
-			InputEventMouseMotion mouseMotion = @event as InputEventMouseMotion;
-			motionX = mouseMotion.Relative.X;
-			motionY = mouseMotion.Relative.Y;
-			Player.Body.RotateY(-motionX * sensetiveX);
-			RotateX(motionY * sensetiveY);
-			camRotation.X = Mathf.Clamp(Rotation.X, Mathf.DegToRad(-90), Mathf.DegToRad(90));
-			Rotation = camRotation;
-			if(!Player.IsAiming)
+			
+				InputEventMouseMotion mouseMotion = @event as InputEventMouseMotion;
+				motionX = mouseMotion.Relative.X;
+				motionY = mouseMotion.Relative.Y;
+				Player.Body.RotateY(-motionX * sensetiveX);
+				RotateX(motionY * sensetiveY);
+				camRotation.X = Mathf.Clamp(Rotation.X, Mathf.DegToRad(-90), Mathf.DegToRad(90));
+				Rotation = camRotation;
+				
+			}
+			if(!Player.IsAiming) {
 				sway(motionX, motionY);
+			}
+			else {
+				sway(motionX/10, motionY/10);
+			}
+				
 		}
-	}
 
 	//hands rotation
     public override void _Process(double delta)

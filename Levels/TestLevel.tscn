@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://sb1k3l2n6rmw"]
+[gd_scene load_steps=19 format=3 uid="uid://sb1k3l2n6rmw"]
 
 [ext_resource type="Material" uid="uid://b6sru7f1r6ruq" path="res://Materials/concrete.tres" id="3_6pwuu"]
 [ext_resource type="PackedScene" uid="uid://c0u52olw1cum0" path="res://Models/blender/locator.blend" id="3_ggxed"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c2onnfty2a2oi" path="res://Models/blender/concrete_fence.blend" id="5_t85ms"]
 [ext_resource type="Texture2D" uid="uid://tqb5lpvioqsd" path="res://Textures/Sprite-0001.png" id="6_0xw6l"]
 [ext_resource type="Material" uid="uid://h6k0vn3j4ole" path="res://Thirdparty/KenneyPrototypetextures/White.tres" id="7_7j6g7"]
-[ext_resource type="Shader" path="res://Thirdparty/Outline/outline.gdshader" id="8_vlpfq"]
+[ext_resource type="Material" uid="uid://dc2rx8rxchhq4" path="res://Materials/brick.tres" id="7_e8c4r"]
+[ext_resource type="Material" uid="uid://o8vtfr6feoab" path="res://Materials/concrete2.tres" id="8_r2cvu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ilhjn"]
 sky_top_color = Color(0.66, 0.66, 0.66, 1)
@@ -125,13 +126,6 @@ shadow_mesh = SubResource("ArrayMesh_37au7")
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhaw2"]
-render_priority = 0
-shader = ExtResource("8_vlpfq")
-
-[sub_resource type="QuadMesh" id="QuadMesh_t6e6n"]
-size = Vector2(2, 2)
-
 [node name="TestLevel" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("3_hk50k")]
@@ -163,97 +157,97 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.59999, -0.1, 18.4)
 material_override = ExtResource("7_7j6g7")
 use_collision = true
 size = Vector3(360.2, 0.4, 322.6)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 1.7, -0.3)
 use_collision = true
 size = Vector3(8.6, 3.2, 0.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.7, -0.3)
 use_collision = true
 size = Vector3(2.8, 3.2, 0.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.7, -4.9)
 use_collision = true
 size = Vector3(13, 3.2, 0.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 1.7, -2.6)
 use_collision = true
 size = Vector3(0.4, 3.2, 4.2)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 3.5, -2.6)
 use_collision = true
 size = Vector3(13, 0.4, 5)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9, 1.7, -2.6)
 use_collision = true
 size = Vector3(0.4, 3.2, 4.2)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 2.9, -0.3)
 use_collision = true
 size = Vector3(1.6, 0.8, 0.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 2.5, 0.6)
 use_collision = true
 size = Vector3(0.4, 2.4, 1.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1.9, 2.6)
 use_collision = true
 size = Vector3(0.4, 3.6, 2.6)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, 0.6)
 use_collision = true
 size = Vector3(1, 2.4, 1.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.9, 2.6)
 use_collision = true
 size = Vector3(5, 3.6, 2.6)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.6, 0.6)
 use_collision = true
 size = Vector3(1, 2.2, 1.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.7, 0.6)
 use_collision = true
 size = Vector3(1, 2, 1.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.8, 0.6)
 use_collision = true
 size = Vector3(1, 1.8, 1.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="blockout/csg"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.9, 0.6)
 use_collision = true
 size = Vector3(1, 1.6, 1.4)
-material = ExtResource("3_6pwuu")
+material = ExtResource("8_r2cvu")
 
 [node name="locator" parent="." instance=ExtResource("3_ggxed")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.68249, 0.327583, -1.9547)
@@ -1495,13 +1489,13 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.5, 10.4)
 use_collision = true
 size = Vector3(7, 7.2, 0.2)
-material = ExtResource("3_6pwuu")
+material = ExtResource("7_e8c4r")
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="street/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 3.5, 34.4)
 use_collision = true
 size = Vector3(15, 7.2, 0.2)
-material = ExtResource("3_6pwuu")
+material = ExtResource("7_e8c4r")
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="street/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1.5, 18.4)
@@ -1546,9 +1540,9 @@ size = Vector3(6.8, 1.2, 3.8)
 material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="street/building"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 14.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 14.4)
 use_collision = true
-size = Vector3(6.8, 1.2, 8)
+size = Vector3(6.8, 1.2, 7.8)
 material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D27" type="CSGBox3D" parent="street/building"]
@@ -1570,9 +1564,9 @@ size = Vector3(6, 3.8, 7.8)
 material = SubResource("StandardMaterial3D_u0ioe")
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="street/building"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.5, 32.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.5, 32.3)
 use_collision = true
-size = Vector3(15.4, 1.2, 4.2)
+size = Vector3(15.4, 1.2, 4)
 material = ExtResource("3_6pwuu")
 
 [node name="Cube_060" type="MeshInstance3D" parent="street/building"]
@@ -2029,13 +2023,13 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 3.5, 10.4)
 use_collision = true
 size = Vector3(7.2, 7.2, 0.2)
-material = ExtResource("3_6pwuu")
+material = ExtResource("7_e8c4r")
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="street/building2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.5, 34.4)
 use_collision = true
 size = Vector3(7, 7.2, 0.2)
-material = ExtResource("3_6pwuu")
+material = ExtResource("7_e8c4r")
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="street/building2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.5, 18.4)
@@ -2074,15 +2068,15 @@ size = Vector3(0.4, 3.2, 0.4)
 material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D25" type="CSGBox3D" parent="street/building2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 30.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 30.4)
 use_collision = true
-size = Vector3(6.8, 1.2, 8)
+size = Vector3(6.8, 1.2, 7.8)
 material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="street/building2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 14.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 14.4)
 use_collision = true
-size = Vector3(6.8, 1.2, 8)
+size = Vector3(6.8, 1.2, 7.8)
 material = ExtResource("3_6pwuu")
 
 [node name="CSGBox3D27" type="CSGBox3D" parent="street/building2"]
@@ -2102,11 +2096,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 5, 22.4)
 use_collision = true
 size = Vector3(6, 3.8, 7.8)
 material = SubResource("StandardMaterial3D_u0ioe")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.6, 6)
-material_override = SubResource("ShaderMaterial_dhaw2")
-mesh = SubResource("QuadMesh_t6e6n")
 
 [editable path="street/Fence/concrete_fence"]
 [editable path="street/Fence/concrete_fence2"]
