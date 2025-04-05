@@ -7,7 +7,7 @@ public partial class Player : Node3D
 
 	public static Weapon CurrentWeapon;
 	
-	public static  StateMachine WeaponStateMachine;
+	public static StateMachine WeaponStateMachine;
 	public static StateMachine MovementStateMachine;
 
 	public static CharacterBody3D Body;
@@ -47,7 +47,7 @@ public partial class Player : Node3D
 	public static void Move(float speed) {
 		Vector2 inputDir = Input.GetVector("left", "right", "up", "down");
 		Vector3 dir = (Body.GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-        Body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed + Vector3.Up * Body.Velocity.Y;
+		Body.Velocity = Vector3.Right * dir.X * speed + Vector3.Back * dir.Z * speed + Vector3.Up * Body.Velocity.Y;
 		Body.MoveAndSlide();
 	}
 }

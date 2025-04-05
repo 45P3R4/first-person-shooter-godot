@@ -1,35 +1,35 @@
 [gd_scene load_steps=74 format=3 uid="uid://bd5v6py7keiiq"]
 
-[ext_resource type="Script" path="res://Scripts/Player/Camera.cs" id="1_02tyf"]
-[ext_resource type="PackedScene" uid="uid://cv6qwvtibrtvg" path="res://Models/blender/LowPoly_FPS_MP5.blend" id="1_4naph"]
-[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_26yc0"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon.cs" id="2_ef5hd"]
-[ext_resource type="Script" path="res://Scripts/Animation.cs" id="3_7ob0h"]
+[ext_resource type="Script" uid="uid://cqena6pwxihvm" path="res://Scripts/Player/Camera.cs" id="1_02tyf"]
+[ext_resource type="PackedScene" uid="uid://cv6qwvtibrtvg" path="res://models/blender/LowPoly_FPS_MP5.blend" id="1_4naph"]
+[ext_resource type="Script" uid="uid://brmn6r8jhflad" path="res://Scripts/Player/Player.cs" id="1_26yc0"]
+[ext_resource type="Script" uid="uid://b34uymdf57deq" path="res://Scripts/Player/Weapon.cs" id="2_ef5hd"]
+[ext_resource type="Script" uid="uid://c2grkx8fswqse" path="res://Scripts/Animation.cs" id="3_7ob0h"]
+[ext_resource type="Script" uid="uid://dgsg7jly4wrl8" path="res://scripts/StateMachine.cs" id="3_wqfne"]
 [ext_resource type="AudioStream" uid="uid://b8chvn7qbgt0l" path="res://Audio/fireshot.wav" id="4_2ctpm"]
-[ext_resource type="Script" path="res://Scripts/Player/Audio.cs" id="5_xbjg8"]
-[ext_resource type="Script" path="res://Scripts/StateMachine.cs" id="7_ju0y3"]
+[ext_resource type="Script" uid="uid://dxt7tkhsg2rn" path="res://Scripts/Player/Audio.cs" id="5_xbjg8"]
 [ext_resource type="Material" uid="uid://53ku081urwxs" path="res://Scenes/Weapon.tres" id="8_6hc5m"]
-[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementIdle.cs" id="9_hgku5"]
-[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementCrouch.cs" id="10_8botg"]
-[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementWalk.cs" id="10_ro4mx"]
-[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementLanding.cs" id="11_54bry"]
-[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementRun.cs" id="11_33753"]
-[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementCrouchIn.cs" id="11_nyjep"]
-[ext_resource type="Texture2D" uid="uid://cf70qvs6t8obi" path="res://Textures/cross.png" id="12_euvy4"]
-[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementCrouchOut.cs" id="12_k6d1d"]
-[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementJump.cs" id="12_pe6a0"]
-[ext_resource type="Script" path="res://Scripts/Player/Movement/PlayerMovementInAir.cs" id="13_1twm2"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponIdle.cs" id="14_8c7hj"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponFire.cs" id="15_gbna7"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponChange.cs" id="15_iwsxo"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponCooldown.cs" id="16_6dg28"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponReload.cs" id="16_j46n1"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponInspect.cs" id="17_3ppcw"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponAim.cs" id="19_gntx8"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponAimIn.cs" id="20_1t1ap"]
-[ext_resource type="Script" path="res://Scripts/Player/Weapon/PlayerWeaponAimOut.cs" id="21_0fyic"]
-[ext_resource type="Script" path="res://Scripts/MP5.cs" id="22_vnvbv"]
-[ext_resource type="Script" path="res://Scripts/UISingleton.cs" id="24_5or2o"]
+[ext_resource type="Script" uid="uid://6e1mqtres73b" path="res://Scripts/Player/Movement/PlayerMovementIdle.cs" id="9_hgku5"]
+[ext_resource type="Script" uid="uid://b7crvtkq56h6" path="res://Scripts/Player/Movement/PlayerMovementCrouch.cs" id="10_8botg"]
+[ext_resource type="Script" uid="uid://dy54fku1urgvi" path="res://Scripts/Player/Movement/PlayerMovementWalk.cs" id="10_ro4mx"]
+[ext_resource type="Script" uid="uid://cvoousolny0ov" path="res://Scripts/Player/Movement/PlayerMovementLanding.cs" id="11_54bry"]
+[ext_resource type="Script" uid="uid://bw4ojke1ov25y" path="res://Scripts/Player/Movement/PlayerMovementRun.cs" id="11_33753"]
+[ext_resource type="Script" uid="uid://b01mkbnejs1ju" path="res://Scripts/Player/Movement/PlayerMovementCrouchIn.cs" id="11_nyjep"]
+[ext_resource type="Texture2D" uid="uid://cf70qvs6t8obi" path="res://textures/cross.png" id="12_euvy4"]
+[ext_resource type="Script" uid="uid://dx8y6qd7u1lig" path="res://Scripts/Player/Movement/PlayerMovementCrouchOut.cs" id="12_k6d1d"]
+[ext_resource type="Script" uid="uid://dspdnu7m35m70" path="res://Scripts/Player/Movement/PlayerMovementJump.cs" id="12_pe6a0"]
+[ext_resource type="Script" uid="uid://dswe1cbhlq0bv" path="res://Scripts/Player/Movement/PlayerMovementInAir.cs" id="13_1twm2"]
+[ext_resource type="Script" uid="uid://8sp0ufcraf13" path="res://Scripts/Player/Weapon/PlayerWeaponIdle.cs" id="14_8c7hj"]
+[ext_resource type="Script" uid="uid://chbjrl4ecovv3" path="res://Scripts/Player/Weapon/PlayerWeaponFire.cs" id="15_gbna7"]
+[ext_resource type="Script" uid="uid://vss6231a3w7g" path="res://Scripts/Player/Weapon/PlayerWeaponChange.cs" id="15_iwsxo"]
+[ext_resource type="Script" uid="uid://cvgea8eanpj5v" path="res://Scripts/Player/Weapon/PlayerWeaponCooldown.cs" id="16_6dg28"]
+[ext_resource type="Script" uid="uid://bm6sfnfmik7yy" path="res://Scripts/Player/Weapon/PlayerWeaponReload.cs" id="16_j46n1"]
+[ext_resource type="Script" uid="uid://dx6tgm3tk7qom" path="res://Scripts/Player/Weapon/PlayerWeaponInspect.cs" id="17_3ppcw"]
+[ext_resource type="Script" uid="uid://dfrism86cj50a" path="res://Scripts/Player/Weapon/PlayerWeaponAim.cs" id="19_gntx8"]
+[ext_resource type="Script" uid="uid://c562asqasif6e" path="res://Scripts/Player/Weapon/PlayerWeaponAimIn.cs" id="20_1t1ap"]
+[ext_resource type="Script" uid="uid://bqc2mu5efqwp3" path="res://Scripts/Player/Weapon/PlayerWeaponAimOut.cs" id="21_0fyic"]
+[ext_resource type="Script" uid="uid://dqnqbmo30mkch" path="res://Scripts/MP5.cs" id="22_vnvbv"]
+[ext_resource type="Script" uid="uid://capstejvi5fi8" path="res://Scripts/UISingleton.cs" id="24_5or2o"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nphbl"]
 animation = &"Arms_Aim"
@@ -242,7 +242,7 @@ script = ExtResource("1_26yc0")
 script = ExtResource("2_ef5hd")
 
 [node name="PlayerMovementStateMachine" type="Node3D" parent="." node_paths=PackedStringArray("initialState")]
-script = ExtResource("7_ju0y3")
+script = ExtResource("3_wqfne")
 initialState = NodePath("PlayerMovementIdle")
 
 [node name="PlayerMovementIdle" type="Node3D" parent="PlayerMovementStateMachine"]
@@ -273,7 +273,7 @@ script = ExtResource("11_nyjep")
 script = ExtResource("12_k6d1d")
 
 [node name="PlayerWeaponStateMachine" type="Node3D" parent="." node_paths=PackedStringArray("initialState")]
-script = ExtResource("7_ju0y3")
+script = ExtResource("3_wqfne")
 initialState = NodePath("PlayerWeaponIdle")
 
 [node name="PlayerWeaponIdle" type="Node3D" parent="PlayerWeaponStateMachine"]
@@ -356,7 +356,7 @@ transform = Transform3D(1, 0, -6.51683e-07, 0, 1, 0, 6.51683e-07, 0, 1, -2.30926
 [node name="Skeleton3D" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 bones/1/position = Vector3(-0.00654852, 0.424412, 0.26196)
-bones/1/rotation = Quaternion(-0.929843, -0.316103, -0.125676, 0.14027)
+bones/1/rotation = Quaternion(-0.929796, -0.316069, -0.125804, 0.140548)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(0.015265, -0.109479, -0.0891798)
 bones/2/rotation = Quaternion(-0.651459, 0.034364, 0.0106243, 0.757831)
@@ -376,6 +376,7 @@ bones/7/scale = Vector3(1, 1, 1)
 bones/8/position = Vector3(-0.100148, -0.0408995, -0.0811895)
 bones/8/rotation = Quaternion(-0.335257, 0.088548, 0.0176513, 0.93779)
 bones/8/scale = Vector3(1, 1, 1)
+bones/9/position = Vector3(0.0795883, -0.0162781, 0.000132015)
 bones/9/rotation = Quaternion(0.0611543, -0.551534, -0.485846, 0.675295)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/position = Vector3(0.06959, -0.0595824, -0.107705)
@@ -387,17 +388,17 @@ bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(0.252867, 0.0952959, -0.367268)
 bones/12/rotation = Quaternion(-0.646953, 0.285398, -0.285398, 0.646953)
 bones/13/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/14/position = Vector3(-0.0984567, 0.350068, 0.00106852)
-bones/14/rotation = Quaternion(-0.702564, 0.693123, -0.00336964, 0.161163)
+bones/14/position = Vector3(-0.0984478, 0.349859, 0.00109203)
+bones/14/rotation = Quaternion(-0.702514, 0.693119, -0.00317739, 0.161403)
 bones/14/scale = Vector3(1, 1, 1)
-bones/15/position = Vector3(-0.044188, -0.0894969, -0.113706)
-bones/15/rotation = Quaternion(-0.38348, -0.0231289, 0.000207201, 0.92326)
+bones/15/position = Vector3(-0.0441879, -0.0894969, -0.113706)
+bones/15/rotation = Quaternion(-0.38348, -0.0231289, 0.000207206, 0.92326)
 bones/16/position = Vector3(-0.00240441, -0.0687242, -0.0533592)
 bones/16/rotation = Quaternion(-0.346945, 0.0261174, -0.0242933, 0.937207)
 bones/16/scale = Vector3(1, 1, 1)
-bones/17/position = Vector3(0.00978879, -0.0689283, -0.0533479)
+bones/17/position = Vector3(0.0097888, -0.0689283, -0.0533479)
 bones/17/rotation = Quaternion(-0.41096, 0.008625, -0.0169541, 0.911455)
-bones/18/position = Vector3(0.028112, -0.0719711, -0.0615407)
+bones/18/position = Vector3(0.0281121, -0.0719711, -0.0615407)
 bones/18/rotation = Quaternion(-0.388816, -0.0298392, -0.00519378, 0.920818)
 bones/18/scale = Vector3(1, 1, 1)
 bones/19/rotation = Quaternion(-0.33269, -0.0115467, -0.0450138, 0.941891)
@@ -408,16 +409,17 @@ bones/21/scale = Vector3(1, 1, 1)
 bones/22/rotation = Quaternion(0.0611543, 0.551534, 0.485846, 0.675295)
 bones/22/scale = Vector3(1, 1, 1)
 bones/23/position = Vector3(-0.0603352, -0.0831508, -0.078209)
-bones/23/rotation = Quaternion(0.353543, 0.0324801, 0.645105, 0.676603)
+bones/23/rotation = Quaternion(0.353543, 0.0324802, 0.645105, 0.676603)
 bones/23/scale = Vector3(1, 1, 1)
+bones/24/position = Vector3(-0.0511283, -0.0218552, -0.143152)
 bones/24/rotation = Quaternion(-0.307869, 0.11208, 0.0558412, 0.943152)
 bones/24/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(-0.646953, -0.285398, 0.285398, 0.646953)
 bones/26/position = Vector3(-0.0981148, 0.449481, -0.264995)
 bones/27/position = Vector3(0.128749, 0.400794, -0.0384993)
-bones/27/rotation = Quaternion(0.56882, 0.172806, 0.768337, 0.237151)
+bones/27/rotation = Quaternion(0.568846, 0.17271, 0.768392, 0.236978)
 bones/28/rotation = Quaternion(-0.105366, 4.12855e-05, -0.723097, 0.682664)
-bones/29/rotation = Quaternion(0.272358, -0.366842, 0.312659, 0.832762)
+bones/29/rotation = Quaternion(0.272395, -0.366998, 0.312693, 0.832668)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/rotation = Quaternion(0.367876, 0.510019, -0.461173, 0.625994)
 bones/30/scale = Vector3(1, 1, 1)
@@ -447,44 +449,48 @@ bones/49/scale = Vector3(1, 1, 1)
 bones/50/rotation = Quaternion(7.08564e-09, -0.19207, -1.24889e-08, 0.981381)
 bones/51/rotation = Quaternion(-7.02881e-08, -0.118053, -1.54008e-08, 0.993007)
 bones/52/position = Vector3(-0.0981148, 0.449481, -0.264995)
-bones/52/rotation = Quaternion(0.590051, -0.294181, -0.696329, -0.283589)
-bones/53/rotation = Quaternion(-0.11793, -3.47495e-05, 0.809318, 0.57541)
-bones/54/rotation = Quaternion(0.18955, 0.328827, -0.224531, 0.897513)
+bones/52/rotation = Quaternion(0.590127, -0.294134, -0.696221, -0.283746)
+bones/53/rotation = Quaternion(-0.117931, -3.48017e-05, 0.809325, 0.5754)
+bones/54/rotation = Quaternion(0.189464, 0.328896, -0.225045, 0.897377)
 bones/54/scale = Vector3(1, 1, 1)
 bones/55/rotation = Quaternion(0.315419, -0.334144, 0.720446, 0.519439)
 bones/55/scale = Vector3(1, 1, 1)
-bones/56/rotation = Quaternion(-0.649675, 0.0317171, -0.0736718, 0.755969)
+bones/56/rotation = Quaternion(-0.649675, 0.0317171, -0.0736719, 0.755969)
 bones/56/scale = Vector3(1, 1, 1)
 bones/57/rotation = Quaternion(-0.22644, -0.439942, -0.0753336, 0.865737)
 bones/57/scale = Vector3(1, 1, 1)
 bones/58/rotation = Quaternion(0.014274, -0.036138, 0.189854, 0.981043)
-bones/59/rotation = Quaternion(-0.166372, 0.0488839, -0.0599, 0.983027)
-bones/60/rotation = Quaternion(-0.58259, -1.48226e-06, 1.17445e-06, 0.812766)
-bones/61/rotation = Quaternion(-0.12628, -2.75762e-07, 2.0442e-06, 0.991995)
+bones/59/rotation = Quaternion(-0.166371, 0.0488839, -0.0599003, 0.983028)
+bones/60/rotation = Quaternion(-0.58259, -1.48298e-06, 1.18449e-06, 0.812766)
+bones/61/rotation = Quaternion(-0.12628, -2.77004e-07, 2.05736e-06, 0.991995)
 bones/62/rotation = Quaternion(0.0234887, -0.00390845, 0.0436187, 0.998764)
-bones/63/rotation = Quaternion(-0.598982, 0.00273621, -0.040602, 0.799728)
-bones/64/rotation = Quaternion(-0.587916, 8.59874e-07, -6.62533e-07, 0.808922)
-bones/65/rotation = Quaternion(-0.441133, -1.79549e-06, -4.88733e-07, 0.897442)
+bones/63/rotation = Quaternion(-0.598982, 0.00273618, -0.0406025, 0.799728)
+bones/64/rotation = Quaternion(-0.587916, 8.7425e-07, -1.15456e-06, 0.808922)
+bones/65/rotation = Quaternion(-0.441133, -1.77926e-06, -9.3459e-07, 0.897442)
 bones/66/rotation = Quaternion(0.0119729, 0.0752219, -0.0706678, 0.994588)
-bones/67/rotation = Quaternion(-0.60342, -0.0428387, -0.0174979, 0.79608)
-bones/68/rotation = Quaternion(-0.638842, -2.21292e-07, -3.67296e-07, 0.769338)
-bones/69/rotation = Quaternion(-0.315224, -1.31964e-06, 8.15097e-07, 0.949017)
+bones/67/rotation = Quaternion(-0.60342, -0.0428386, -0.0174983, 0.79608)
+bones/68/rotation = Quaternion(-0.638842, -2.24668e-07, -5.48598e-07, 0.769338)
+bones/69/rotation = Quaternion(-0.315224, -1.32668e-06, 6.51289e-07, 0.949017)
 bones/70/rotation = Quaternion(0.0222864, 0.267991, -0.200864, 0.941986)
-bones/71/rotation = Quaternion(-0.573251, -0.204613, -0.000659935, 0.793421)
+bones/71/rotation = Quaternion(-0.57325, -0.204613, -0.000660822, 0.793421)
 bones/71/scale = Vector3(1, 1, 1)
-bones/72/rotation = Quaternion(-0.433729, -2.7958e-08, 1.97563e-08, 0.901043)
-bones/73/rotation = Quaternion(-0.492087, -1.55511e-06, 6.03358e-07, 0.870546)
-bones/74/rotation = Quaternion(2.1309e-08, 0.491392, -3.55043e-08, 0.870939)
+bones/72/rotation = Quaternion(-0.433729, 9.16656e-09, -5.06602e-08, 0.901043)
+bones/73/rotation = Quaternion(-0.492087, -1.52852e-06, 5.52189e-07, 0.870546)
+bones/74/rotation = Quaternion(7.5261e-08, 0.491392, -9.03473e-08, 0.870938)
 bones/74/scale = Vector3(1, 1, 1)
-bones/75/rotation = Quaternion(-3.94292e-08, 0.140685, -1.84815e-08, 0.990054)
-bones/76/rotation = Quaternion(-7.85625e-08, 0.0863128, 3.56177e-08, 0.996268)
+bones/75/rotation = Quaternion(4.28802e-08, 0.140685, -1.54934e-09, 0.990054)
+bones/76/rotation = Quaternion(-1.19694e-07, 0.0863127, 3.09437e-08, 0.996268)
 bones/77/position = Vector3(-0.0488726, 0.447867, 0.330354)
-bones/77/rotation = Quaternion(0.471856, -0.521362, -0.519473, 0.48547)
+bones/77/rotation = Quaternion(0.472024, -0.521216, -0.51962, 0.485307)
 bones/79/position = Vector3(-0.0416324, -0.00907777, 1.70032e-09)
+bones/79/rotation = Quaternion(4.36555e-10, -3.63836e-12, 7.72265e-08, 1)
+bones/80/position = Vector3(0.0418098, -0.0990128, -2.31708e-08)
+bones/80/rotation = Quaternion(-0.408674, -0.491589, -0.491589, 0.591326)
 bones/82/rotation = Quaternion(0.408674, 0.491589, 0.491589, 0.591326)
-bones/83/rotation = Quaternion(0.5, 0.5, 0.5, -0.499999)
+bones/83/rotation = Quaternion(0.5, 0.5, 0.5, -0.5)
 bones/84/rotation = Quaternion(-0.629095, 0.322861, 0.629095, 0.322862)
 bones/84/scale = Vector3(1, 1, 1)
+bones/85/position = Vector3(-0.0096149, -0.57847, -1.66948e-07)
 bones/85/rotation = Quaternion(-1.11075e-08, 0.707107, 2.18197e-08, 0.707107)
 
 [node name="Cylinder_001" parent="CharacterBody3D/hands/LowPoly_FPS_MP5/Camera/Arms/Skeleton3D" index="0"]
@@ -549,8 +555,5 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="OnStateChanged" from="PlayerMovementStateMachine" to="CharacterBody3D/AnimationTree" method="OnStateChanged"]
-[connection signal="OnStateChanged" from="PlayerWeaponStateMachine" to="CharacterBody3D/AnimationTree" method="OnStateChanged"]
 
 [editable path="CharacterBody3D/hands/LowPoly_FPS_MP5"]
